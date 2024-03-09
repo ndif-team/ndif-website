@@ -1,0 +1,42 @@
+body {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+[data-bs-theme="light"] {
+    
+    .btn-primary {
+        --bs-btn-color: var(--bs-body-bg);
+        --bs-btn-bg: #4385BE !important;
+        --bs-btn-border-color: #4385BE !important;   
+    }
+
+}
+
+[data-bs-theme="flexoki"] {
+    --bs-body-color: #100F0F;
+    --bs-body-color-rgb: #{to-rgb($white)};
+    --bs-body-bg: #FFFCF0;
+    --bs-body-bg-rgb: #{to-rgb($blue)};
+    --bs-tertiary-bg: #{$blue-600};
+    
+    .bg-secondary {
+        background-color: #F2F0E5 !important;
+    }
+
+    .btn-primary {
+        --bs-btn-color: var(--bs-body-bg);
+        --bs-btn-bg: #4385BE;
+        --bs-btn-border-color: #4385BE;   
+    }
+
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link  {
+        --bs-active-color: #4385BE !important;
+        --bs-active-bg: #FFFCF0;
+        color: #FFFCF0;
+        background-color: #4385BE;
+    }
+
+    .nav-link {
+        color: #100F0F;
+    }
+}
