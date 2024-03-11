@@ -2,6 +2,10 @@ body {
     font-family: 'Montserrat', sans-serif !important;
 }
 
+.nav-item .nav-link.active {
+    font-weight: 500;
+}
+
 [data-bs-theme="light"] {
     
     .btn-primary {
@@ -31,9 +35,9 @@ body {
 
     .nav-pills .nav-link.active, .nav-pills .show>.nav-link  {
         --bs-active-color: #4385BE !important;
-        --bs-active-bg: #FFFCF0;
+        /* --bs-active-bg: #FFFCF0; */
         color: #FFFCF0;
-        background-color: #4385BE;
+        /* background-color: #4385BE; */
     }
 
     .nav-link {
