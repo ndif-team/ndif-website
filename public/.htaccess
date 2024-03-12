@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "restricted area"
-AuthUserFile /srv/ndif/www/ndif/public/.htpasswd
-require valid-user
