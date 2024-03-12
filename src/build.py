@@ -1,4 +1,4 @@
-# Simple static website generation framework, by GPT-4.
+# Simple static website generation framework, by Claude-3.
 
 import os
 import shutil
