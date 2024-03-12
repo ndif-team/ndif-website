@@ -59,17 +59,16 @@ National Deep<br />Inference Fabric
 <div class="col-md-8 align-items-center justify-content-end d-flex">
 <ul class="nav navbar-light p-1" style="display: inline-flex;">
 <li class="nav-item">
-{nav_link('Home', './')}
+{nav_link('Home', '/')}
 </li>
 <li class="nav-item">
-{nav_link('Fabric', './fabric.html')}
+{nav_link('Fabric', '/fabric.html')}
 </li>
 <li class="nav-item me-2">
-{nav_link('About Us', './about.html')}
-<a class="nav-link text-secondary active" aria-current="page" href="./about.html">About Us</a>
+{nav_link('About Us', '/about.html')}
 </li>
 <li class="nav-item">
-{nav_link('Get Involved', './start.html')}
+{nav_link('Get Involved', '/start.html')}
 </li>
 </ul>
 </div>
