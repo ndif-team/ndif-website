@@ -4,7 +4,7 @@ def header():
     def nav_link(text, link):
         classes = ' border rounded-pill' if text == 'Get Involved' else ''
         attributes = ''
-        if link == pathname:
+        if link == pathname or link == '/' and pathname == '/index.html':
             classes += ' active'
             attributes = ' aria-current="page"'
         return f'<a class="nav-link text-secondary{classes}"{attributes} href="{link}">{text}</a>'
