@@ -13,8 +13,17 @@ Usage:
                             website (default: ../public)
 
 File formats and directory layout:
-  - HTML templates: Files with the .html extension
-  - Python modules: Files with the .py extension (this script itself)
+  - HTML templates: Files with the .html extension. Unlike a regular
+    HTML file, if they contain a curly brace {...} with valid python
+    code, then they are run, so that functions can be called to
+    produce the content which is copied to the target directory.
+    (Each HTML file is actually expanded as it were the contents
+    of a python f-string.)
+  - Python modules: Files with the .py extension can define python
+    functions that can be called within HTML templates.  If there
+    are multiple .py files, all them are compiled into a single
+    unified namespace in which all the html files are run.  (This
+    script itself is omitted.)
   - Any other files (e.g., CSS, JavaScript, images) will be copied as-is
 
 Example directory layout:
@@ -40,10 +49,10 @@ import sys
 import argparse
 
 # Function to load Python modules from the current directory into the script's namespace
-def load_modules():
+def load_modules(src_dir):
     namespace = {}
     script_name = os.path.basename(sys.argv[0])
-    for file in os.listdir("."):
+    for file in os.listdir(src_dir):
         if file.endswith(".py") and file != script_name:
             with open(file, 'r') as f:
                 # Compile and execute the module code within the namespace
@@ -106,7 +115,7 @@ def main():
     args = parser.parse_args()
 
     # Load Python modules into the script's namespace
-    namespace = load_modules()
+    namespace = load_modules(args.source)
 
     # Generate the static website recursively
     generate_website(args.source, args.target, namespace, args.source)
