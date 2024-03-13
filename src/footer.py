@@ -1,11 +1,13 @@
 def footer():
     return f"""
 
-<div class="bg-body-secondary">
+<div class="bg-body-secondary px-5 px-lg-0">
     <footer class="container py-5 bg-body-secondary">
         <div class="row">
             <div class="col-12 col-md">
-                <h5>NDIF</h5>
+                <a href="https://www.northeastern.edu">
+                    <img src="./images/northeastern.svg" alt="Description of the image" style="max-width: 3vw;" class="mb-3">
+                </a>
                 <small class="d-block mb-3 text-body-secondary">© 2024 NDIF</small>
             </div>
             <div class="col-6 col-md">
@@ -21,10 +23,6 @@ def footer():
                     <li><a class="link-secondary text-decoration-none" href="https://nnsight.net/">NNsight</a></li>
                     <li><a class="link-secondary text-decoration-none" href="/signup.html">Community</a></li>
                 </ul>
-            </div>
-            <div class="col-6 col-md">
-                <img src="./images/northeastern.svg" alt="Description of the image" style="max-width: 5vw;">
-                <p>NDIF is developed at Northeastern University</p>
             </div>
         </div>
     </footer>
