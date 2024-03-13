@@ -7,7 +7,7 @@ def header():
         if link == pathname or link == '/' and pathname == '/index.html':
             classes += ' active'
             attributes = ' aria-current="page"'
-        return f'<a class="nav-link text-secondary{classes}"{attributes} href="{link}">{text}</a>'
+        return f'<a class="nav-link text-secondary{classes}"{attributes} href=".{link}">{text}</a>'
 
     return f"""\
 <!doctype html>
@@ -50,10 +50,9 @@ rel="stylesheet">
                                 loading="lazy">
                         </div>
                         <div class="col-md-9 my-auto d-none d-lg-block">
-                            <h4 style="margin-bottom: 0 !important; color: #656565; margin-bottom: 0 !important; font-size: 22px; line-height: 0.9; font-weight: 700 !important;"
-                                class="fw-semibold">
+                            <h5 style="margin-bottom: 0 !important; color: #656565; margin-bottom: 0 !important; line-height: 0.9; font-weight: 700 !important;">
                                 National Deep<br />Inference Fabric
-                            </h4>
+                            </h6>
                         </div>
                     </div>
                 </a>
