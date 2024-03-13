@@ -1,0 +1,26 @@
+/* Custom CSS to remove borders on 'md' and smaller screens */
+@media (max-width: 1000px) {
+
+    /* Adjust this value based on the Bootstrap version you are using */
+    .no-border-md-down {
+        border: none !important;
+    }
+
+    .small-screen-img {
+        width: 60vw;
+        /* Adjust the size as needed */
+        height: auto;
+        /* Maintain aspect ratio */
+        padding-top: 1.5rem;
+        /* Adjust the padding as needed */
+        padding-bottom: 1.5rem;
+        border-radius: var(--bs-border-radius) !important;
+    }
+
+    .action-button:hover {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        border-radius: var(--bs-border-radius-pill) !important;
+        color: var(--bs-secondary-rgb) !important;
+    }
+}

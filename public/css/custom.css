@@ -6,14 +6,29 @@ body {
     font-weight: 500;
 }
 
+.action-button:hover {
+    background-color: rgb(108, 117, 125) !important;
+    border-color: rgb(108, 117, 125) !important;
+    border-radius: var(--bs-border-radius-pill)!important;
+    color: #ffffff !important;
+} 
+
 [data-bs-theme="light"] {
     
     .btn-primary {
         --bs-btn-color: var(--bs-body-bg);
         --bs-btn-bg: #4385BE !important;
         --bs-btn-border-color: #4385BE !important;   
+
+        --bs-btn-hover-bg: #205ea6 !important;
+        --bs-btn-hover-border-color: #205ea6 !important;
+        --bs-btn-active-bg: #205ea6 !important;
     }
 
+    .btn-primary:hover {
+        --bs-btn-bg: #205ea6  !important;
+        --bs-btn-border-color: #205ea6  !important;
+    }
 }
 
 [data-bs-theme="flexoki"] {
