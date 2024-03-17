@@ -16,8 +16,20 @@ def header():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="The National Deep Inference Fabric is a research computing project that will enable us to crack open the mysteries inside large-scale Artificial Intelligence systems.">
+
 <title>National Deep Inference Fabric</title>
+<meta name="description" content="National Deep Inference Fabric" />
+<meta property="og:title" content="National Deep Inference Fabric" />
+<meta property="og:url" content="https://ndif.us/" />
+<meta property="og:image" content="https://ndif.us/images/NDIF_Acr_color.png" />
+<meta property="og:description" content="NDIF is a research computing project that enables researchers and students to crack open the mysteries inside large-scale AI systems." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="National Deep Inference Fabric" />
+<meta name="twitter:description" content="NDIF is a research computing project that enables researchers and students to crack open the mysteries inside large-scale AI systems." />
+<meta name="twitter:image" content="https://ndif.us/images/NDIF_Acr_color.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
 
 <!-- Bootstrap CSS Imports -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
