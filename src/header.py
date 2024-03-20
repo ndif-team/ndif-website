@@ -48,14 +48,13 @@ rel="stylesheet">
 <link rel="stylesheet" href="./css/mobile.css">
 
 <!-- Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V7Z5WY7JYX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NQV89E9KBS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){{dataLayer.push(arguments);}}
   gtag('js', new Date());
-  gtag('config', 'G-V7Z5WY7JYX');
+  gtag('config', 'G-NQV89E9KBS');
 </script>
-</head>
 
 <body>
 
