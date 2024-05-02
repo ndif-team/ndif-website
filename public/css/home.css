@@ -8,5 +8,9 @@
 }
 
 .nsf a {
-    color: #FFFFFF !important;
+    color: #FFFCF0;
+}
+
+.nsf a:hover {
+    color: #FFF;
 }
