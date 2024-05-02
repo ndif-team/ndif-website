@@ -16,8 +16,20 @@ def header():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+
 <title>National Deep Inference Fabric</title>
+<meta name="description" content="National Deep Inference Fabric" />
+<meta property="og:title" content="National Deep Inference Fabric" />
+<meta property="og:url" content="https://ndif.us/" />
+<meta property="og:image" content="https://ndif.us/images/NDIF_Acr_color.png" />
+<meta property="og:description" content="NDIF is a research computing project that enables researchers and students to crack open the mysteries inside large-scale AI systems." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="National Deep Inference Fabric" />
+<meta name="twitter:description" content="NDIF is a research computing project that enables researchers and students to crack open the mysteries inside large-scale AI systems." />
+<meta name="twitter:image" content="https://ndif.us/images/NDIF_Acr_color.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
 
 <!-- Bootstrap CSS Imports -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -35,7 +47,14 @@ rel="stylesheet">
 <link rel="stylesheet" href="./css/custom.css">
 <link rel="stylesheet" href="./css/mobile.css">
 
-</head>
+<!-- Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NQV89E9KBS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', 'G-NQV89E9KBS');
+</script>
 
 <body>
 
@@ -45,7 +64,7 @@ rel="stylesheet">
             <div class="col-4 text-start">
                 <a href="./" style="color: inherit; text-decoration: none;">
                     <div class="row align-items-center">
-                        <div class="col-md-3 border-end no-border-md-down ps-0">
+                        <div class="col-lg-3 border-end no-border-md-down ps-0">
                             <img src="./images/NDIF_Acr_color.png" class="d-block img-fluid" width="100" height="100"
                                 loading="lazy">
                         </div>

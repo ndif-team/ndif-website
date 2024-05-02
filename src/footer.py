@@ -6,8 +6,8 @@ def footer():
         <div class="row">
             <div class="col-12 col-md">
                 <a href="https://www.northeastern.edu" class="text-decoration-none">
-                    <img src="./images/northeastern.svg" alt="Northeastern University" style="width:48px;" class="float-left mt-1 mb-2 align-text-top">
-                    <small class="d-inline-block text-body-secondary align-text-top">
+                    <img src="./images/northeastern.svg" alt="Northeastern University" style="width:48px;" class="float-left align-text-top">
+                    <small class="d-inline-block text-body-secondary align-text-top mb-2">
                     NDIF is developed at<br>
                     Northeastern University
                     </small>
