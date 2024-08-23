@@ -85,8 +85,11 @@ rel="stylesheet">
                     <li class="nav-item">
                         {nav_link('Fabric', '/fabric.html')}
                     </li>
-                    <li class="nav-item me-2">
+                    <li class="nav-item">
                         {nav_link('About Us', '/about.html')}
+                    </li>
+                    <li class="nav-item me-2">
+                        {nav_link('Citing', '/cite.html')}
                     </li>
                     <li class="nav-item">
                         {nav_link('Get Involved', '/start.html')}
@@ -113,6 +116,7 @@ rel="stylesheet">
                 <li>{nav_link('Home', '/')}</li>
                 <li>{nav_link('Fabric', '/fabric.html')}</li>
                 <li>{nav_link('About Us', '/about.html')}</li>
+                <li>{nav_link('Citing', '/cite.html')}</li>
                 <li>{nav_link('Get Involved', '/start.html')}</li>
             </ul>
         </div>
