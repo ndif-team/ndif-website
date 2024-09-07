@@ -116,7 +116,7 @@ rel="stylesheet">
   <div class="container  col-xxl-8 px-5 px-lg-0 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5">
       <div class="col">
-        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Citing NDIF 
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Citing NDIF
         </h1>
       </div>
     </div>
@@ -127,25 +127,56 @@ rel="stylesheet">
     <div class="row">
 
       <div class="col-md-12 text-start">
-        <p>    
+        <p>
         If you use NNsight or NDIF resources in your research, please cite the following:
-        <cite>Jaden Fiotto-Kaufman, Alexander R. Loftus, Eric Todd, Jannik Brinkmann, 
-            Caden Juang, Koyena Pal, Can Rager, Aaron Mueller, Samuel Marks, Arnab Sen Sharma, 
-            Francesca Lucchetti, Michael Ripa, Adam Belfki, Nikhil Prakash, Sumeet Multani, Carla Brodley, 
-            Arjun Guha, Jonathan Bell, Byron Wallace, and David Bau. "NNsight and NDIF: Democratizing Access to 
-            Foundation Model Internals," 2024. arXiv preprint arXiv:2407.14561. Available at 
-            <a href="https://arxiv.org/abs/2407.14561">https://arxiv.org/abs/2407.14561</a>.</cite>
         </p>
+        <div class="card">
+        <h3 class="card-header">citation</h3>
+        <div class="card-body">
+        <p style="text-indent: -3em; margin-left: 3em;" class="card-text clickselect"
+        >Jaden Fiotto-Kaufman, Alexander R. Loftus, Eric Todd, Jannik Brinkmann,
+            Caden Juang, Koyena Pal, Can Rager, Aaron Mueller, Samuel Marks, Arnab Sen Sharma,
+            Francesca Lucchetti, Michael Ripa, Adam Belfki, Nikhil Prakash, Sumeet Multani, Carla Brodley,
+            Arjun Guha, Jonathan Bell, Byron Wallace, and David Bau. "NNsight and NDIF: Democratizing Access to
+            Foundation Model Internals," 2024. arXiv preprint arXiv:2407.14561. Available at
+            <a href="https://arxiv.org/abs/2407.14561">https://arxiv.org/abs/2407.14561</a>.
+        </p>
+        </div>
+        </div>
+        <div class="card">
+        <h3 class="card-header">bibtex</h3>
+        <div class="card-body">
+<pre class="card-text clickselect" style="text-wrap:wrap; overflow:wrap">
+@article{fiotto2024nnsight,
+  title={{NNsight} and {NDIF}: Democratizing Access to Foundation Model Internals},
+  author={Fiotto-Kaufman, Jaden and Loftus, Alexander R and Todd, Eric and Brinkmann, Jannik and Juang, Caden and Pal, Koyena and Rager, Can and Mueller, Aaron and Marks, Samuel and Sharma, Arnab Sen and Lucchetti, Francesca and Ripa, Michael and Belfki, Adam and Prakash, Nikhil and Multani, Sumeet and Brodley, Carla and Guha, Arjun and Bell, Jonathan and Wallace, Byron and Bau, David},
+  journal={arXiv preprint arXiv:2407.14561},
+  year={2024}
+}
+</pre>
+        </div>
+        </div>
         <p>
         In addition, when you publish work using NNsight or NDIF resources, we'd love you
-        to email us directly at <a href="mailto:info@ndif.us">info@ndif.us</a> to tell us about your work. This helps us 
-        track our impact and supports our continued efforts to provide open-source 
+        to email us directly at <a href="mailto:info@ndif.us">info@ndif.us</a> to tell us about your work. This helps us
+        track our impact and supports our continued efforts to provide open-source
         resources for reproducible and transparent research on large-scale AI systems.
         </p>
 
       </div>
     </div>
   </section>
+  <script>
+  document.addEventListener('click', (e) => {
+    if (e.target.matches('.clickselect')) {
+      var range = document.createRange();
+      range.selectNodeContents(e.target);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    }
+  });
+  </script>
 
 
 </main>
