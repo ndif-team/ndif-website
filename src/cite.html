@@ -1,4 +1,5 @@
 {header()}
+
 <main>
 
   <div class="container  col-xxl-8 px-5 px-lg-0 py-5">
@@ -65,137 +66,155 @@
   </div>
 
 
-  <section class=" col-xxl-8 px-5 px-lg-0 py-5 container border-bottom border-top" style="font-size: 12px;">
-
-    <div class="row">
-
-      <div class="col-md-12 text-start">
-        
-        </div>
-        <div class="card">
-        <h3 class="card-header"><a href="https://arxiv.org/abs/2409.04478">Evaluating Open-Source Sparse Autoencoders on Disentangling Factual Knowledge in GPT-2 Small</a> </h3>
-        <div class="card-body">
-<pre class="card-text clickselect" style="text-wrap:wrap; overflow:wrap">
-  @misc{{chaudhary2024evaluatingopensourcesparseautoencoders,
-    title={{Evaluating Open-Source Sparse Autoencoders on Disentangling Factual Knowledge in GPT-2 Small}}, 
-    author={{Maheep Chaudhary and Atticus Geiger}},
-    year={{2024}},
-    eprint={{2409.04478}},
-    archivePrefix={{arXiv}},
-    primaryClass={{cs.LG}},
-    url={{https://arxiv.org/abs/2409.04478}}, 
-  }}
-</pre>
-        </div>
-        </div>
+  <section class=" col-xxl-8 px-5 px-lg-0 py-5 container border-bottom border-top" style="font-size: 14px;">
     
+      <p>
+      <img src="images/Evaluating-Open-Source-Sparse-Autoencoders-on-Disentangling-Factual-Knowledge-in-GPT-2-Small.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://arxiv.org/pdf/2409.04478"
+         >Maheep Chaudhary, Atticus Geiger.
+         Evaluating Open-Source Sparse Autoencoders on Disentangling Factual Knowledge in GPT-2 Small.
+         <nobr>ArXiv 2024.</nobr></a>
+      <br>
+      Evaluates the utility of high-dimensional sparse autoencoders (SAEs) for causal analysis in mechanistic 
+      interpretability, using the RAVEL benchmark on GPT-2 small. Compares four SAEs to neurons as a baseline 
+      and linear features learned via distributed alignment search (DAS) as a skyline. Findings indicate that 
+      SAEs struggle to match the neuron baseline and fall significantly short of the DAS skyline in 
+      distinguishing between knowledge of a city's country and continent.
+    </p>
 
-  <div class="card">
-    <h3 class="card-header"><a href="https://arxiv.org/abs/2404.03646"> Locating and Editing Factual Associations in Mamba </a> </h3>
-    <div class="card-body">
-<pre class="card-text clickselect" style="text-wrap:wrap; overflow:wrap">
-  @misc{{sharma2024locatingeditingfactualassociations,
-    title={{Locating and Editing Factual Associations in Mamba}}, 
-    author={{Arnab Sen Sharma and David Atkinson and David Bau}},
-    year={{2024}},
-    eprint={{2404.03646}},
-    archivePrefix={{arXiv}},
-    primaryClass={{cs.CL}},
-    url={{https://arxiv.org/abs/2404.03646}}
-}}
-</pre>
-  </div>
-  </div>
+    <p>
+      <img src="images/Locating-and-Editing-Factual-Associations-in-Mamba.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://openreview.net/pdf?id=yoVRyrEgix"
+         >Arnab Sen Sharma, David Atkinson, David Bau.
+         Locating and Editing Factual Associations in Mamba.
+         <nobr>COLM 2024.</nobr></a>
+         <br>
+         Investigates factual recall mechanisms in the Mamba state space model, comparing it to autoregressive transformer models. 
+         Finds that key components responsible for factual recall are localized in middle layers and at specific token positions,
+         mirroring patterns seen in transformers. Demonstrates that rank-one model editing can insert facts at particular locations 
+         and adapts attention-knockout techniques to analyze information flow. Despite architectural differences, 
+         the study concludes that Mamba and transformer models share significant similarities in factual recall processes.
+    </p>
+
+    <p>
+      <img src="images/Benchmarking-Mental-State-Representations-in-Language-Models.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://arxiv.org/pdf/2406.17513"
+         >Matteo Bortoletto, Constantin Ruhdorfer, Lei Shi, Andreas Bulling.
+         Benchmarking Mental State Representations in Language Models.
+         <nobr>ArXiv 2024.</nobr></a>
+         <br>
+         Conducts a benchmark study on the internal representation of mental states in language models, 
+         analyzing different model sizes, fine-tuning strategies, and prompt designs. Finds that the 
+         quality of belief representations improves with model size and fine-tuning but is sensitive to 
+         prompt variations. Extends previous activation editing experiments, showing that reasoning 
+         performance can be improved by steering model activations without training probes. 
+         First to investigate the impact of prompt variations on probing performance in Theory of Mind tasks.
+    </p>
+
+    <p>
+      <img src="images/Token-Erasure-as-a-Footprint-of-Implicit-Vocabulary-Items-in-LLMs.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://arxiv.org/pdf/2406.20086"
+         >Sheridan Feucht, David Atkinson, Byron Wallace, David Bau.
+         Token Erasure as a Footprint of Implicit Vocabulary Items in LLMs.
+         <nobr>ArXiv 2024.</nobr></a>
+         <br>
+         Investigates how LLMs transform arbitrary groups of tokens into higher-level representations, 
+         focusing on multi-token words and named entities. Identifies a pronounced "erasure" effect where 
+         information about previous tokens is quickly forgotten in early layers. Proposes a method to 
+         probe the implicit vocabulary of LLMs by analyzing token representation changes across layers, 
+         providing results for Llama-2-7b and Llama-3-8B. This study represents the first effort to explore 
+         the implicit vocabulary of LLMs.
+    </p>
 
 
-  <div class="card">
-    <h3 class="card-header"><a href="https://arxiv.org/abs/2406.17513"> Benchmarking Mental State Representations in Language Models </a> </h3>
-    <div class="card-body">
-<pre class="card-text clickselect" style="text-wrap:wrap; overflow:wrap">
-  @misc{{bortoletto2024benchmarkingmentalstaterepresentations,
-    title={{Benchmarking Mental State Representations in Language Models}}, 
-    author={{Matteo Bortoletto and Constantin Ruhdorfer and Lei Shi and Andreas Bulling}},
-    year={{2024}},
-    eprint={{2406.17513}},
-    archivePrefix={{arXiv}},
-    primaryClass={{cs.CL}},
-    url={{https://arxiv.org/abs/2406.17513}}
-}}
-</pre>
-    </div>
-    </div>
+    <p>
+      <img src="images/How-do-Llamas-process-multilingual-text-A-latent-exploration-through-activation-patching.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      height: 150px;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://openreview.net/pdf/4ae31df7b78b2cdab11c6b3f87aa5be7d6cc0701.pdf"
+         >Clément Dumas, Veniamin Veselovsky, Giovanni Monea, Robert West, Chris Wendler.
+         How do Llamas process multilingual text? A latent exploration through activation patching.
+         <nobr>ICML 2024 Workshop on Mechanistic Interpretability.</nobr></a>
+         <br> 
+         Analyzes Llama-2's forward pass during word translation tasks to explore whether it develops 
+         language-agnostic concept representations. Shows that language encoding occurs earlier than 
+         concept encoding and that activation patching can independently alter either the concept or 
+         the language. Demonstrates that averaging latents across languages does not hinder translation 
+         performance, providing evidence for universal concept representation in multilingual models.
+    </p>
 
-  <div class="card">
-    <h3 class="card-header"><a href="https://arxiv.org/abs/2406.20086"> Token Erasure as a Footprint of Implicit Vocabulary Items in LLMs </a> </h3>
-    <div class="card-body">
-<pre class="card-text clickselect" style="text-wrap:wrap; overflow:wrap">
-  @misc{{feucht2024tokenerasurefootprintimplicit,
-    title={{Token Erasure as a Footprint of Implicit Vocabulary Items in LLMs}}, 
-    author={{Sheridan Feucht and David Atkinson and Byron Wallace and David Bau}},
-    year={{2024}},
-    eprint={{2406.20086}},
-    archivePrefix={{arXiv}},
-    primaryClass={{cs.CL}},
-    url={{https://arxiv.org/abs/2406.20086}}
-}}
-</pre>
-    </div>
-    </div>
+    <p>
+      <img src="images/Evidence-of-Learned-Look-Ahead-in-a-Chess-Playing-Neural-Network.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      height: 100px;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://arxiv.org/pdf/2406.00877.pdf"
+         >Erik Jenner, Shreyas Kapur, Vasil Georgiev, Cameron Allen, Scott Emmons, Stuart Russell.
+         Evidence of Learned Look-Ahead in a Chess-Playing Neural Network.
+         <nobr>ArXiv 2024.</nobr></a>
+         <br>
+         Presents evidence of learned look-ahead in the policy network of Leela Chess Zero, 
+         showing that it internally represents future optimal moves, which are critical in 
+         certain board states. Demonstrates through activations, attention heads, and a 
+         probing model that neural networks can predict optimal moves ahead, providing a basis 
+         for understanding learned algorithmic capabilities in neural networks.
+    </p>
 
+    <p>
+      <img src="images/Language-Models-Represent-Beliefs-of-Self-and-Others.png"
+      style="
+      width: 300px;
+      max-width: 100%;
+      height: 150px;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://arxiv.org/pdf/2402.18496.pdf"
+         >Wentao Zhu, Zhining Zhang, Yizhou Wang.
+         Language Models Represent Beliefs of Self and Others.
+         <nobr>ICML 2024.</nobr></a>
+         <br>
+         Investigates the presence of Theory of Mind (ToM) abilities in large language models, 
+         identifying internal representations of self and others' beliefs through neural activations. 
+         Shows that manipulating these representations significantly alters ToM performance, 
+         highlighting their importance in social reasoning. Extends findings to various social 
+         reasoning tasks involving causal inference.
+    </p>
 
-  <div class="card">
-    <h3 class="card-header"><a href="https://openreview.net/forum?id=0ku2hIm4BS"> How do Llamas process multilingual text? A latent exploration through activation patching | OpenReview </a> </h3>
-    <div class="card-body">
-<pre class="card-text clickselect" style="text-wrap:wrap; overflow:wrap">
-  @inproceedings{{dumas2024how,
-    title={{How do Llamas process multilingual text? A latent exploration through activation patching}},
-    author={{Clément Dumas and Veniamin Veselovsky and Giovanni Monea and Robert West and Chris Wendler}},
-    booktitle={{ICML 2024 Workshop on Mechanistic Interpretability}},
-    year={{2024}},
-    url={{https://openreview.net/forum?id=0ku2hIm4BS}}
-}}
-
-</pre>
-  </div>
-  </div>
-
-
-  <div class="card">
-    <h3 class="card-header"><a href="https://arxiv.org/abs/2406.00877"> Evidence of Learned Look-Ahead in a Chess-Playing Neural Network </a> </h3>
-    <div class="card-body">
-<pre class="card-text clickselect" style="text-wrap:wrap; overflow:wrap">
-  @misc{{jenner2024evidencelearnedlookaheadchessplaying,
-    title={{Evidence of Learned Look-Ahead in a Chess-Playing Neural Network}}, 
-    author={{Erik Jenner and Shreyas Kapur and Vasil Georgiev and Cameron Allen and Scott Emmons and Stuart Russell}},
-    year={{2024}},
-    eprint={{2406.00877}},
-    archivePrefix={{arXiv}},
-    primaryClass={{cs.LG}},
-    url={{https://arxiv.org/abs/2406.00877}}
-}}
-</pre>
-    </div>
-    </div>
-
-  <div class="card">
-    <h3 class="card-header"><a href="https://arxiv.org/abs/2402.18496"> Language Models Represent Beliefs of Self and Others </a> </h3>
-    <div class="card-body">
-<pre class="card-text clickselect" style="text-wrap:wrap; overflow:wrap">
-  @misc{{zhu2024languagemodelsrepresentbeliefs,
-    title={{Language Models Represent Beliefs of Self and Others}}, 
-    author={{Wentao Zhu and Zhining Zhang and Yizhou Wang}},
-    year={{2024}},
-    eprint={{2402.18496}},
-    archivePrefix={{arXiv}},
-    primaryClass={{cs.AI}},
-    url={{https://arxiv.org/abs/2402.18496}}
-}}
-
-</pre>
-    </div>
-    </div>
-</div>
-</section>
+  </section>
 
 
 
@@ -208,145 +227,61 @@
     </div>
   </div>
   
-  <section class=" col-xxl-8 px-5 px-lg-0 py-5 container border-bottom border-top" style="font-size: 12px;">
-  <div class="row">
-
-    <div class="col-md-12 text-start">
-
-      </div>
-      <div class="card">
-      <h3 class="card-header"><a href="https://arxiv.org/abs/2408.01416"> The Quest for the Right Mediator: A History, Survey, and Theoretical Grounding of Causal Interpretability </a> </h3>
-      <div class="card-body">
-<pre class="card-text clickselect" style="text-wrap:wrap; overflow:wrap">
-  @misc{{mueller2024questrightmediatorhistory,
-    title={{The Quest for the Right Mediator: A History, Survey, and Theoretical Grounding of Causal Interpretability}}, 
-    author={{Aaron Mueller and Jannik Brinkmann and Millicent Li and Samuel Marks and Koyena Pal and Nikhil Prakash and Can Rager and Aruna Sankaranarayanan and Arnab Sen Sharma and Jiuding Sun and Eric Todd and David Bau and Yonatan Belinkov}},
-    year={{2024}},
-    eprint={{2408.01416}},
-    archivePrefix={{arXiv}},
-    primaryClass={{cs.LG}},
-    url={{https://arxiv.org/abs/2408.01416}}
-}}
-
-</pre>
-    </div>
-    </div>
-  
-
-<div class="card">
-  <h3 class="card-header"><a href="https://arxiv.org/abs/2408.00211">Penzai + Treescope: A Toolkit for Interpreting, Visualizing, and Editing Models As Data </a> </h3>
-  <div class="card-body">
-<pre class="card-text clickselect" style="text-wrap:wrap; overflow:wrap">
-  @misc{{johnson2024penzaitreescopetoolkit,
-    title={{Penzai + Treescope: A Toolkit for Interpreting, Visualizing, and Editing Models As Data}}, 
-    author={{Daniel D. Johnson}},
-    year={{2024}},
-    eprint={{2408.00211}},
-    archivePrefix={{arXiv}},
-    primaryClass={{cs.LG}},
-    url={{https://arxiv.org/abs/2408.00211}}
-}}
-</pre>
-  </div>
-  </div>
+  <section class=" col-xxl-8 px-5 px-lg-0 py-5 container border-bottom border-top" style="font-size: 14px;">
 
 
-<div class="card">
-  <h3 class="card-header"><a href="https://arxiv.org/abs/2407.21656"> Comgra: A Tool for Analyzing and Debugging Neural Networks </a> </h3>
-  <div class="card-body">
-<pre class="card-text clickselect" style="text-wrap:wrap; overflow:wrap">
-  @misc{{dietz2024comgratoolanalyzingdebugging,
-    title={{Comgra: A Tool for Analyzing and Debugging Neural Networks}}, 
-    author={{Florian Dietz and Sophie Fellenz and Dietrich Klakow and Marius Kloft}},
-    year={{2024}},
-    eprint={{2407.21656}},
-    archivePrefix={{arXiv}},
-    primaryClass={{cs.LG}},
-    url={{https://arxiv.org/abs/2407.21656}}
-}}
-</pre>
-  </div>
-  </div>
+  <p>
+    <a href="https://arxiv.org/pdf/2408.01416"
+       >Aaron Mueller, Jannik Brinkmann, Millicent Li, Samuel Marks, Koyena Pal, Nikhil Prakash, Can Rager, Aruna Sankaranarayanan, Arnab Sen Sharma, Jiuding Sun, Eric Todd, David Bau, Yonatan Belinkov.
+       The Quest for the Right Mediator: A History, Survey, and Theoretical Grounding of Causal Interpretability. 
+       <nobr>ArXiv 2024.</nobr></a>
+  </p>
 
-<div class="card">
-  <h3 class="card-header"><a href="https://doi.org/10.1145/3630106.3659037"> Black-Box Access is Insufficient for Rigorous AI Audits </a> </h3>
-  <div class="card-body">
-<pre class="card-text clickselect" style="text-wrap:wrap; overflow:wrap">
-  @inproceedings{{10.1145/3630106.3659037,
-    author = {{Casper, Stephen and Ezell, Carson and Siegmann, Charlotte and Kolt, Noam and Curtis, Taylor Lynn and Bucknall, Benjamin and Haupt, Andreas and Wei, Kevin and Scheurer, Jérémy and Hobbhahn, Marius and Sharkey, Lee and Krishna, Satyapriya and Von Hagen, Marvin and Alberti, Silas and Chan, Alan and Sun, Qinyi and Gerovitch, Michael and Bau, David and Tegmark, Max and Krueger, David and Hadfield-Menell, Dylan}},
-    title = {{Black-Box Access is Insufficient for Rigorous AI Audits}},
-    year = {{2024}},
-    isbn = {{9798400704505}},
-    publisher = {{Association for Computing Machinery}},
-    address = {{New York, NY, USA}},
-    url = {{https://doi.org/10.1145/3630106.3659037}},
-    doi = {{10.1145/3630106.3659037}},
-    booktitle = {{Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency}},
-    pages = {{2254–2272}},
-    numpages = {{19}},
-    keywords = {{Adversarial Attacks, Auditing, Black-Box Access, Evaluation, Explainability, Fairness, Fine-Tuning, Governance, Interpretability, Policy, Regulation, Risk, White-Box Access}},
-    location = {{Rio de Janeiro, Brazil}},
-    series = {{FAccT '24}}
-    }}
-    
-</pre>
-  </div>
-  </div>
+  <p>
+    <a href="https://arxiv.org/pdf/2408.00211"
+       >Daniel D. Johnson.
+      Penzai + Treescope: A Toolkit for Interpreting, Visualizing, and Editing Models As Data. 
+      <nobr>ArXiv 2024.</nobr></a>
+  </p>
 
+  <p>
+    <a href="https://arxiv.org/pdf/2407.21656"
+       >Florian Dietz, Sophie Fellenz, Dietrich Klakow, Marius Kloft.
+       Comgra: A Tool for Analyzing and Debugging Neural Networks. 
+      <nobr>ArXiv 2024.</nobr></a>
+  </p>
 
-<div class="card">
-  <h3 class="card-header"><a href="https://arxiv.org/abs/2405.00208"> A Primer on the Inner Workings of Transformer-based Language Models</a> </h3>
-  <div class="card-body">
-<pre class="card-text clickselect" style="text-wrap:wrap; overflow:wrap">
-  @misc{{ferrando2024primerinnerworkingstransformerbased,
-    title={{A Primer on the Inner Workings of Transformer-based Language Models}}, 
-    author={{Javier Ferrando and Gabriele Sarti and Arianna Bisazza and Marta R. Costa-jussà}},
-    year={{2024}},
-    eprint={{2405.00208}},
-    archivePrefix={{arXiv}},
-    primaryClass={{cs.CL}},
-    url={{https://arxiv.org/abs/2405.00208}}
-}}
-</pre>
-  </div>
-  </div>
+  <p>
+    <a href="https://dl.acm.org/doi/pdf/10.1145/3630106.3659037"
+       >Stephen Casper, Carson Ezell, Charlotte Siegmann, Noam Kolt, Taylor Lynn Curtis, Benjamin Bucknall, 
+       Andreas Haupt, Kevin Wei, Jérémy Scheurer, Marius Hobbhahn, Lee Sharkey, Satyapriya Krishna, 
+       Marvin Von Hagen, Silas Alberti, Alan Chan, Qinyi Sun, Michael Gerovitch, 
+       David Bau, Max Tegmark, David Krueger, Dylan Hadfield-Menell.
+       Black-Box Access is Insufficient for Rigorous AI Audits. 
+      <nobr>ACM 2024.</nobr></a>
+  </p>
 
+  <p>
+    <a href="https://arxiv.org/pdf/2405.00208"
+       >Javier Ferrando, Gabriele Sarti, Arianna Bisazza, Marta R. Costa-jussà.
+       A Primer on the Inner Workings of Transformer-based Language Models. 
+      <nobr>ArXiv 2024.</nobr></a>
+  </p>
 
-<div class="card">
-  <h3 class="card-header"><a href="https://arxiv.org/abs/2404.07129"> What needs to go right for an induction head? A mechanistic study of in-context learning circuits and their formation </a> </h3>
-  <div class="card-body">
-<pre class="card-text clickselect" style="text-wrap:wrap; overflow:wrap">
-  @misc{{singh2024needsrightinductionhead,
-    title={{What needs to go right for an induction head? A mechanistic study of in-context learning circuits and their formation}}, 
-    author={{Aaditya K. Singh and Ted Moskovitz and Felix Hill and Stephanie C. Y. Chan and Andrew M. Saxe}},
-    year={{2024}},
-    eprint={{2404.07129}},
-    archivePrefix={{arXiv}},
-    primaryClass={{cs.LG}},
-    url={{https://arxiv.org/abs/2404.07129}}
-}}
-</pre>
-  </div>
-  </div>
+  <p>
+    <a href="https://arxiv.org/pdf/2404.07129"
+       >Aaditya K. Singh, Ted Moskovitz, Felix Hill, Stephanie C.Y. Chan, Andrew M. Saxe.
+       What needs to go right for an induction head? A mechanistic study of in-context learning circuits and their formation. 
+      <nobr>ArXiv 2024.</nobr></a>
+  </p>
 
-<div class="card">
-  <h3 class="card-header"><a href="https://arxiv.org/abs/2403.07809"> Pyvene: A Library for Understanding and Improving PyTorch Models via Interventions </a> </h3>
-  <div class="card-body">
-<pre class="card-text clickselect" style="text-wrap:wrap; overflow:wrap">
-  @misc{{wu2024pyvenelibraryunderstandingimproving,
-    title={{pyvene: A Library for Understanding and Improving PyTorch Models via Interventions}}, 
-    author={{Zhengxuan Wu and Atticus Geiger and Aryaman Arora and Jing Huang and Zheng Wang and Noah D. Goodman and Christopher D. Manning and Christopher Potts}},
-    year={{2024}},
-    eprint={{2403.07809}},
-    archivePrefix={{arXiv}},
-    primaryClass={{cs.LG}},
-    url={{https://arxiv.org/abs/2403.07809}}
-}}
+  <p>
+    <a href="https://arxiv.org/pdf/2403.07809"
+       >Zhengxuan Wu, Atticus Geiger, Aryaman Arora, Jing Huang, Zheng Wang, Noah D. Goodman, Christopher D. Manning, Christopher Potts.
+       Pyvene: A Library for Understanding and Improving PyTorch Models via Interventions. 
+      <nobr>ArXiv 2024.</nobr></a>
+  </p>
 
-</pre>
-  </div>
-  </div>
-</div>
 </section>
 
 
