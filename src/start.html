@@ -1,254 +1,77 @@
 {header()}
 <main>
 
-<div class="container col-xxl-8 px-5 px-lg-0 py-5">
-<div class="row align-items-center">
-  <p><span class="badge bg-info fs-6">New!</span>
-    NDIF is opening up more spots for the <a href="/405b.html"> 405b Pilot Program</a>. Apply now! </p>
-</div>
-<div class="row align-items-center">
-  <p><span class="badge bg-info fs-6">New!</span>
-    Applications for  <a href="/fellowship.html"> NDIF's Engineering Fellowship </a> are now open. Apply now! </p>
-</div>
-
-</div>
-
-
-
 <div class="container col-xxl-8 px-5 px-lg-0">
 <div class="row align-items-center">
-<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Get Involved</h1>
+<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Get Started</h1>
+
 <p>
-NDIF is under continuous development, and there are several ways to get involved
-in the prototype fabric during its construction.
+In the current era of large-scale deep learning, the most interesting AI models are massive black boxes 
+that are both costly and difficult to run. Ordinary commercial inference services and APIs let us interact with these models, 
+but they do not let us access model internals. We are changing this with NDIF and NNsight.
 <ul class="px-5"t pus>
-  <li><a href="/signup.html">Join our community of early adopters.</a>
-    Our online discord server hosts
-    students and researchers from many fields who are dissecting the
-    behavior and mechanisms of large AI models.  Request early access
-    to the prototype NDIF service through this community.
-  <li><a href="https://nnsight.net/about">Use our open-source library, nnsight.</a>
-    NNsight can be used with NDIF
-    and it can also be used with your own local computation power,
-    independently of the fabric.  It works with pytorch and can be
-    easily installed via pip.
-  <li><a href="#jobs">Join our team.</a>
-    We are looking for talented and motivated team
-    members who are inspired to create a vibrant scientific community to
-    crack the mysteries of large-scale AI. Jobs and opportunities are listed
-    on this page.
+  <li>NDIF is an inference service hosting large open-weight LLMs for use by researchers.
+  <li><a href="https://nnsight.net/about" target="_blank" >NNsight</a> is a package for interpreting and manipulating internals of deep learning models.
 </ul>
-</p>
-<p>
-The NDIF project code is open-source and can be found at
-<a href="https://github.com/orgs/ndif-team/repositories">github.com/ndif-team</a>.
+Together, NDIF and NNsight work to enable researchers to run complex experiments on 
+huge open AI models easily, with full transparent access. Follow the steps below to get started.
 </p>
 </div>
 </div>
 
-<section class="col-xxl-8 px-5 px-lg-0 py-5 text-center container border-top">
-<div class="row">
-
-<div class="col-md-4 text-start">
-<br>
-<p>An NDIF workshop for undergraduate and graduate students, introducing state-of-the-art methods for performing interventions on the internal computations of large language models, using NDIF.  NDIF enables students and scientists to share GPU resources to learn, develop, and deploy scientific methods that crack open the internals of large neural networks</p>
-</div>
-
-<div class="col-md-8 pt-3 text-start">
-<img src="./images/ndif-workshop-1.jpg" class="img-fluid">
-</div>
-
-</div>
 </section>
 
-
-<section class="col-xxl-8 px-5 px-lg-0 py-5 text-center container border-top">
-<div class="row">
-
-<div class="col-md-4 text-start">
-<div class="card bg-body-secondary p-4">
-<div class="card-body">
-<h5 class="card-title">NDIF Community</h5>
-<p class="card-text">On the NDIF community discord, you can chat with the team
-and discuss tips, tricks, and the latest research. Submit a short form to join.
-</p>
-<a href="./signup.html" class="btn btn-primary">Join the group</a>
-</div>
-</div>
-</div>
-
-<div class="col-md-4 text-start">
-<div class="card bg-body-secondary p-4">
-<div class="card-body">
-<h5 class="card-title">NNsight</h5>
-<p class="card-text">You can use NDIF right away in local mode
-without an account by using the nnsight library. Just a "pip install" away.
-Read about it here.
-</p>
-<a href="https://nnsight.net/about" class="btn btn-primary">Go to nnsight</a>
-</div>
-</div>
-</div>
-
-<div class="col-md-4 text-start">
-<div class="card bg-body-secondary p-4">
-<div class="card-body">
-<h5 class="card-title">Jobs</h5>
-<p class="card-text">We are looking for help building NDIF.
-To join the NDIF team full-time, part-time, as a
-co-op or a volunteer, see our job listings on this page.
-</p>
-<a href="#jobs"><span
-  class="btn btn-primary"
-data-bs-toggle="collapse"
-data-bs-target="#flush-collapseOne"
-                >See jobs below</span></a>
-</div>
-</div>
-</div>
-
-</div>
-</section>
-
-
-<section class="col-xxl-8 px-5 px-lg-0 py-5 mb-5 container">
+<section class="col-xxl-8 px-5 px-lg-0 py-3 mb-5 container">
 
 <div class="border-bottom pb-3">
-<h1>Jobs and Community Opportunities</h1>
+<h1>Step 1: Install NNsight</h1>
 </div>
 
-<div class="accordion accordion-flush" id="accordionFlush">
+<p>
+To start using NNsight, you can install it via <kbd>pip</kbd>:<br>
+<kbd>pip install nnsight</kbd>
+</p>
 
+</section>
 
+<section class="col-xxl-8 px-5 px-lg-0 py-3 mb-5 container">
 
-<div class="accordion-item">
-<h2 class="accordion-header">
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-<h6 style="margin-bottom: 0 !important;">Principal Research Software Engineer</h6>
-</button>
-</h2>
-<div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
-<div class="accordion-body">
-<p>
-We are seeking a highly skilled Principal Research Software Engineer with
-experience in Machine Learning and Large Language Model interpretability
-research methods, to assist in developing the National Deep Inference Fabric, an
-open-source deep learning interpretability research computing infrastructure
-project.
-</p>
-<p>
-You will be responsible for full stack development, doing both back-end and
-front-end software development to help create a robust, high-throughput, highly
-usable, and flexible multi-tenant AI inference service to enable research nationwide. Some of the day-to-day activities include solving security, stability,
-integration, and performance issues involved in providing a large-scale research
-inference service for open-source AI models.
-</p>
-<p>
-We are looking for someone who can implement state-of-the-art parallel GPU
-inference methods, and incorporate them into a system with job scheduling,
-routing, quota management, authentication, authorization, and telemetry to
-create a high-performance computing infrastructure. This person should be
-expert in Python and working internals of PyTorch along with Unix/Linux
-service development, HPC/cloud environments, and all other aspects of the
-software development life cycle.
-</p>
-<p>
-This is a full-time role, based in Boston, MA
-</p>
-<p>
-<a href="https://northeastern.wd1.myworkdayjobs.com/en-US/careers/details/Principal-Research-Software-Engineer--Khoury-College-of-Computer-Sciences_R124851-1">Apply here</a>.
-</p>
-</div>
-</div>
-</div>
-
-<div class="accordion-item">
-<h2 class="accordion-header">
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-data-bs-target="#flush-collapseThree" aria-expanded="false"
-aria-controls="flush-collapseThree">
-<h6 style="margin-bottom: 0 !important;">NDIF Engineering Fellowship, Summer 2025</h6>
-</button>
-</h2>
-<div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
-<div class="accordion-body">
-<p>
-The Summer 2025 NDIF Engineering Fellowship is an intensive program for engineering students to contribute to an active state-of-the-art AI research engineering project in the public interest. The program welcomes applications from PhD, Masters, and undergraduate students in computer science who have knowledge and interest in ML Systems or full-stack application development.
-</p>
-<p>
-  <a href="/fellowship.html">More information on how to apply
-  to the fellowship here.</a>
-</p>
-</div>
-</div>
-</div>
-
-<!--
-<div class="accordion-item">
-<h2 class="accordion-header">
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-data-bs-target="#flush-collapseThree" aria-expanded="false"
-aria-controls="flush-collapseThree">
-<h6 style="margin-bottom: 0 !important;">Technical Outreach Co-Op, Research Assistant</h6>
-</button>
-</h2>
-<div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
-<div class="accordion-body">
+  <div class="border-bottom pb-3">
+  <h1>Step 2: Sign up for NDIF remote model access</h1>
+  </div>
+  
   <p>
-  These are paid roles for students.
+  In order to remotely access LLMs through NDIF, users must sign up for an NDIF API key.
   </p>
-</div>
-</div>
-</div>
+
+  <div class="row align-items-center">
+    <p>
+       <a class="btn btn-outline-secondary rounded-pill"
+       href="https://login.ndif.us/" target="_blank" >Register here to get your free API key!
+       </a>
+    </p>
+ </div>
+  
+</section>
 
 
-<div class="accordion-item">
-<h2 class="accordion-header">
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-data-bs-target="#flush-collapseFour" aria-expanded="false"
-aria-controls="flush-collapseFour">
-<h6 style="margin-bottom: 0 !important;">Postdoctoral Associate</h6>
-</button>
-</h2>
-<div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
-<div class="accordion-body">
+<section class="col-xxl-8 px-5 px-lg-0 py-3 mb-5 container">
+
+  <div class="border-bottom pb-3">
+  <h1>Step 3: Access LLM internals</h1>
+  </div>
+  
   <p>
-  This is a full-time academic role.
+  Once you have your API key, you should be ready to start officially using NDIF and NNsight.
   </p>
-</div>
-</div>
-</div>
 
--->
+  
 
-<div class="accordion-item">
-<h2 class="accordion-header">
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-data-bs-target="#flush-collapseFive" aria-expanded="false"
-aria-controls="flush-collapseFive">
-<h6 style="margin-bottom: 0 !important;">
-  <a name="jobs">Other roles</a></h6>
-</button>
-</h2>
-<div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
-<div class="accordion-body">
-  <p>
-  In the future we will post specific listings for other roles we seek to fill including
-  <ul>
-    <li>Student research assistants.
-    <li>Student co-ops.
-  </ul>
-  </p>
-  <p>
-  We also welcome research collaborators and unpaid open-source contributors; for
-  open-source community opportunities, get in touch through our <a href="./signup.html">community Discord</a>.
-  </p>
-</div>
-</div>
-</div>
-
+  
 </section>
 
 </main>
 {footer()}
+
+
+
