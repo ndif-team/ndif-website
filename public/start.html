@@ -137,27 +137,34 @@ huge open AI models easily, with full transparent access. Follow the steps below
 
 </section>
 
-<section class="col-xxl-8 px-5 px-lg-0 py-3 mb-5 container">
+<section class="col-xxl-8 px-5 px-lg-0 py-2 mb-5 container">
 
 <div class="border-bottom pb-3">
 <h1>Step 1: Install NNsight</h1>
 </div>
 
 <p>
-To start using NNsight, you can install it via <kbd>pip</kbd>:<br>
-<kbd>pip install nnsight</kbd>
+  To start using NNsight, you can install it via <kbd>pip</kbd>:<br>
+</p>
+<p>
+  <kbd>pip install nnsight</kbd>
+</p>
+
+<p>
+If you'd like to explore NNsight in more detail, we recommend you run through the full
+<a href="https://nnsight.net/notebooks/tutorials/walkthrough/" target="_blank" >NNsight walkthrough</a>.
 </p>
 
 </section>
 
-<section class="col-xxl-8 px-5 px-lg-0 py-3 mb-5 container">
+<section class="col-xxl-8 px-5 px-lg-0 py-2 mb-5 container">
 
   <div class="border-bottom pb-3">
   <h1>Step 2: Sign up for NDIF remote model access</h1>
   </div>
   
   <p>
-  In order to remotely access LLMs through NDIF, users must sign up for an NDIF API key.
+  To remotely access LLMs through NDIF, you must sign up for an NDIF API key.
   </p>
 
   <div class="row align-items-center">
@@ -167,41 +174,91 @@ To start using NNsight, you can install it via <kbd>pip</kbd>:<br>
        </a>
     </p>
  </div>
-  
+
+<p>
+NDIF hosts multiple LLMs, including various sizes of the Llama 3.1 models and DeepSeek-R1 models. 
+You can view the full list of hosted models on 
+<a href="https://nnsight.net/status/" target="_blank" >our status page</a>.
+All of our models are open for public use, but you need to apply for access to the Llama-3.1-405B models.<br>
+   
+</p>
+
+<p>
+If you have a clear research need for Llama-3.1-405B and would like more details about applying for access,
+please refer to <a href="./405b.html" target="_blank" >our 405B pilot program application</a>!
+</p>
+
 </section>
 
-<section class="col-xxl-8 px-5 px-lg-0 py-3 mb-5 container">
 
-  <div class="border-bottom pb-3">
-  <h1>Step 2: Sign up for NDIF remote model access</h1>
-  </div>
-  
-  <p>
-  In order to remotely access LLMs through NDIF, users must sign up for an NDIF API key.
-  </p>
-
-  <div class="row align-items-center">
-    <p>
-       <a class="btn btn-outline-secondary rounded-pill"
-       href="https://login.ndif.us/" target="_blank" >Register here to get your free API key!
-       </a>
-    </p>
- </div>
-  
-</section>
-
-<section class="col-xxl-8 px-5 px-lg-0 py-3 mb-5 container">
+<section class="col-xxl-8 px-5 px-lg-0 py-2 mb-5 container">
 
   <div class="border-bottom pb-3">
   <h1>Step 3: Access LLM internals</h1>
   </div>
   
   <p>
-  Once you have your API key, you should be ready to start officially using NDIF and NNsight.
+  Now that you have your NDIF API key, you should be ready to start exploring LLM internals with NDIF and NNsight. 
+  The following Colab notebook will guide you through how to configure your API key, load a LLM in NNsight, 
+  and access LLM internals remotely.
   </p>
 
-  
+  <a target="_blank" href="https://colab.research.google.com/github/ndif-team/ndif-website/blob/onboarding-fixes/public/notebooks/NDIFGetStarted.ipynb">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+  </a>
 
+  
+</section>
+
+
+<section class="col-xxl-8 px-5 px-lg-0 py-2 mb-5 container">
+
+  <div class="border-bottom pb-3">
+  <h1>Step 4: Get involved!</h1>
+  </div>
+  
+  <p>
+    This is just a quick overview to get started with NDIF's remote models. 
+    To learn more, we recommend taking a deeper dive into the following resources:
+
+    <ul class="px-5"t pus>
+      <li>Get a comprehensive overview of the library with the <a href="https://nnsight.net/notebooks/tutorials/walkthrough/"> NNsight Walkthrough </a>
+      <li>Check out some NNsight implementations of common <a href="https://nnsight.net/tutorials/"> LLM interpretability techniques</a>
+      <li>Join the conversation with the NDIF <a href="https://discord.com/invite/6uFJmCSwW7"> Discord </a> community
+      </li>
+    </ul>
+
+    <strong> Follow us!</strong> <br>
+    <p>
+      <a href="https://github.com/ndif-team/nnsight" style="text-decoration: none;">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="20" height="20">
+      </a>
+      | <a href="https://github.com/ndif-team/nnsight">ndif-team/nnsight</a>
+    </p>
+
+    <p>
+      <a href="https://bsky.app/profile/ndif-team.bsky.social" style="text-decoration: none;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/2319px-Bluesky_Logo.svg.png" alt="Bluesky" width="20" height="20">
+      </a>
+      | <a href="https://bsky.app/profile/ndif-team.bsky.social">@ndif-team.bsky.social</a>
+
+    </p>
+     
+    <p>
+      <a href="https://x.com/ndif_team" style="text-decoration: none;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/X_logo.jpg/1200px-X_logo.jpg" alt="X" width="20" height="20">
+      </a>
+      | <a href="https://x.com/ndif_team">@ndif_team</a>
+    </p>
+
+    <p>
+      <a href="https://www.linkedin.com/company/national-deep-inference-fabric/" style="text-decoration: none;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/1024px-LinkedIn_icon_circle.svg.png" alt="LinkedIn" width="20" height="20">
+      </a>
+      | <a href="https://www.linkedin.com/company/national-deep-inference-fabric/">National Deep Inference Fabric</a>
+    </p>
+  
+  </p>
   
 </section>
 
