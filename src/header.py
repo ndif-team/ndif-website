@@ -92,7 +92,7 @@ rel="stylesheet">
                     <li class="nav-item">
                         {nav_link('About Us', '/about.html')}
                     </li>
-                    <li class="nav-item me-2">
+                    <li class="nav-item">
                         {nav_link('Citing', '/cite.html')}
                     </li>
                     <li class="nav-item">
