@@ -117,12 +117,6 @@ rel="stylesheet">
 
 <main>
 
-<!-- <div class="container col-xxl-8 px-5 px-lg-0">
-<div class="row align-items-center">
-<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Get Started</h1>
-</div>
-</div> -->
-
 <div class="container  col-xxl-8 px-5 px-lg-0 py-5">
   <div class="row flex-lg-row-reverse align-items-center g-5">
     <div class="col-10 col-sm-8 col-lg-6">
@@ -136,17 +130,38 @@ rel="stylesheet">
   that are both costly and difficult to run. Ordinary commercial inference services and APIs let us interact with these models, 
   but they do not let us access model internals. We are changing this with NDIF and NNsight.
   <ul class="px-5"t pus>
-    <li>NDIF is an inference service hosting large open-weight LLMs for use by researchers.
-    <li><a href="https://nnsight.net/about" target="_blank" >NNsight</a> is a package for interpreting and manipulating internals of deep learning models.
+    <li><strong>NDIF</strong> is an inference service hosting large open-weight LLMs for use by researchers.
+    <li><strong><a href="https://nnsight.net/about" target="_blank" >NNsight</a></strong>
+       is a package for interpreting and manipulating internals of deep learning models.
   </ul>
+</p>
+
+<div class="accordion accordion-flush" id="imageAccordion">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="imageHeading">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#imageCollapse" aria-expanded="false" aria-controls="imageCollapse">
+        <h6 style="margin-bottom: 0 !important;">View the NDIF and NNsight system diagram</h6>
+      </button>
+    </h2>
+    <div id="imageCollapse" class="accordion-collapse collapse" data-bs-parent="#imageAccordion">
+      <div class="accordion-body">
+        <img src="./images/NDIF_system.png" alt="NDIF System" class="img-fluid">
+        <p>
+          NDIF and NNsight work together to apply user's code to NDIF's hosted models so that users can access and manipulate large-scale model internals.
+          This works without the user needing to download the model, set up complex distributed systems, or have a powerful computer.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>
+  <br>
   Together, NDIF and NNsight work to enable researchers to run complex experiments on 
-  huge open AI models easily, with full transparent access. <strong>Follow the steps below to get started.</strong>
+    huge open AI models easily, with full transparent access. <strong>Follow the steps below to get started.</strong>
 </p>
 
 </div>
-
-
-
 
 </section>
 
@@ -157,7 +172,8 @@ rel="stylesheet">
 </div>
 
 <p>
-  To start using NNsight, you can install it via <kbd>pip</kbd>:<br>
+  To start using NNsight, you can install it via pip:
+  <br>
 </p>
 <p>
   <kbd>pip install nnsight</kbd>
@@ -166,6 +182,11 @@ rel="stylesheet">
 <p>
 If you'd like to explore NNsight in more detail, we recommend you run through the full
 <a href="https://nnsight.net/notebooks/tutorials/walkthrough/" target="_blank" >NNsight walkthrough</a>.
+</p>
+
+<p>
+  We welcome open-source contributions and suggested improvements to NNsight on our 
+  <a href="https://github.com/orgs/ndif-team/nnsight">GitHub</a>.
 </p>
 
 </section>
@@ -190,9 +211,10 @@ If you'd like to explore NNsight in more detail, we recommend you run through th
 
 <p>
 NDIF hosts multiple LLMs, including various sizes of the Llama 3.1 models and DeepSeek-R1 models. 
+All of our models are open for public use, but you need to apply for access to the Llama-3.1-405B models.
 You can view the full list of hosted models on 
 <a href="https://nnsight.net/status/" target="_blank" >our status page</a>.
-All of our models are open for public use, but you need to apply for access to the Llama-3.1-405B models.<br>
+<br>
    
 </p>
 
@@ -212,13 +234,26 @@ please refer to <a href="./405b.html" target="_blank" >our 405B pilot program ap
   
   <p>
   Now that you have your NDIF API key, you should be ready to start exploring LLM internals with NDIF and NNsight. 
-  The following Colab notebook will guide you through how to configure your API key, load a LLM in NNsight, 
-  and access LLM internals remotely.
+  We've put together a Colab notebook to help you get started.
   </p>
 
-  <a target="_blank" href="https://colab.research.google.com/github/ndif-team/ndif-website/blob/onboarding-fixes/public/notebooks/NDIFGetStarted.ipynb">
-    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-  </a>
+  <p>
+    <strong>The Colab notebook covers the following topics:</strong>
+    <ul class="px-5"t pus>
+      <li>Installing NNsight
+      <li>Setting up your NDIF API key
+      <li>Loading a LLM in NNsight
+      <li>Accessing and altering LLM internals remotely
+
+      <br><br>
+
+    <strong>Access the notebook:</strong>
+    <br>
+    <a target="_blank" href="https://colab.research.google.com/github/ndif-team/ndif-website/blob/onboarding-fixes/public/notebooks/NDIFGetStarted.ipynb">
+      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+    </a>
+
+  </p>
 
   
 </section>
@@ -253,10 +288,10 @@ please refer to <a href="./405b.html" target="_blank" >our 405B pilot program ap
   
   <p>
     <p>
-      <a href="https://github.com/ndif-team/nnsight" style="text-decoration: none;">
+      <a href="https://github.com/orgs/ndif-team/repositories" style="text-decoration: none;">
       <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="20" height="20">
       </a>
-      | <a href="https://github.com/ndif-team/nnsight">ndif-team/nnsight</a>
+      | <a href="https://github.com/orgs/ndif-team/repositories">github.com/ndif-team</a>
     </p>
 
     <p>
@@ -308,11 +343,13 @@ please refer to <a href="./405b.html" target="_blank" >our 405B pilot program ap
                     <li><a class="link-secondary text-decoration-none" href="/">Home</a></li>
                     <li><a class="link-secondary text-decoration-none" href="/fabric.html">Fabric</a></li>
                     <li><a class="link-secondary text-decoration-none" href="/about.html">About Us</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="/cite.html">Citing NDIF</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md">
                 <ul class="list-unstyled text-small">
-                    <li><a class="link-secondary text-decoration-none" href="/start.html">Get involved</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="/start.html">Get started</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="/contribute.html">Get involved</a></li>
                     <li><a class="link-secondary text-decoration-none" href="https://nnsight.net/">NNsight</a></li>
                     <li><a class="link-secondary text-decoration-none" href="/signup.html">Community</a></li>
                 </ul>
