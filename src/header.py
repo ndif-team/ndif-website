@@ -2,7 +2,7 @@
 def header():
     global pathname
     def nav_link(text, link):
-        classes = ' no-border-md-down border rounded-pill action-button' if text == 'Get Involved' else ''
+        classes = ' no-border-md-down border rounded-pill action-button' if text == 'Get Started' else ''
         attributes = ''
         if link == pathname or link == '/' and pathname == '/index.html':
             classes += ' active'
@@ -92,11 +92,14 @@ rel="stylesheet">
                     <li class="nav-item">
                         {nav_link('About Us', '/about.html')}
                     </li>
-                    <li class="nav-item me-2">
+                    <li class="nav-item">
                         {nav_link('Citing', '/cite.html')}
                     </li>
                     <li class="nav-item">
-                        {nav_link('Get Involved', '/start.html')}
+                        {nav_link('Get Involved', '/contribute.html')}
+                    </li>
+                    <li class="nav-item">
+                        {nav_link('Get Started', '/start.html')}
                     </li>
                 </ul>
                 
@@ -121,7 +124,8 @@ rel="stylesheet">
                 <li>{nav_link('Fabric', '/fabric.html')}</li>
                 <li>{nav_link('About Us', '/about.html')}</li>
                 <li>{nav_link('Citing', '/cite.html')}</li>
-                <li>{nav_link('Get Involved', '/start.html')}</li>
+                <li>{nav_link('Get Involved', '/contribute.html')}</li>
+                <li>{nav_link('Get Started', '/start.html')}</li>
             </ul>
         </div>
     </div>
