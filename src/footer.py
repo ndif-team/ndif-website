@@ -35,9 +35,20 @@ def footer():
     </footer>
 </div>
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FD12LWN557"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous">
+
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date()); gtag('config', 'G-FD12LWN557');
+        
+</script>
+
+
 
 </body>
 
