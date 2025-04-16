@@ -10,8 +10,8 @@ def header():
         return f'<a class="nav-link text-secondary{classes}"{attributes} href=".{link}">{text}</a>'
 
     invisible_header = ''
-    # if pathname == '/index.html' or pathname == '/':
-    #     invisible_header = 'invisible'
+    if pathname == '/index.html' or pathname == '/':
+        invisible_header = 'invisible'
 
     return f"""\
 <!doctype html>
