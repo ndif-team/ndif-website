@@ -21,7 +21,7 @@ def header():
 <meta name="description" content="National Deep Inference Fabric" />
 <meta property="og:title" content="National Deep Inference Fabric" />
 <meta property="og:url" content="https://ndif.us/" />
-<meta property="og:image" content="https://ndif.us/images/NSF_NDIF_color.png" />
+<meta property="og:image" content="https://ndif.us/images/NDIF_Acr_color.png" />
 <meta property="og:description" content="NDIF is a research computing project that enables researchers and students to crack open the mysteries inside large-scale AI systems." />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
@@ -65,7 +65,7 @@ rel="stylesheet">
                 <a href="./" style="color: inherit; text-decoration: none;">
                     <div class="row align-items-center">
                         <div class="col-lg-3 border-end no-border-md-down ps-0">
-                            <img src="./images/NDIF_Acr_color.png" class="d-block img-fluid" width="100" height="100"
+                            <img src="./images/NSF_NDIF_color.png" class="d-block img-fluid" width="100" height="100"
                                 loading="lazy">
                         </div>
                         <div class="col-md-9 my-auto d-none d-lg-block">
