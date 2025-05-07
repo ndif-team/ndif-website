@@ -74,9 +74,340 @@
 
 
   <section class=" col-xxl-8 px-5 px-lg-0 py-5 container border-bottom border-top" style="font-size: 14px;"> 
+
+    <p>
+      <img src="images/DeltaProduct-Improving-State-Tracking-in-Linear-RNNs-via-Householder-Products.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="http://openreview.net/forum?id=nvb60szj5C"
+        >Julien Siems, Timur Carstensen, Arber Zela, Frank Hutter, Massimiliano Pontil, Riccardo Grazzi.
+        DeltaProduct: Improving State-Tracking in Linear RNNs via Householder Products.
+        <nobr>ICLR 2025 Workshop on Foundation Models in the Wild.</nobr></a>
+      <br>
+      This paper presents DeltaProduct, a linear RNN that improves expressivity while maintaining efficiency by using a diagonal plus rank-nh transition matrix built from Householder transforms. It outperforms DeltaNet in state tracking, language modeling, and length extrapolation, and the authors also provides new theoretical insights, showing that DeltaNet can solve dihedral group word problems in just two layers.
+    </p>
+
+    <p> 
+      <img src="images/Robustly-identifying-concepts-introduced-during-chat-fine-tuning-using-crosscoders.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://arxiv.org/abs/2504.02922"
+        >Julian Minder, Clement Dumas, Caden Juang, Bilal Chugtai, Neel Nanda.
+        Robustly identifying concepts introduced during chat fine-tuning using crosscoders.
+        <nobr>ArXiv 2025.</nobr></a>
+      <br>
+      Improves model diffing techniques for understanding how fine-tuning alters language model behavior. The authors identify flaws in the standard crosscoder method that lead to misattributing shared concepts as fine-tuning-specific. They introduce Latent Scaling to better measure concept presence across models and propose a new BatchTopK loss that avoids these issues. Their method uncovers chat-specific, interpretable latents (e.g., latents tied to refusals or misinformation) offering clearer insights into the effects of chat tuning.
+    </p>
+  
+
+    <p>
+      <img src="images/The-Dual-Route-Model-of-Induction.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://arxiv.org/abs/2504.03022"
+        >Sheridan Feucht, Eric Todd, Byron Wallace, David Bau.
+        The Dual-Route Model of Induction.
+        <nobr>ArXiv 2025.</nobr></a>
+      <br>
+      Identifies concept-level induction heads—attention heads that copy entire lexical units rather than individual tokens. These heads specialize in semantic tasks like translation, while token-level induction heads handle exact copying. The authors show that these two mechanisms operate independently, and ablating token heads leads models to paraphrase instead of copying. They argue concept-level heads may play a broader role in in-context learning.
+    </p>
+   
+    <p> 
+      <img src="images/Steering-Fine-Tuning-Generalization-with-Targeted-Concept-Ablation.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://openreview.net/forum?id=2HyKWpAB4i"
+        >Helena Casademunt, Caden Juang, Samuel Marks, Senthooran Rajamanoharan, Neel Nanda.
+        Steering Fine-Tuning Generalization with Targeted Concept Ablation.
+        <nobr>ICLR 2025 Workshop on Building Trust in Language Models and Applications.</nobr></a>
+      <br>
+      Introduces a method for steering fine-tuned models toward intended generalizations by identifying and ablating sparse autoencoder latents linked to undesired concepts. This helps disambiguate between multiple training-consistent but behaviorally distinct solutions, such as aligned vs. deceptive models. The approach outperforms baselines on two tasks, eliminating spurious gender correlations and guiding attention in double multiple choice, demonstrating its potential for safer model deployment.
+   </p>  
+   
+   
+    <p>
+      <img src="images/ICLR-In-Context-Learning-of-Representations.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://openreview.net/forum?id=pXlmOmlHJZ"
+        >Core Francisco Park, Andrew Lee, Ekdeep Singh Lubana, Yongyi Yang, Maya Okawa, Kento Nishi, Martin Wattenberg, Hidenori Tanaka.
+        ICLR: In-Context Learning of Representations.
+        <nobr>ICLR 2025.</nobr></a>
+      <br>
+      Explores whether large language models can reorganize internal concept representations based on in-context examples that conflict with pretrained semantics. Using a synthetic graph-tracing task, the authors show that sufficient context can trigger a reorganization of representations to match the graph's structure, though strong semantic priors can resist this shift. They interpret the behavior through the lens of energy minimization and argue that context length is a key factor in enabling flexible representation formation.
+    </p>
+   
+   
+    <p>
+      <img src="images/The-Geometry-of-Refusal-in-Large-Language-Models-Concept-Cones-and-Representational-Independence.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://arxiv.org/abs/2502.17420"
+        >Tom Wollschläger, Jannes Elstner, Simon Geisler, Vincent Cohen-Addad, Stephan Günnemann, Johannes Gasteiger.
+        The Geometry of Refusal in Large Language Models: Concept Cones and Representational Independence.
+        <nobr>ArXiv 2025.</nobr></a>
+      <br>
+      Introduces a gradient-based method to identify and analyze internal mechanisms behind refusal in large language models. Challenging prior claims of a single refusal direction, the authors find multiple mechanistically independent directions and multi-dimensional concept structures that govern refusal. They introduce the concept of representational independence to capture both linear and nonlinear intervention effects, revealing that LLM safety behavior relies on more complex internal structures than previously thought.
+    </p>
     
-     
-      <p>
+    
+    <p>
+      <img src="images/Structured-In-Context-Task-Representations.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://openreview.net/forum?id=hlOu6w1a8T"
+        >Core Francisco Park, Andrew Lee, Ekdeep Singh Lubana, Kento Nishi, Maya Okawa, Hidenori Tanaka.
+        Structured In-Context Task Representations.
+        <nobr>NeurIPS 2024 Workshop on Symmetry and Geometry in Neural Representations.</nobr></a>
+      <br>
+      Investigates whether language models develop interpretable internal representations during in-context learning. Using synthetic data based on geometric structures like grids and rings, the authors show that models do form internal representations reflecting these structures. They also find that in-context examples can override existing semantic priors by shaping representations in new dimensions. The study concludes that language models can build meaningful internal representations from in-context examples alone.
+    </p>
+    
+    
+    <p>
+      <img src="images/Elucidating-Mechanisms-of-Demographic-Bias-in-LLMs-for-Healthcare.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://arxiv.org/abs/2502.13319"
+        >Hiba Ahsan, Arnab Sen Sharma, Silvio Amir, David Bau, Byron C. Wallace.
+        Elucidating Mechanisms of Demographic Bias in LLMs for Healthcare.
+        <nobr>ArXiv 2025.</nobr></a>
+       <br>
+       Uncovers how large language models encode sociodemographic information, such as gender and race, within the context of healthcare. The authors find that gender information is concentrated in middle MLP layers and can be manipulated at inference time through patching, impacting clinical vignette generation and predictions related to gender (e.g., depression risk). While race information is more distributed, it can also be influenced. This work represents the first application of interpretability methods to study sociodemographic biases in LLMs for healthcare.
+    </p>
+    
+    
+    <p>
+      <img src="images/Back-Attention-Understanding-and-Enhancing-Multi-Hop-Reasoning-in-Large-Language-Models.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://arxiv.org/abs/2502.10835"
+        >Zeping Yu, Yonatan Belinkov, Sophia Ananiadou.
+        Back Attention: Understanding and Enhancing Multi-Hop Reasoning in Large Language Models.
+        <nobr>ArXiv 2025.</nobr></a>
+      <br>
+      This paper explores how large language models perform multi-hop reasoning using logit flow, a method for tracing how logits evolve across layers during prediction. The authors identify four stages in factual retrieval and find that multi-hop failures often occur during relation attribute extraction. To address this, they propose back attention, which lets lower layers attend to higher-layer hidden states from other positions. This mechanism improves reasoning accuracy across multiple models and datasets.
+    </p>
+    
+    <p>
+      <img src="images/Language-Models-Use-Trigonometry-to-Do-Addition.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://arxiv.org/abs/2502.00873"
+        >Subhash Kantamneni, Max Tegmark.
+        Language Models Use Trigonometry to Do Addition.
+        <nobr>ArXiv 2025.</nobr></a>
+      <br>
+      Investigates how mid-sized large language models (LLMs) perform mathematical tasks. The authors discover that LLMs represent numbers as a generalized helix which is causally involved in tasks like addition, subtraction, and other arithmetic operations. They propose that LLMs add by manipulating these number-representing helices using the "Clock" algorithm. Through causal interventions and analysis of MLP outputs and attention heads, the authors provide the first representation-level explanation of how LLMs perform mathematical operations.
+    </p>
+
+    <p>
+      <img src="images/Large-Language-Models-Share-Representations-of-Latent-Grammatical-Concepts-Across-Typologically-Diverse-Languages.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://arxiv.org/abs/2501.06346"
+         >Jannik Brinkmann, Chris Wendler, Christian Bartelt, Aaron Mueller.
+         Large Language Models Share Representations of Latent Grammatical Concepts Across Typologically Diverse Languages.
+         <nobr>ArXiv 2025.</nobr></a>
+      <br>
+      Investigates how large language models (LLMs) represent grammatical concepts across languages, finding that abstract features like number, gender, and tense are encoded in shared multilingual directions. Using sparse autoencoders and causal interventions, the authors show that ablating these features significantly impairs cross-lingual performance, suggesting that LLMs can develop robust, language-agnostic grammatical abstractions.
+    </p>
+    
+    <p> 
+      <img src="images/Hidden-Pieces-An-Analysis-of-Linear-Probes-for-GPT-Representation-Edits.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://ial.eecs.ucf.edu/pdf/Sukthankar-Austin-ICMLA2024.pdf"
+        >Austin L Davis, Gita Sukthankar.
+        Hidden Pieces: An Analysis of Linear Probes for GPT Representation Edits.
+        <nobr>ICMLA 2024.</nobr></a>
+      <br>
+      This paper explores the use of probing classifiers to analyze and intervene in the internal representations of a chess-playing transformer model. Probing classifiers are small models trained on hidden states to perform specific tasks, serving as tools to reveal and influence how information is encoded—much like neural electrode arrays in neuroscience. The authors demonstrate that the weights of these probes are highly informative and can be used to reliably delete specific pieces from the board, effectively editing the model’s internal game state. This shows that the model learns an emergent, manipulable representation of the chessboard.
+    </p>
+
+    <p> 
+      <img src="images/Incremental-Sentence-Processing-Mechanisms.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://arxiv.org/abs/2412.05353"
+        >Michael Hanna, Aaron Mueller.
+        Incremental Sentence Processing Mechanisms in Autoregressive Transformer Language Models.
+        <nobr>ArXiv 2024.</nobr></a>
+      <br>
+      Investigates how autoregressive language models (LMs) process garden path sentences, revealing that LMs use both syntactic features and shallow heuristics to interpret ambiguous sentences. Using sparse autoencoders, the authors show that LMs simultaneously represent multiple interpretations but do not effectively reanalyze their initial understanding when answering follow-up questions.
+    </p>
+
+    <p>
+      <img src="images/Separating-Tongue-From-Thought-Activation-Patching.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://arxiv.org/abs/2411.08745"
+          >Clément Dumas, Chris Wendler, Veniamin Veselovsky, Giovanni Monea, Robert West.
+          Separating Tongue from Thought: Activation Patching Reveals Language-Agnostic Concept Representations in Transformers.
+          <nobr>ArXiv 2024.</nobr></a>
+      <br>
+      Investigates whether large language models (LLMs) develop language-agnostic concept representations by analyzing their latent activations during translation tasks. Language information emerges earlier than conceptual meaning in the model's layers and show, through activation patching, that concepts and languages can be independently manipulated, providing evidence for universal concept representations.
+    </p>
+    
+    
+    <p>
+      <img src="images/Interplm-Discovering-Interpretable-Features-in-Protein-LMs.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://www.biorxiv.org/content/10.1101/2024.11.14.623630v1.abstract"
+         >Elana Simon, James Zou.
+         InterPLM: Discovering Interpretable Features in Protein Language Models via Sparse Autoencoders.
+         <nobr>BiorXiv 2024.</nobr></a>
+      <br>
+      This paper introduces a method for interpreting protein language models (PLMs) by using sparse autoencoders (SAEs) to extract human-interpretable features from model embeddings. Applied to ESM-2, the approach reveals thousands of latent features per layer that align with known biological concepts like binding sites and structural motifs, far exceeding the interpretability of individual neurons. The authors also identify coherent, novel features that extend beyond current biological annotations and propose a language model-based pipeline to help interpret them. These features can aid in filling database gaps and steering protein design. The study presents InterPLM, a platform for exploring these representations, along with open-source tools for further analysis.
+    </p>  
+   
+   
+    <p>
+      <img src="images/Token-Erasure-as-a-Footprint-of-Implicit-Vocabulary-Items-in-LLMs.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://aclanthology.org/2024.emnlp-main.543/"
+        >Sheridan Feucht, David Atkinson, Byron Wallace, David Bau.
+        Token Erasure as a Footprint of Implicit Vocabulary Items in LLMs.
+        <nobr>EMNLP 2024.</nobr></a>
+      <br>
+      Investigates how LLMs transform arbitrary groups of tokens into higher-level representations, focusing on multi-token words and named entities. Identifies a pronounced "erasure" effect where information about previous tokens is quickly forgotten in early layers. Proposes a method to probe the implicit vocabulary of LLMs by analyzing token representation changes across layers, providing results for Llama-2-7b and Llama-3-8B. This study represents the first effort to explore the implicit vocabulary of LLMs.
+   </p>
+
+
+    <p>
+      <img src="images/Evidence-of-Learned-Look-Ahead-in-a-Chess-Playing-Neural-Network.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      height: 100px;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://openreview.net/forum?id=8zg9sO4ttV"
+         >Erik Jenner, Shreyas Kapur, Vasil Georgiev, Cameron Allen, Scott Emmons, Stuart Russell.
+         Evidence of Learned Look-Ahead in a Chess-Playing Neural Network.
+         <nobr>NeurIPS 2024.</nobr></a>
+      <br>
+      Presents evidence of learned look-ahead in the policy network of Leela Chess Zero, showing that it internally represents future optimal moves, which are critical in certain board states. Demonstrates through activations, attention heads, and a probing model that neural networks can predict optimal moves ahead, providing a basis for understanding learned algorithmic capabilities in neural networks.
+    </p>
+
+    <p>
+      <img src="images/Representation-Shattering-in-Transformers.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://arxiv.org/abs/2410.17194"
+         >Kento Nishi, Maya Okawa, Rahul Ramesh, Mikail Khona, Ekdeep Singh Lubana, Hidenori Tanaka.
+         Representation Shattering in Transformers: A Synthetic Study with Knowledge Editing.
+         <nobr>ArXiv 2024.</nobr></a>
+      <br>    
+      Investigates why Knowledge Editing (KE) methods in large language models can degrade factual recall and reasoning abilities, proposing that KE inadvertently distorts concept representations beyond the targeted fact—a phenomenon they call representation shattering. Through synthetic tasks and experiments on LLaMA and Mamba models, the authors demonstrate that modifying one fact can disrupt related knowledge structures, explaining the broader performance degradation caused by KE.
+    </p>
+
+
+    <p>
+      <img src="images/A-Generative-Benchmark-Creation-Framework.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://dl.acm.org/doi/abs/10.1145/3627673.3679157"
+         >Daniel C. Fox, Aamod Khatiwada, Roee Shraga.
+         A Generative Benchmark Creation Framework for Detecting Common Data Table Versions.
+         <nobr>ACM 2024.</nobr></a>
+      <br>
+      Introduces a novel framework using large language models (LLMs) to generate benchmarks for data versioning, addressing the lack of standardized evaluation methods in the field. The authors release VerLLM-v1, a benchmark with detailed documentation, version lineage, and complex transformations, facilitating better development and evaluation of data versioning techniques.     
+    </p>
+
+
+    <p>
+      <img src="images/Emergence-of-Hierarchical-Emotion-Representations.png" 
+      style="
+      width: 300px;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto 15px auto;
+      float: left;">
+      <a href="https://openreview.net/forum?id=vgXUoCrHmp"
+        >Bo Zhao, Maya Okawa, Eric J Bigelow, Rose Yu, Tomer Ullman, Hidenori Tanaka.
+        Emergence of Hierarchical Emotion Representations in Large Language Models.
+        <nobr>NeurIPS 2024 Workshop on Scientific Methods for Understanding Deep Learning.</nobr></a>
+      <br>
+      Explores how large language models (LLMs) represent and predict human emotions, revealing that larger models develop more complex hierarchical emotion structures and achieve better outcomes in negotiation tasks by accurately modeling counterparts' emotions. Also highlights ethical concerns, showing that LLMs exhibit persona biases, often misclassifying emotions for minority personas, raising important considerations for responsible deployment.     
+    </p>
+
+    <p>
       <img src="images/Evaluating-Open-Source-Sparse-Autoencoders-on-Disentangling-Factual-Knowledge-in-GPT-2-Small.png" 
       style="
       width: 300px;
@@ -184,27 +515,6 @@
     </p>
 
     <p>
-      <img src="images/Evidence-of-Learned-Look-Ahead-in-a-Chess-Playing-Neural-Network.png" 
-      style="
-      width: 300px;
-      max-width: 100%;
-      height: 100px;
-      display: block;
-      margin: 0 auto 15px auto;
-      float: left;">
-      <a href="https://arxiv.org/pdf/2406.00877.pdf"
-         >Erik Jenner, Shreyas Kapur, Vasil Georgiev, Cameron Allen, Scott Emmons, Stuart Russell.
-         Evidence of Learned Look-Ahead in a Chess-Playing Neural Network.
-         <nobr>ArXiv 2024.</nobr></a>
-         <br>
-         Presents evidence of learned look-ahead in the policy network of Leela Chess Zero, 
-         showing that it internally represents future optimal moves, which are critical in 
-         certain board states. Demonstrates through activations, attention heads, and a 
-         probing model that neural networks can predict optimal moves ahead, providing a basis 
-         for understanding learned algorithmic capabilities in neural networks.
-    </p>
-
-    <p>
       <img src="images/Language-Models-Represent-Beliefs-of-Self-and-Others.png"
       style="
       width: 300px;
@@ -216,13 +526,14 @@
       <a href="https://arxiv.org/pdf/2402.18496.pdf"
          >Wentao Zhu, Zhining Zhang, Yizhou Wang.
          Language Models Represent Beliefs of Self and Others.
-         <nobr>ICML 2024.</nobr></a>
-         <br>
-         Investigates the presence of Theory of Mind (ToM) abilities in large language models, 
-         identifying internal representations of self and others' beliefs through neural activations. 
-         Shows that manipulating these representations significantly alters ToM performance, 
-         highlighting their importance in social reasoning. Extends findings to various social 
-         reasoning tasks involving causal inference.
+         <nobr>ICML 2024.</nobr>
+      </a>
+      <br>
+      Investigates the presence of Theory of Mind (ToM) abilities in large language models, 
+      identifying internal representations of self and others' beliefs through neural activations. 
+      Shows that manipulating these representations significantly alters ToM performance, 
+      highlighting their importance in social reasoning. Extends findings to various social 
+      reasoning tasks involving causal inference.
     </p>
 
   </section>
