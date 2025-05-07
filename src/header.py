@@ -71,7 +71,7 @@ rel="stylesheet">
                         <div class="col-lg-4 border-end no-border-md-down ps-0">
                             <img src="./images/NSF_NDIF_color.png" class="d-block img-fluid" width="120" loading="lazy">
                         </div>
-                        <div class="col-md-8 my-auto d-none d-lg-block">
+                        <div class="col-md-8 my-auto d-none d-lg-block" style="padding-right:0">
                             <h5 style="margin-bottom: 0 !important; color: #656565; margin-bottom: 0 !important; line-height: 0.9; font-weight: 700 !important;">
                                 NSF National Deep<br />Inference Fabric
                             </h6>
