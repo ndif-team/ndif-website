@@ -1,0 +1,7 @@
+{
+  "name": "ndif-website",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
