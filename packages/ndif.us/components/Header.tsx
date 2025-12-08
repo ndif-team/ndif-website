@@ -49,7 +49,7 @@ export default function Header() {
               alt="NDIF Logo"
               className="h-10 w-auto"
             />
-            <span className="font-display font-bold text-xl tracking-tight text-slate-900 dark:text-white">
+            <span className="font-display font-bold text-xl tracking-tight text-slate-900 dark:text-white hidden md:inline">
               National Deep Inference Fabric
             </span>
           </div>
