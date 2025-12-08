@@ -2,9 +2,13 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { useSettings } from "./SettingsProvider";
+import { useTheme } from "next-themes";
 
 export default function BackgroundCanvas() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { isAnimationEnabled } = useSettings();
+  const { theme } = useTheme();
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -12,8 +16,14 @@ export default function BackgroundCanvas() {
     const container = containerRef.current;
     const scene = new THREE.Scene();
 
-    // Fog to blend particles into the dark background
-    scene.fog = new THREE.FogExp2(0x020617, 0.001);
+    // Fog to blend particles into the background
+    // Adjust fog color based on theme (approximate, as theme might change)
+    // For simplicity, we'll stick to a dark fog or update it if we can.
+    // Since we can't easily update the scene on theme change without full re-init,
+    // let's try to make it work for both or re-init on theme change.
+    const isDark = theme === 'dark' || theme === 'system'; // Simplified check
+    const bgColor = isDark ? 0x020617 : 0xffffff;
+    scene.fog = new THREE.FogExp2(bgColor, 0.001);
 
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 50;
@@ -82,7 +92,7 @@ export default function BackgroundCanvas() {
     // Lines connecting particles (simplified for performance)
     const planeGeo = new THREE.PlaneGeometry(200, 200, 40, 40);
     const planeMat = new THREE.MeshBasicMaterial({
-      color: 0x0f172a,
+      color: isDark ? 0x0f172a : 0xe2e8f0,
       wireframe: true,
       transparent: true,
       opacity: 0.05,
@@ -98,24 +108,27 @@ export default function BackgroundCanvas() {
 
     function animate() {
       animationId = requestAnimationFrame(animate);
-      time += 0.001;
+      
+      if (isAnimationEnabled) {
+        time += 0.001;
 
-      // Rotate particle systems slightly
-      particles.rotation.y = time * 0.5;
-      particles2.rotation.y = time * 0.3;
+        // Rotate particle systems slightly
+        particles.rotation.y = time * 0.5;
+        particles2.rotation.y = time * 0.3;
 
-      // Waving motion for the main particle field
-      const positions = particles.geometry.attributes.position.array as Float32Array;
-      for (let i = 0; i < count; i++) {
-        const x = positions[i * 3];
-        // Sine wave based on x position and time
-        positions[i * 3 + 1] += Math.sin(x * 0.1 + time * 10) * 0.02;
+        // Waving motion for the main particle field
+        const positions = particles.geometry.attributes.position.array as Float32Array;
+        for (let i = 0; i < count; i++) {
+          const x = positions[i * 3];
+          // Sine wave based on x position and time
+          positions[i * 3 + 1] += Math.sin(x * 0.1 + time * 10) * 0.02;
+        }
+        particles.geometry.attributes.position.needsUpdate = true;
+
+        // Subtle camera movement
+        camera.position.x = Math.sin(time) * 2;
+        camera.lookAt(0, 0, 0);
       }
-      particles.geometry.attributes.position.needsUpdate = true;
-
-      // Subtle camera movement
-      camera.position.x = Math.sin(time) * 2;
-      camera.lookAt(0, 0, 0);
 
       renderer.render(scene, camera);
     }
@@ -146,7 +159,7 @@ export default function BackgroundCanvas() {
       planeMat.dispose();
       renderer.dispose();
     };
-  }, []);
+  }, [isAnimationEnabled, theme]); // Re-run when theme or animation state changes
 
   return <div id="canvas-container" ref={containerRef} />;
 }

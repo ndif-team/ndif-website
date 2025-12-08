@@ -14,14 +14,14 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content, isOpen, t
   return (
     <div className="mb-4">
       <div
-        className={`w-full rounded-lg overflow-hidden ${
-          isOpen ? "bg-black dark:bg-gray-900" : "bg-black dark:bg-gray-900"
+        className={`w-full rounded-lg overflow-hidden transition-colors duration-300 ${
+          isOpen ? "bg-slate-100 dark:bg-gray-900" : "bg-slate-100 dark:bg-gray-900"
         }`}
       >
         <button className="w-full text-left p-4 flex justify-between items-center" onClick={toggleOpen}>
-          <span className="text-xl font-semibold text-white dark:text-white">{title}</span>
+          <span className="text-xl font-semibold text-slate-900 dark:text-white">{title}</span>
           <span className={`transform transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
-            <FaChevronDown className="text-2xl text-white" />
+            <FaChevronDown className="text-2xl text-slate-900 dark:text-white" />
           </span>
         </button>
         <div
@@ -30,7 +30,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ title, content, isOpen, t
           }`}
         >
           <div className="p-4">
-            <p className="text-white font-light">{content}</p>
+            <p className="text-slate-600 dark:text-slate-300 font-light">{content}</p>
           </div>
         </div>
       </div>

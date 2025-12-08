@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800 bg-black pt-16 pb-8">
+    <footer className="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-black pt-16 pb-8 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
@@ -10,11 +10,11 @@ export default function Footer() {
               <div className="w-8 h-8 rounded bg-gradient-to-br from-brand-500 to-accent-600 flex items-center justify-center">
                 <span className="font-bold text-white text-xs">N</span>
               </div>
-              <span className="font-display font-bold text-xl text-white">
+              <span className="font-display font-bold text-xl text-slate-900 dark:text-white">
                 NDIF
               </span>
             </div>
-            <p className="text-slate-500 max-w-sm">
+            <p className="text-slate-500 dark:text-slate-500 max-w-sm">
               The National Deep Inference Fabric is supported by the National
               Science Foundation. Enabling the next generation of AI
               interpretability research.
@@ -22,12 +22,12 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-4">Navigation</h4>
-            <ul className="space-y-2 text-sm text-slate-500">
+            <h4 className="text-slate-900 dark:text-white font-bold mb-4">Navigation</h4>
+            <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-500">
               <li>
                 <Link
                   href="#"
-                  className="hover:text-brand-400 transition-colors"
+                  className="hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
                 >
                   Home
                 </Link>
@@ -35,7 +35,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#mission"
-                  className="hover:text-brand-400 transition-colors"
+                  className="hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
                 >
                   Mission
                 </Link>
@@ -43,7 +43,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#research"
-                  className="hover:text-brand-400 transition-colors"
+                  className="hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
                 >
                   Research
                 </Link>
@@ -51,7 +51,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="hover:text-brand-400 transition-colors"
+                  className="hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
                 >
                   Team
                 </Link>
@@ -60,12 +60,12 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-4">Connect</h4>
-            <ul className="space-y-2 text-sm text-slate-500">
+            <h4 className="text-slate-900 dark:text-white font-bold mb-4">Connect</h4>
+            <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-500">
               <li>
                 <Link
                   href="#"
-                  className="hover:text-brand-400 transition-colors"
+                  className="hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
                 >
                   Contact Us
                 </Link>
@@ -73,7 +73,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="hover:text-brand-400 transition-colors"
+                  className="hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
                 >
                   Twitter / X
                 </Link>
@@ -81,7 +81,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="hover:text-brand-400 transition-colors"
+                  className="hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
                 >
                   GitHub
                 </Link>
@@ -89,7 +89,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="hover:text-brand-400 transition-colors"
+                  className="hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
                 >
                   NSF Project Page
                 </Link>

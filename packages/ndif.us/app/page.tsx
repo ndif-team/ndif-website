@@ -1,7 +1,7 @@
 import Header from "components/Header";
 import Hero from "components/Hero";
 import Mission from "components/Mission";
-import MissionCards from "components/MissionCards";
+import WhatWeDoCards from "components/WhatWeDoCards";
 import Research from "components/Research";
 import Footer from "components/Footer";
 
@@ -12,7 +12,7 @@ export default function Page() {
       <main>
         <Hero />
         <Mission />
-        <MissionCards />
+        <WhatWeDoCards />
         <Research />
       </main>
       <Footer />

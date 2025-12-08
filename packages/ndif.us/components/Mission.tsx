@@ -1,16 +1,16 @@
 export default function Mission() {
   return (
-    <section id="context" className="py-24 bg-slate-900/50 relative">
+    <section id="mission" className="py-24 bg-slate-50 dark:bg-slate-900/50 relative transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-brand-600 to-accent-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative p-8 bg-slate-900 ring-1 ring-slate-800 rounded-xl leading-none flex items-center justify-center aspect-square md:aspect-video lg:aspect-square">
+              <div className="relative p-8 bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 rounded-xl leading-none flex items-center justify-center aspect-square md:aspect-video lg:aspect-square transition-colors duration-300">
                 {/* Simple SVG Visualization of "Black Box" */}
                 <svg
                   viewBox="0 0 200 200"
-                  className="w-full h-full text-slate-600 group-hover:text-brand-500 transition-colors duration-500"
+                  className="w-full h-full text-slate-400 dark:text-slate-600 group-hover:text-brand-500 transition-colors duration-500"
                 >
                   <defs>
                     <pattern
@@ -59,12 +59,12 @@ export default function Mission() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-slate-900 dark:text-white">
               Our Mission
             </h2>
-            <p className="text-slate-300 text-lg leading-relaxed mb-6">
+            <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-6">
               Powerful large-scale Artificial Intelligence (AI) systems such as{" "}
-              <span className="text-brand-400 font-semibold">
+              <span className="text-brand-600 dark:text-brand-400 font-semibold">
                 Large Language Models (LLMs)
               </span>{" "}
               herald a new era of AI that is poised to reshape society, but
@@ -73,7 +73,7 @@ export default function Mission() {
               enable researchers and students to crack open the mysteries inside
               these enormous neural networks.
             </p>
-            <p className="text-slate-400 leading-relaxed mb-6">
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
               Because large-scale AI systems are trained automatically using
               massive amounts of data—instead of being designed line-by-line by a
               programmer—the internal workings of the current generation of AI are
@@ -85,7 +85,7 @@ export default function Mission() {
               differs from the computing systems used for ordinary commercial
               deployment of AI.
             </p>
-            <p className="text-slate-400 leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
               NDIF addresses this critical need by creating a unique nationwide
               research computing fabric that enables scientists to perform
               transparent and reproducible experiments on the largest-scale open
