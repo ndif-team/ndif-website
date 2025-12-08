@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDIF | National Deep Inference Fabric</title>
+    <meta name="description" content="Cracking open the mysteries inside large-scale Artificial Intelligence systems.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        },
+                        accent: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card-glass {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .card-glass:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border-color: rgba(139, 92, 246, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(135deg, #38bdf8 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        body {
+            background-color: #020617; /* Slate 950 */
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent-500 selection:text-white">
+
+    <!-- Background Animation -->
+    <div id="canvas-container"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-500 to-accent-600 flex items-center justify-center shadow-lg shadow-brand-500/20">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                    </div>
+                    <span class="font-display font-bold text-xl tracking-tight text-white">NDIF</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#mission" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Mission</a>
+                    <a href="#research" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Research</a>
+                    <a href="#community" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Community</a>
+                    <a href="#" class="px-5 py-2.5 rounded-full bg-slate-800 border border-slate-700 hover:border-brand-500 text-sm font-medium text-white transition-all hover:bg-slate-700">
+                        Access Portal
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-slate-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#mission" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Mission</a>
+                <a href="#research" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Research</a>
+                <a href="#community" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">Community</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-900/30 border border-brand-500/30 text-brand-300 text-xs font-semibold uppercase tracking-wide mb-8 animate-pulse-slow">
+                <span class="w-2 h-2 rounded-full bg-brand-400"></span>
+                NSF National Deep Inference Fabric
+            </div>
+            
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 leading-tight">
+                <span class="text-gradient">NSF National Deep Inference Fabric</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-400 leading-relaxed">
+                The NSF National Deep Inference Fabric is a research computing project that will enable us to crack open the mysteries inside large-scale Artificial Intelligence systems.
+            </p>
+            
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#mission" class="group relative px-8 py-4 rounded-full bg-white text-slate-900 font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 overflow-hidden">
+                    <span class="relative z-10">Discover Our Mission</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-200 to-accent-200 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </a>
+                <a href="#research" class="px-8 py-4 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700 text-white font-medium text-lg hover:bg-slate-800 transition-all hover:-translate-y-1">
+                    Read the Research
+                </a>
+            </div>
+        </div>
+        
+        <!-- Decorative Glows -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-600/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+    </section>
+
+    <!-- The Problem Section -->
+    <section id="context" class="py-24 bg-slate-900/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-600 to-accent-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                        <div class="relative p-8 bg-slate-900 ring-1 ring-slate-800 rounded-xl leading-none flex items-center justify-center aspect-square md:aspect-video lg:aspect-square">
+                            <!-- Simple SVG Visualization of "Black Box" -->
+                            <svg viewBox="0 0 200 200" class="w-full h-full text-slate-600 group-hover:text-brand-500 transition-colors duration-500">
+                                <defs>
+                                    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" stroke-width="0.5" stroke-opacity="0.3"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#grid)" />
+                                <rect x="60" y="60" width="80" height="80" rx="4" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="2"/>
+                                <path d="M20 100 H60 M140 100 H180" stroke="currentColor" stroke-width="2" marker-end="url(#arrow)"/>
+                                <circle cx="100" cy="100" r="20" fill="currentColor" class="animate-pulse"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2">
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
+                    <p class="text-slate-300 text-lg leading-relaxed mb-6">
+                        Powerful large-scale Artificial Intelligence (AI) systems such as <span class="text-brand-400 font-semibold">Large Language Models (LLMs)</span> herald a new era of AI that is poised to reshape society, but scientists cannot explain their predictions. The NSF National Deep Inference Fabric (NDIF) is a research computing project that will enable researchers and students to crack open the mysteries inside these enormous neural networks.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Because large-scale AI systems are trained automatically using massive amounts of data—instead of being designed line-by-line by a programmer—the internal workings of the current generation of AI are inscrutable to humans. Understanding how these systems work is an emerging science. But performing science on the internals of such large-scale AI systems requires substantial computational resources that are not practical at institutional scale, because the infrastructure required to study the detailed computations of AI differs from the computing systems used for ordinary commercial deployment of AI.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed">
+                        NDIF addresses this critical need by creating a unique nationwide research computing fabric that enables scientists to perform transparent and reproducible experiments on the largest-scale open AI systems. NDIF will advance our nation’s understanding of the capabilities of large-scale AI systems, as well as their limitations, robustness, safety issues, and impacts on human society.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-5xl font-bold mb-4">Our Mission</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-brand-500 to-accent-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card-glass p-8 rounded-2xl">
+                    <div class="w-14 h-14 rounded-full bg-slate-800 flex items-center justify-center mb-6 text-brand-400 border border-slate-700">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Enable Deep Inference</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        NDIF provides the infrastructure to "crack open" neural networks, allowing researchers to observe and intervene in the inference process in real-time.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-glass p-8 rounded-2xl">
+                    <div class="w-14 h-14 rounded-full bg-slate-800 flex items-center justify-center mb-6 text-accent-400 border border-slate-700">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Empower Researchers</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        We democratize access to the computational power needed to analyze LLMs, supporting students and scientists across the nation.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card-glass p-8 rounded-2xl">
+                    <div class="w-14 h-14 rounded-full bg-slate-800 flex items-center justify-center mb-6 text-teal-400 border border-slate-700">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Ensure Interpretability</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        Moving from black-box alchemy to engineered understanding. We aim to make AI predictions transparent, explainable, and safer for society.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Feature/Tech Section -->
+    <section id="research" class="py-24 bg-gradient-to-b from-slate-900 to-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative rounded-3xl overflow-hidden bg-slate-800/30 border border-slate-700/50">
+                <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-accent-600/20 rounded-full blur-[80px]"></div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-10 md:p-16 flex flex-col justify-center">
+                        <h3 class="font-display text-3xl font-bold mb-6 text-white">What is a Deep Inference Fabric?</h3>
+                        <p class="text-slate-300 mb-6 leading-relaxed">
+                            A deep inference fabric is a high-performance computing fabric designed to support scientific experiments on running AI systems.
+                        </p>
+                        <p class="text-slate-300 leading-relaxed">
+                            The NSF National Deep Inference Fabric consists of a unique combination of hardware and software that provides a remotely-accessible computing resource for scientists and students to perform detailed and reproducible experiments on large pretrained AI models, such as open large language models.
+                        </p>
+                    </div>
+                    <div class="bg-slate-900/50 p-10 md:p-16 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-slate-700/50">
+                        <div class="text-center">
+                            <div class="text-5xl font-bold text-white mb-2">100+</div>
+                            <div class="text-brand-400 font-medium mb-8">Universities & Labs</div>
+                            
+                            <div class="text-5xl font-bold text-white mb-2">PB</div>
+                            <div class="text-brand-400 font-medium mb-8">Scale Data Processing</div>
+
+                            <div class="text-5xl font-bold text-white mb-2">Open</div>
+                            <div class="text-brand-400 font-medium">Source Ecosystem</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-black pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded bg-gradient-to-br from-brand-500 to-accent-600 flex items-center justify-center">
+                            <span class="font-bold text-white text-xs">N</span>
+                        </div>
+                        <span class="font-display font-bold text-xl text-white">NDIF</span>
+                    </div>
+                    <p class="text-slate-500 max-w-sm">
+                        The National Deep Inference Fabric is supported by the National Science Foundation. Enabling the next generation of AI interpretability research.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Home</a></li>
+                        <li><a href="#mission" class="hover:text-brand-400 transition-colors">Mission</a></li>
+                        <li><a href="#research" class="hover:text-brand-400 transition-colors">Research</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Team</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Twitter / X</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">GitHub</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">NSF Project Page</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-600">
+                <p>&copy; 2023 National Deep Inference Fabric. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // --- 1. Mobile Menu Toggle ---
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- 2. Navbar Glass Effect on Scroll ---
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-lg');
+                nav.style.background = 'rgba(15, 23, 42, 0.85)';
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.add('glass');
+                nav.style.background = 'rgba(15, 23, 42, 0.5)';
+            }
+        });
+
+        // --- 3. Three.js "Deep Inference Fabric" Animation ---
+        
+        function initThree() {
+            const container = document.getElementById('canvas-container');
+            const scene = new THREE.Scene();
+            
+            // Fog to blend particles into the dark background
+            scene.fog = new THREE.FogExp2(0x020617, 0.001);
+
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 50;
+            camera.position.y = 10;
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            container.appendChild(renderer.domElement);
+
+            // Create particles to represent the "Fabric"
+            const geometry = new THREE.BufferGeometry();
+            const count = 1500;
+            const positions = new Float32Array(count * 3);
+            const scales = new Float32Array(count);
+
+            for (let i = 0; i < count; i++) {
+                // Create a wavelike distribution
+                const x = (Math.random() - 0.5) * 150;
+                const z = (Math.random() - 0.5) * 100;
+                const y = Math.sin(x * 0.1) * 5 + (Math.random() - 0.5) * 10;
+
+                positions[i * 3] = x;
+                positions[i * 3 + 1] = y;
+                positions[i * 3 + 2] = z;
+                
+                scales[i] = Math.random();
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('scale', new THREE.BufferAttribute(scales, 1));
+
+            // Custom shader material for glowing dots
+            const material = new THREE.PointsMaterial({
+                color: 0x38bdf8, // Sky blue brand color
+                size: 0.4,
+                transparent: true,
+                opacity: 0.8,
+                sizeAttenuation: true
+            });
+
+            // Add a secondary color system (Purple accents)
+            const geometry2 = new THREE.BufferGeometry();
+            const count2 = 500;
+            const positions2 = new Float32Array(count2 * 3);
+            for(let i=0; i<count2; i++){
+                positions2[i*3] = (Math.random() - 0.5) * 150;
+                positions2[i*3+1] = (Math.random() - 0.5) * 40;
+                positions2[i*3+2] = (Math.random() - 0.5) * 100;
+            }
+            geometry2.setAttribute('position', new THREE.BufferAttribute(positions2, 3));
+            const material2 = new THREE.PointsMaterial({
+                color: 0x8b5cf6, // Violet accent
+                size: 0.5,
+                transparent: true,
+                opacity: 0.6,
+                sizeAttenuation: true
+            });
+
+            const particles = new THREE.Points(geometry, material);
+            const particles2 = new THREE.Points(geometry2, material2);
+            
+            scene.add(particles);
+            scene.add(particles2);
+
+            // Lines connecting particles (simplified for performance)
+            // We'll simulate connections visually without raycasting every frame by using a wireframe plane below
+            const planeGeo = new THREE.PlaneGeometry(200, 200, 40, 40);
+            const planeMat = new THREE.MeshBasicMaterial({ 
+                color: 0x0f172a, 
+                wireframe: true, 
+                transparent: true, 
+                opacity: 0.05 
+            });
+            const plane = new THREE.Mesh(planeGeo, planeMat);
+            plane.rotation.x = -Math.PI / 2;
+            plane.position.y = -10;
+            scene.add(plane);
+
+            // Animation Loop
+            let time = 0;
+            
+            function animate() {
+                requestAnimationFrame(animate);
+                time += 0.001;
+
+                // Rotate particle systems slightly
+                particles.rotation.y = time * 0.5;
+                particles2.rotation.y = time * 0.3;
+                
+                // Waving motion for the main particle field
+                const positions = particles.geometry.attributes.position.array;
+                for(let i=0; i< count; i++) {
+                    const x = positions[i*3];
+                    // Sine wave based on x position and time
+                    positions[i*3 + 1] += Math.sin(x * 0.1 + time * 10) * 0.02; 
+                }
+                particles.geometry.attributes.position.needsUpdate = true;
+
+                // Subtle camera movement
+                camera.position.x = Math.sin(time) * 2;
+                camera.lookAt(0, 0, 0);
+
+                renderer.render(scene, camera);
+            }
+
+            animate();
+
+            // Handle Resize
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        }
+
+        // Initialize Three.js when DOM is ready
+        document.addEventListener('DOMContentLoaded', initThree);
+
+    </script>
+</body>
+</html>

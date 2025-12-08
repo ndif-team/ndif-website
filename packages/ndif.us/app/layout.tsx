@@ -1,29 +1,22 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
-
+import { Inter, Space_Grotesk } from "next/font/google";
+import BackgroundCanvas from "components/BackgroundCanvas";
 import "styles/globals.css";
 
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" });
+
 export const metadata: Metadata = {
-  title: "Next JS SaaS Starter Template",
-  description: "Next JS SaaS Starter Template",
+  title: "NDIF | National Deep Inference Fabric",
+  description: "Cracking open the mysteries inside large-scale Artificial Intelligence systems.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="bg-white dark:bg-black min-h-screen">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          {children}
-        </ThemeProvider>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased selection:bg-accent-500 selection:text-white bg-[#020617] text-slate-50 overflow-x-hidden`}>
+        <BackgroundCanvas />
+        {children}
       </body>
     </html>
   );
