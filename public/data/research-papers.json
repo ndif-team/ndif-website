@@ -1,0 +1,631 @@
+[
+  {
+    "title": "ADAG: Automatically Describing Attribution Graphs",
+    "authors": "Aryaman Arora, Zhengxuan Wu, Jacob Steinhardt, Sarah Schwettmann",
+    "venue": "arXiv (Cornell University) 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2604.07615",
+    "description": "Researchers have developed a new approach to understanding how language models work, called ADAG, which automatically identifies and explains the internal features that contribute to a model's outputs. By analyzing the functional roles of these features, ADAG provides a more transparent and interpretable view of the model's decision-making process. This breakthrough has significant implications for improving the reliability and trustworthiness of language models, particularly in identifying and mitigating potential biases or flaws.",
+    "category": "referencing",
+    "image": "/images/ADAG-Automatically-Describing-Attribution-Graphs.png"
+  },
+  {
+    "title": "Can you map it to English? The Role of Cross-Lingual Alignment in the Multilingual Performance of LLMs",
+    "authors": "Kartik Ravisankar, HyoJung Han, Sarah Wiegreffe, Marine Carpuat",
+    "venue": "Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "year": 2026,
+    "url": "https://doi.org/10.18653/v1/2026.eacl-long.225",
+    "description": "Researchers explore the limitations of current machine translation systems, highlighting the need for more nuanced and culturally sensitive approaches to language translation. By examining the complexities of human language and its relationship to culture, this work aims to improve the accuracy and relevance of machine translation in diverse contexts. This study contributes to the development of more effective and inclusive language technologies.",
+    "category": "uses_nnsight",
+    "image": "/images/Can-you-map-it-to-English-The-Role-of-Cross-Lingual-Alignment-in-the-Multilingual-Performance-of-LLMs.png"
+  },
+  {
+    "title": "Counting Hypothesis: Potential Mechanism of In-Context Learning",
+    "authors": "Jung H. Lee, Sujith Vijayan",
+    "venue": "arXiv (Cornell University) 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2602.01687",
+    "description": "Researchers are working to unlock the full potential of large language models by understanding how they learn from examples, a process known as In-Context Learning. This ability allows models to adapt to a wide range of tasks without needing significant modifications, but its underlying mechanisms are still not well understood. By shedding light on these mechanisms, this study aims to improve the reliability and effectiveness of large language models in various applications.",
+    "category": "uses_nnsight",
+    "image": "/images/Counting-Hypothesis-Potential-Mechanism-of-In-Context-Learning.png"
+  },
+  {
+    "title": "DreamReader: An Interpretability Toolkit for Text-to-Image Models",
+    "authors": "Nirmalendu Prakash, Narmeen Oozeer, Michael Lan, Luka Samkharadze, Phillip Howard, Roy Ka-Wei Lee, Dhruv Nathawani, Shivam Raval, Amirali Abdullah",
+    "venue": "arXiv (Cornell University) 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2603.13299",
+    "description": "Researchers have developed a unified framework called DreamReader to improve understanding and control of text-to-image diffusion models. By providing a model-agnostic abstraction layer, DreamReader enables systematic analysis and intervention across different architectures, allowing for more interpretable and controllable image generation. This framework also introduces new techniques for fine-tuning and steering model representations, making it easier to study and manipulate the inner workings of these models.",
+    "category": "referencing",
+    "image": "/images/DreamReader-An-Interpretability-Toolkit-for-Text-to-Image-Models.png"
+  },
+  {
+    "title": "Explaining the Explainer: Understanding the Inner Workings of Transformer-based Symbolic Regression Models",
+    "authors": "Arco van Breda, Erman Acar",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2602.03506",
+    "description": "Researchers have applied a new algorithm, PATCHES, to uncover the internal workings of transformers used in symbolic regression, a task that involves generating mathematical equations. By identifying the underlying circuits that drive these models, the study sheds light on how transformers make predictions and provides a framework for evaluating the accuracy of these explanations. This work opens up new possibilities for understanding and interpreting complex models in a range of applications.",
+    "category": "uses_nnsight",
+    "image": "/images/Explaining-the-Explainer-Understanding-the-Inner-Workings-of-Transformer-based-Symbolic-Regression-Models.png"
+  },
+  {
+    "title": "Fine-Grained Analysis of Shared Syntactic Mechanisms in Language Models",
+    "authors": "Ryoma Kumon, Hitomi Yanaka",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2604.22166",
+    "description": "Researchers are working to understand how language models process complex sentence structures, and whether their internal workings align with established linguistic principles. By analyzing the models' neural mechanisms at a detailed level, they've identified shared patterns in how the models handle certain types of sentence dependencies, but found that other constructions are processed differently. This study sheds light on the inner workings of language models and could lead to improvements in their performance and ability to understand human language.",
+    "category": "uses_nnsight",
+    "image": "/images/Fine-Grained-Analysis-of-Shared-Syntactic-Mechanisms-in-Language-Models.png"
+  },
+  {
+    "title": "Fluid Representations in Reasoning Models",
+    "authors": "Dmitrii Kharlapenko, Alessandro Stolfo, Arthur Conmy, Mrinmaya Sachan, Zhijing Jin",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2602.04843",
+    "description": "Researchers have made significant strides in understanding how advanced language models process complex information, leading to breakthroughs in problem-solving. By analyzing a model specifically designed to generate detailed reasoning traces, they uncovered the internal mechanisms that enable superior performance on abstract problems. This discovery sheds light on the importance of adaptive representations in language models, which can be refined and even replaced with symbolic representations to improve problem-solving capabilities.",
+    "category": "referencing",
+    "image": "/images/Fluid-Representations-in-Reasoning-Models.png"
+  },
+  {
+    "title": "Friends and Grandmothers in Silico: Localizing Entity Cells in Language Models",
+    "authors": "Itay Yona, Dan Barzilay, Michael Karasik, Mor Geva",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2604.01404",
+    "description": "Researchers investigate how language models answer factual questions about specific entities, shedding light on the internal mechanisms at play. By analyzing multiple models and experimenting with various techniques, they identify key neurons that play a crucial role in retrieving entity-specific information. These findings have implications for understanding and controlling how language models process and generate factual knowledge.",
+    "category": "uses_nnsight",
+    "image": "/images/Friends-and-Grandmothers-in-Silico-Localizing-Entity-Cells-in-Language-Models.png"
+  },
+  {
+    "title": "Hierarchical Latent Structures in Data Generation Process Unify Mechanistic Phenomena across Scale",
+    "authors": "Jonas Rohweder, Subhabrata Dutta, Iryna Gurevych",
+    "venue": "arXiv (Cornell University) 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2603.06592",
+    "description": "Researchers are working to understand the complex behaviors of large language models by studying how they process information. To overcome the limitations of analyzing massive amounts of real-world data, they've developed a method to generate synthetic data that mimics the structure of web-scale text corpora. This approach has led to a unified explanation for several puzzling phenomena in language models, highlighting the key role of hierarchical structures in their training dynamics.",
+    "category": "uses_nnsight",
+    "image": "/images/Hierarchical-Latent-Structures-in-Data-Generation-Process-Unify-Mechanistic-Phenomena-across-Scale.png"
+  },
+  {
+    "title": "How Open Must Language Models be to Enable Reliable Scientific Inference?",
+    "authors": "James A. Michaelov, Catherine Arnett, Tyler A. Chang, Pamela D. Rivière, Samuel M. Taylor, Cameron R. Jones, Sean Trott, Roger P. Levy, Benjamin K. Bergen, Micah Altman",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2603.26539",
+    "description": "Researchers examine how the transparency of a model affects the reliability of scientific conclusions drawn from it. They argue that models that are not openly accessible can hinder trustworthy inferences and propose strategies to address these limitations. By promoting transparency and accountability in model use, scientists can strengthen the validity of their research findings.",
+    "category": "referencing",
+    "image": "/images/How-Open-Must-Language-Models-be-to-Enable-Reliable-Scientific-Inference.png"
+  },
+  {
+    "title": "LangFIR: Discovering Sparse Language-Specific Features from Monolingual Data for Language Steering",
+    "authors": "Sing Hieng Wong, Hassan Sajjad, A. B. Siddique",
+    "venue": "arXiv (Cornell University) 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2604.03532",
+    "description": "Researchers have developed a new method, LangFIR, to improve the control of language outputs in large language models. By analyzing the internal workings of these models using sparse autoencoders, LangFIR can identify language-specific features using minimal monolingual data, overcoming the need for expensive multilingual or parallel data. This breakthrough enables more accurate and reliable language control in multilingual models, paving the way for improved language generation capabilities.",
+    "category": "uses_nnsight",
+    "image": "/images/LangFIR-Discovering-Sparse-Language-Specific-Features-from-Monolingual-Data-for-Language-Steering.png"
+  },
+  {
+    "title": "Learning a Generative Meta-Model of LLM Activations",
+    "authors": "Grace Luo, Jiahai Feng, Trevor Darrell, Alec Radford, Jacob Steinhardt",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2602.06964",
+    "description": "Researchers are developing a new approach to analyzing neural network activations by using generative models, which can uncover underlying structure without relying on strong assumptions. This method involves training diffusion models on a network's internal states, creating a \"meta-model\" that learns the distribution of these states and can be used to improve the interpretability of neural networks. By applying this approach, the researchers aim to make neural networks more transparent and easier to understand, paving the way for more reliable and trustworthy AI systems.",
+    "category": "uses_nnsight",
+    "image": "/images/Learning-a-Generative-Meta-Model-of-LLM-Activations.png"
+  },
+  {
+    "title": "Learning State-Tracking from Code Using Linear RNNs",
+    "authors": "Julien Siems, Riccardo Grazzi, Kirill Kalinin, Hitesh Ballani, Babak Rahmani",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2602.14814",
+    "description": "Researchers have adapted a challenging task, permutation composition, to better align with the training methods used for language models, allowing for a more accurate assessment of sequence models' capabilities. This adaptation reveals that linear RNNs excel at state-tracking tasks, while Transformers struggle, and highlights the difficulties of tracking states in code due to incomplete information about actions. By framing this challenge as a probabilistic problem, the study sheds light on the limitations of different sequence models.",
+    "category": "uses_nnsight",
+    "image": "/images/Learning-State-Tracking-from-Code-Using-Linear-RNNs.png"
+  },
+  {
+    "title": "Model Medicine: A Clinical Framework for Understanding, Diagnosing, and Treating AI Models",
+    "authors": "Jihoon Jeong",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2603.04722",
+    "description": "Researchers are developing a new field called Model Medicine, which views AI models as complex systems that can be understood, diagnosed, and treated like living organisms. By bridging the gap between AI interpretability and clinical practice, Model Medicine aims to provide a systematic approach to understanding and improving complex AI systems. This work introduces a range of tools and frameworks for diagnosing and treating AI models, drawing inspiration from biology and medicine.",
+    "category": "uses_nnsight",
+    "image": "/images/Model-Medicine-A-Clinical-Framework-for-Understanding-Diagnosing-and-Treating-AI-Models.png"
+  },
+  {
+    "title": "Patches of Nonlinearity: Instruction Vectors in Large Language Models",
+    "authors": "Irina Bigoulaeva, Jonas Rohweder, Subhabrata Dutta, Iryna Gurevych",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2602.07930",
+    "description": "Researchers are shedding light on how language models process instructions internally, a crucial aspect that has remained poorly understood despite their widespread adoption. By analyzing how models construct and use instruction-specific representations, they've discovered that these representations are surprisingly localized and exhibit both linear and non-linear behavior, challenging common assumptions about how models work. This new understanding could lead to more effective methods for interpreting and improving language models.",
+    "category": "uses_nnsight",
+    "image": "/images/Patches-of-Nonlinearity-Instruction-Vectors-in-Large-Language-Models.png"
+  },
+  {
+    "title": "PyHealth 2.0: A Comprehensive Open-Source Toolkit for Accessible and Reproducible Clinical Deep Learning",
+    "authors": "John Wu, Yongda Fan, Zhenbang Wu, Paul Landes, Eric Schrock, Sayeed Sajjad Razin, Arjun Chatterjee, Naveen Baskaran, Joshua Steier, Andrea Fitzpatrick, Bilal Arif, Rian Atri, Jathurshan Pradeepkumar, Siddhartha Laghuvarapu, Junyi Gao, Adam R. Cross, Jimeng Sun",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2601.16414",
+    "description": "Researchers have developed PyHealth 2.0, a comprehensive clinical deep learning toolkit designed to overcome common barriers in clinical AI research, such as difficulty replicating results and high computational costs. By unifying various datasets, models, and interpretability methods within a single framework, PyHealth 2.0 enables faster and more accessible predictive modeling in healthcare. This open-source toolkit aims to advance reproducible and accessible healthcare AI, making it easier for researchers and clinicians to collaborate and drive innovation.",
+    "category": "referencing",
+    "image": "/images/PyHealth-20-A-Comprehensive-Open-Source-Toolkit-for-Accessible-and-Reproducible-Clinical-Deep-Learning.png"
+  },
+  {
+    "title": "The Truthfulness Spectrum Hypothesis",
+    "authors": "Zhuofan Josh Ying, Shauli Ravfogel, Nikolaus Kriegeskorte, Peter Hase",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2602.20273",
+    "description": "Researchers challenge the idea that large language models uniformly represent truthfulness, instead proposing a spectrum of truth representations that range from general to specific. By testing these models across various domains and types of truth, they find that while some truth representations are widely applicable, others are more domain-specific and can be influenced by post-training adjustments. This nuanced understanding of truth representation in language models has implications for their potential biases and limitations.",
+    "category": "uses_nnsight",
+    "image": "/images/The-Truthfulness-Spectrum-Hypothesis.png"
+  },
+  {
+    "title": "Transformer See, Transformer Do: Copying as an Intermediate Step in Learning Analogical Reasoning",
+    "authors": "Philipp Hellwig, Willem Zuidema, Claire E. Stevenson, Martha Lewis",
+    "venue": "arXiv (Cornell University) 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2604.06501",
+    "description": "Researchers tackle the challenge of developing artificial intelligence systems that can reason analogically, a key aspect of human intelligence. By training transformers on a specific analogical reasoning task and guiding them to focus on the most relevant information, they demonstrate improved generalization capabilities. This work sheds light on the potential of meta-learning approaches to enhance AI's ability to reason and solve problems in a more human-like way.",
+    "category": "uses_nnsight",
+    "image": "/images/Transformer-See-Transformer-Do-Copying-as-an-Intermediate-Step-in-Learning-Analogical-Reasoning.png"
+  },
+  {
+    "title": "Triggers Hijack Language Circuits: A Mechanistic Analysis of Backdoor Behaviors in Large Language Models",
+    "authors": "Théo Lasnier, Wissam Antoun, Francis Kulumba, Djamé Seddah",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2602.10382",
+    "description": "Researchers have shed light on the inner workings of backdoor attacks in Large Language Models, specifically those that cause the model to switch languages. By analyzing the mechanisms behind these attacks, they found that the triggers that activate them don't create separate, hidden pathways, but instead hijack the model's existing language processing components. This discovery has important implications for developing effective defenses against backdoor attacks.",
+    "category": "uses_nnsight",
+    "image": "/images/Triggers-Hijack-Language-Circuits-A-Mechanistic-Analysis-of-Backdoor-Behaviors-in-Large-Language-Models.png"
+  },
+  {
+    "title": "When Meanings Meet: Investigating the Emergence and Quality of Shared Concept Spaces during Multilingual Language Model Training",
+    "authors": "Felicia Körner, Max Müller-Eberstein, Anna Korhonen, Barbara Plank",
+    "venue": "Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "year": 2026,
+    "url": "https://doi.org/10.18653/v1/2026.eacl-long.145",
+    "description": "Unfortunately, you haven't provided the abstract itself. Please provide the abstract text, and I'll be happy to summarize it for you.",
+    "category": "uses_nnsight",
+    "image": "/images/When-Meanings-Meet-Investigating-the-Emergence-and-Quality-of-Shared-Concept-Spaces-during-Multilingual-Language-Model-Training.png"
+  },
+  {
+    "title": "Back Attention: Understanding and Enhancing Multi-Hop Reasoning in Large Language Models",
+    "authors": "Zeping Yu, Yonatan Belinkov, Sophia Ananiadou",
+    "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    "year": 2025,
+    "url": "https://doi.org/10.18653/v1/2025.emnlp-main.567",
+    "description": "Researchers have developed a new method to analyze how large language models reason through complex questions, revealing the specific stages where they tend to struggle. By understanding these stages, they've identified a key weakness in the models' ability to extract relationships between entities, and proposed a solution to address it. This innovation has the potential to significantly improve the performance of language models on multi-step reasoning tasks.",
+    "category": "uses_nnsight",
+    "image": "/images/Back-Attention-Understanding-and-Enhancing-Multi-Hop-Reasoning-in-Large-Language-Models.png"
+  },
+  {
+    "title": "Constructive Circuit Amplification: Improving Math Reasoning in LLMs via Targeted Sub-Network Updates",
+    "authors": "Nikhil Prakash, Donghao Ren, Dominik Moritz, Yannick Assogba",
+    "venue": "ArXiv 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2512.16914",
+    "description": "Researchers have discovered that large language models (LLMs) contain sparse subnetworks, or \"circuits,\" that perform specific tasks, and that fine-tuning these models often strengthens these existing circuits. Building on this understanding, a new method called Constructive Circuit Amplification has been developed to make targeted updates to these circuits, allowing for precise improvements to model performance. This approach has shown promise in enhancing mathematical reasoning capabilities while minimizing disruptions to other model abilities.",
+    "category": "uses_nnsight",
+    "image": "/images/Constructive-Circuit-Amplification-Improving-Math-Reasoning-in-LLMs-via-Targeted-Sub-Network-Updates.png"
+  },
+  {
+    "title": "Discovering Forbidden Topics in Language Models",
+    "authors": "Can Rager, Chris Wendler, Rohit Gandikota, David Bau",
+    "venue": "ArXiv 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.17441",
+    "description": "Researchers have identified a new challenge in understanding language models: uncovering the topics they refuse to discuss. A novel method, called Iterated Prefill Crawler, has been developed to detect these \"forbidden topics\" by using token prefilling to probe the models' boundaries. This work highlights the importance of developing tools to detect biases and alignment failures in AI systems, ensuring they operate transparently and fairly.",
+    "category": "referencing",
+    "image": "/images/Discovering-Forbidden-Topics-in-Language-Models.png"
+  },
+  {
+    "title": "Disentangling Recall and Reasoning in Transformer Models through Layer-wise Attention and Activation Analysis",
+    "authors": "Harshwardhan Fartale, Ashish Kattamuri, Rahul Raja, Arpita Vats, Ishita Prasad, Akshata Kishore Moharir",
+    "venue": "arXiv (Cornell University) 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2510.03366",
+    "description": "Researchers have made a breakthrough in understanding how transformer-based language models process information, shedding light on the internal mechanisms that enable recall and reasoning. By analyzing the models' responses to synthetic linguistic puzzles, they discovered that distinct components within the models are responsible for these two abilities, and that intervening on these components can selectively impair one ability without affecting the other. This discovery has significant implications for the development of safer and more reliable language models.",
+    "category": "uses_nnsight",
+    "image": "/images/Disentangling-Recall-and-Reasoning-in-Transformer-Models-through-Layer-wise-Attention-and-Activation-Analysis.png"
+  },
+  {
+    "title": "Do Language Models Use Their Depth Efficiently?",
+    "authors": "Róbert Csordás, Christopher D. Manning, Christopher Potts",
+    "venue": "ArXiv 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.13898",
+    "description": "Researchers investigate whether modern large language models (LLMs) effectively utilize their depth to perform complex computations. By analyzing the internal workings of several LLMs, they find that deeper layers contribute relatively little to the models' overall performance, and that the additional layers primarily allow for finer adjustments rather than new kinds of computation. This insight may help explain why increasing the size of these models leads to diminishing returns in terms of performance.",
+    "category": "uses_ndif",
+    "image": "/images/Do-Language-Models-Use-Their-Depth-Efficiently.png"
+  },
+  {
+    "title": "Do Natural Language Descriptions of Model Activations Convey Privileged Information?",
+    "authors": "Millicent Li, Alberto Mario Ceballos Arroyo, Giordano Rogers, Naomi Saphra, Byron C. Wallace",
+    "venue": "ArXiv 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2509.13316",
+    "description": "Researchers are re-examining the effectiveness of a popular approach to understanding how large language models (LLMs) work, which involves using a second LLM to translate the internal representations of the first model into natural language. However, their findings suggest that these methods may not provide the insights they claim, and instead may simply reflect the knowledge of the second LLM rather than the first. This raises important questions about how to accurately evaluate and improve these methods.",
+    "category": "uses_nnsight",
+    "image": "/images/Do-Natural-Language-Descriptions-of-Model-Activations-Convey-Privileged-Information.png"
+  },
+  {
+    "title": "eDIF: A European Deep Inference Fabric for Remote Interpretability of LLM",
+    "authors": "Irma Heithoff. Marc Guggenberger, Sandra Kalogiannis, Susanne Mayer, Fabian Maag, Sigurd Schacht, Carsten Lanquillon",
+    "venue": "ArXiv 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2508.10553",
+    "description": "Researchers are working to make advanced analysis tools for large language models more accessible to the European research community, promoting a deeper understanding of these complex systems. A new infrastructure, the European Deep Inference Fabric, has been developed and tested with a group of researchers, who used it to conduct experiments and analyze models remotely. This initiative aims to democratize access to these tools and foster a community of researchers working together to advance our understanding of large language models.",
+    "category": "uses_nnsight",
+    "image": "/images/eDIF-A-European-Deep-Inference-Fabric-for-Remote-Interpretability-of-LLM.png"
+  },
+  {
+    "title": "Elucidating Mechanisms of Demographic Bias in LLMs for Healthcare",
+    "authors": "Hiba Ahsan, Arnab Sen Sharma, Silvio Amir, David Bau, Byron Wallace",
+    "venue": "Findings of the Association for Computational Linguistics: EMNLP 2025",
+    "year": 2025,
+    "url": "https://doi.org/10.18653/v1/2025.findings-emnlp.789",
+    "description": "Researchers are using new tools to uncover hidden biases in large language models (LLMs) used in healthcare, focusing on how these models represent sociodemographic information like gender and race. By analyzing the inner workings of LLMs, they've found that certain biases can be identified and even manipulated, which can impact the accuracy of clinical predictions. This work sheds light on the potential for bias in AI-driven healthcare and offers a new approach to addressing these issues.",
+    "category": "uses_nnsight",
+    "image": "/images/Elucidating-Mechanisms-of-Demographic-Bias-in-LLMs-for-Healthcare.png"
+  },
+  {
+    "title": "Explaining Neural Networks with Reasons",
+    "authors": "Levin Hornischer, Hannes Leitgeb",
+    "venue": "ArXiv 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.14424",
+    "description": "Researchers have developed a new approach to understanding how neural networks make decisions, drawing on a novel theory of reasons that combines logical and Bayesian perspectives. This method provides a way to interpret the role of individual neurons and groups of neurons in the decision-making process, taking into account the complexity of multiple concepts being represented by a single neuron. By shedding light on the inner workings of neural networks, this approach can help improve their reliability, fairness, and overall performance.",
+    "category": "uses_nnsight",
+    "image": "/images/Explaining-Neural-Networks-with-Reasons.png"
+  },
+  {
+    "title": "If open source is to win, it must go public",
+    "authors": "Joshua Tan, Nicholas Vincent, Katherine Elkins, Magnus Sahlgren",
+    "venue": "ArXiv 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2507.09296",
+    "description": "Democratizing access to AI requires more than just open source models, as the significant resources needed to activate and maintain them create a barrier to widespread adoption. To make AI truly accessible, public infrastructure and institutions are needed to ensure models are sustainable, governed in the public interest, and available to all. By building this public infrastructure, AI models can be harnessed as a force for public good.",
+    "category": "referencing",
+    "image": "/images/If-open-source-is-to-win-it-must-go-public.png"
+  },
+  {
+    "title": "In Which Areas of Technical AI Safety Could Geopolitical Rivals Cooperate?",
+    "authors": "Ben Bucknall, Saad Siddiqui, Lara Thurnherr, Conor McGurk, Ben Harack, Anka Reuel, Patricia Paskov, Casey Mahoney, Sören Mindermann, Scott Singer, Vinay Hiremath, Charbel-Raphaël Segerie, Oscar Delaney, Alessandro Abate, Fazl Barez, Michael K. Cohen, Philip Torr, Ferenc Huszár, Anisoara Calinescu, Gabriel Davis Jones, Yoshua Bengio, Robert Trager",
+    "venue": "Conference on Fairness, Accountability and Transparency 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2504.12914",
+    "description": "International cooperation on AI safety research is crucial for addressing global risks, but it also raises concerns about national security. By examining the technical factors that impact these risks, researchers can better understand how to balance cooperation with caution. This study aims to help governments and researchers identify areas of cooperation that minimize risks, such as AI verification mechanisms, and maximize the benefits of collaborative research.",
+    "category": "referencing",
+    "image": "/images/In-Which-Areas-of-Technical-AI-Safety-Could-Geopolitical-Rivals-Cooperate.png"
+  },
+  {
+    "title": "In-Context Algebra",
+    "authors": "Eric Todd, Jannik Brinkmann, Rohit Gandikota, David Bau",
+    "venue": "ArXiv 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2512.16902",
+    "description": "Researchers explore how transformers learn to perform arithmetic operations on sequences where token meanings are defined by their context, rather than fixed properties. By designing a challenging task that requires models to generalize across varying token assignments, they uncover the mechanisms that enable transformers to achieve high accuracy and generalize to new situations. This study reveals that transformers can develop symbolic reasoning strategies, such as copying and cancellation, that are tailored to the task at hand, highlighting the flexibility of these models in learning to reason about variables.",
+    "category": "uses_nnsight",
+    "image": "/images/In-Context-Algebra.png"
+  },
+  {
+    "title": "In-Context Learning Without Copying",
+    "authors": "Kerem Sahin, Sheridan Feucht, Adam Belfki, Jannik Brinkmann, Aaron Mueller, David Bau, Chris Wendler",
+    "venue": "ArXiv 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2511.05743",
+    "description": "Researchers challenge the idea that \"induction heads\" - a type of attention mechanism in AI models - are essential for learning complex tasks that require generating new information. By developing a new training approach that discourages the model from relying on induction heads, they show that these models can still learn to perform well on tasks that require creativity and abstraction. This discovery sheds new light on how AI models learn and suggests that the relationship between induction heads and complex learning capabilities may be more nuanced than previously thought.",
+    "category": "uses_nnsight",
+    "image": "/images/In-Context-Learning-Without-Copying.png"
+  },
+  {
+    "title": "Incremental Sentence Processing Mechanisms in Autoregressive Transformer Language Models",
+    "authors": "Michael Hanna, Aaron Mueller",
+    "venue": "UvA-DARE (University of Amsterdam) 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2412.05353",
+    "description": "I'm happy to help, but I don't see an abstract provided. Please share the abstract, and I'll summarize it in 1-3 sentences, focusing on what the paper does and why it matters.",
+    "category": "uses_nnsight",
+    "image": "/images/Incremental-Sentence-Processing-Mechanisms-in-Autoregressive-Transformer-Language-Models.png"
+  },
+  {
+    "title": "Interpreto: An Explainability Library for Transformers",
+    "authors": "Antonin Poché, Thomas Mullor, Gabriele Sarti, Frédéric Boisnard, Corentin Friedrich, Charlotte Claye, François Hoofd, Raphael Bernas, Céline Hudelot, Fanny Jourdan",
+    "venue": "arXiv (Cornell University) 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2512.09730",
+    "description": "Researchers have developed Interpreto, a Python library that helps make sense of complex language models by providing tools to understand how they make decisions. The library offers two main approaches: attribution methods that identify which parts of the input contribute to a model's output, and concept-based explanations that provide a deeper understanding of the model's reasoning. By making these tools easily accessible, Interpreto aims to bridge the gap between research and practical applications of language models.",
+    "category": "uses_nnsight",
+    "image": "/images/Interpreto-An-Explainability-Library-for-Transformers.png"
+  },
+  {
+    "title": "Language Models use Lookbacks to Track Beliefs",
+    "authors": "Nikhil Prakash, Natalie Shapira, Arnab Sen Sharma, Christoph Riedl, Yonatan Belinkov, Tamar Rott Shaham, David Bau, Atticus Geiger",
+    "venue": "ArXiv 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.14685",
+    "description": "Researchers are working to understand how language models represent characters' beliefs, especially when those beliefs differ from reality, a key aspect of Theory of Mind capabilities. By analyzing language models' reasoning about characters' beliefs, they uncovered a mechanism that enables the models to recall important information when needed, shedding light on how these models track and update beliefs. This work takes a step toward reverse-engineering the reasoning behind Theory of Mind in language models.",
+    "category": "uses_ndif",
+    "image": "/images/Language-Models-use-Lookbacks-to-Track-Beliefs.png"
+  },
+  {
+    "title": "Language Models Use Trigonometry to Do Addition",
+    "authors": "Subhash Kantamneni, Max Tegmark",
+    "venue": "ArXiv 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2502.00873",
+    "description": "Researchers have made a breakthrough in understanding how large language models process simple mathematical tasks, such as addition. By reverse-engineering the inner workings of these models, they discovered that numbers are represented in a unique, helix-like structure that plays a key role in mathematical operations. This insight provides the first representation-level explanation of how large language models perform mathematical tasks, shedding light on the underlying mechanisms that enable their capabilities.",
+    "category": "uses_nnsight",
+    "image": "/images/Language-Models-Use-Trigonometry-to-Do-Addition.png",
+    "github_repo_url": "https://github.com/tinycrops/toroidalNetwork"
+  },
+  {
+    "title": "Large Language Models Share Representations of Latent Grammatical Concepts Across Typologically Diverse Languages",
+    "authors": "Jannik Brinkmann, Chris Wendler, Christian Bartelt, Aaron Mueller",
+    "venue": "Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+    "year": 2025,
+    "url": "https://doi.org/10.18653/v1/2025.naacl-long.312",
+    "description": "I'm happy to help, but I don't see an abstract provided. Please share the abstract, and I'll summarize it in 1-3 sentences, focusing on what the paper does and why it matters, in an accessible way for a technical but non-specialist audience.",
+    "category": "uses_nnsight",
+    "image": "/images/Large-Language-Models-Share-Representations-of-Latent-Grammatical-Concepts-Across-Typologically-Diverse-Languages.png"
+  },
+  {
+    "title": "Localized Cultural Knowledge is Conserved and Controllable in Large Language Models",
+    "authors": "Veniamin Veselovsky, Berke Argin, Benedikt Stroebl, Chris Wendler, Robert West, James Evans, Thomas L. Griffiths, Arvind Narayanan",
+    "venue": "ArXiv 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2504.10191",
+    "description": "Large language models often struggle to generate culturally nuanced responses in non-English languages, defaulting to English-centric patterns instead. However, researchers have found that providing explicit cultural context can significantly improve the models' ability to produce culturally localized responses. By identifying a cultural customization vector, the study shows that it's possible to steer the models towards more diverse and culturally accurate responses, with implications for translation, cultural customization, and expanding the models' functionality.",
+    "category": "uses_nnsight",
+    "image": "/images/Localized-Cultural-Knowledge-is-Conserved-and-Controllable-in-Large-Language-Models.png",
+    "github_repo_url": "https://github.com/vminvsky/localization-gap"
+  },
+  {
+    "title": "Measuring Mechanistic Independence: Can Bias Be Removed Without Erasing Demographics?",
+    "authors": "Zhengyang Shan, Aaron Mueller",
+    "venue": "Conference of the European Chapter of the Association for Computational Linguistics 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2512.20796",
+    "description": "Researchers explore the relationship between demographic bias and demographic recognition in language models, seeking to understand whether it's possible to reduce bias without sacrificing the model's ability to detect demographics. By comparing different methods for identifying and addressing biased features, they demonstrate that targeted interventions can effectively debias models without degrading their performance. This work highlights the importance of nuanced, task-specific approaches to mitigating bias in language models.",
+    "category": "uses_nnsight",
+    "image": "/images/Measuring-Mechanistic-Independence-Can-Bias-Be-Removed-Without-Erasing-Demographics.png"
+  },
+  {
+    "title": "nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers",
+    "authors": "Clément Dumas",
+    "venue": "ArXiv 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2511.14465",
+    "description": "Researchers have developed a new tool, nnterp, to help analyze the inner workings of transformer models, a type of artificial intelligence architecture. By providing a unified interface, nnterp makes it easier for researchers to study how these models work, without having to manually adapt their code for each different architecture. This tool bridges a long-standing gap between accuracy and usability in transformer analysis, enabling more efficient and reliable research into AI interpretability.",
+    "category": "uses_nnsight",
+    "image": "/images/nnterp-A-Standardized-Interface-for-Mechanistic-Interpretability-of-Transformers.png",
+    "github_repo_url": "https://github.com/ndif-team/nnterp"
+  },
+  {
+    "title": "Robustly Identifying Concepts Introduced During Chat Fine-Tuning Using Crosscoders",
+    "authors": "Julian Minder, Clément Dumas",
+    "venue": "Qeios 2025",
+    "year": 2025,
+    "url": "https://doi.org/10.32388/r3sz5u",
+    "description": "Researchers have developed a method to better understand how fine-tuning changes a model's internal workings, focusing on identifying concepts that emerge or shift during this process. However, they discovered that existing techniques can misattribute concepts, leading to inaccurate insights. By addressing these issues, the study provides a more accurate approach to model diffing, enabling the identification of genuinely chat-specific concepts that reveal how language models are modified during fine-tuning.",
+    "category": "referencing",
+    "image": "/images/Robustly-Identifying-Concepts-Introduced-During-Chat-Fine-Tuning-Using-Crosscoders.png"
+  },
+  {
+    "title": "Separating Tongue from Thought: Activation Patching Reveals Language-Agnostic Concept Representations in Transformers",
+    "authors": "Clément Dumas, Chris Wendler, Veniamin Veselovsky, Giovanni Monea, Robert West",
+    "venue": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2411.08745",
+    "description": "Researchers investigate whether large language models can develop a universal understanding of concepts that transcends specific languages. By analyzing how these models process word translations, they uncover evidence that concepts are represented in a language-agnostic way, separate from the language itself. This discovery has implications for the development of more flexible and effective language models.",
+    "category": "uses_nnsight",
+    "image": "/images/Separating-Tongue-from-Thought-Activation-Patching-Reveals-Language-Agnostic-Concept-Representations-in-Transformers.png",
+    "github_repo_url": "https://github.com/Butanium/llm-lang-agnostic"
+  },
+  {
+    "title": "Signatures of human-like processing in Transformer forward passes",
+    "authors": "Jennifer Hu, Michael A. Lepori, Michael Franke",
+    "venue": "ArXiv 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2504.14107",
+    "description": "Researchers are exploring the potential of AI models to study human cognition, moving beyond simply comparing model outputs to human behaviors. By analyzing the internal processes of AI models, specifically Transformers, they found that these models exhibit processing patterns similar to those of humans, including signs of decision conflict and competitor interference. This work opens up new possibilities for using AI models as tools to understand human cognition, offering a more nuanced view of how we process information.",
+    "category": "uses_nnsight",
+    "image": "/images/Signatures-of-human-like-processing-in-Transformer-forward-passes.png"
+  },
+  {
+    "title": "Steering Large Language Models for Machine Translation Personalization",
+    "authors": "Daniel Scalena, Gabriele Sarti, Arianna Bisazza, Elisabetta Fersini, Malvina Nissim",
+    "venue": "Conference of the European Chapter of the Association for Computational Linguistics",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.16612",
+    "description": "Researchers are working to improve the ability of large language models to generate personalized translations that reflect the style of a specific human translator, particularly in the challenging domain of literary translation. They are exploring various strategies to achieve this, including new methods for analyzing and manipulating the model's internal representations to steer its output towards a desired style. By developing more effective and efficient techniques for personalizing translations, this work aims to bring machine-generated translations closer to the nuance and expressiveness of human-translated texts.",
+    "category": "uses_nnsight",
+    "image": "/images/Steering-Large-Language-Models-for-Machine-Translation-Personalization.png",
+    "github_repo_url": "https://github.com/DanielSc4/steering-for-personalization"
+  },
+  {
+    "title": "TDHook: A Lightweight Framework for Interpretability",
+    "authors": "Yoann Poupart",
+    "venue": "ArXiv 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2509.25475",
+    "description": "Researchers have developed a new framework, TDHook, to make deep neural networks more interpretable, particularly in complex applications like image captioning and reinforcement learning. This open-source library provides a flexible and lightweight solution for understanding how these models work, making it easier to apply interpretability techniques to a wide range of domains. By bridging gaps between different interpretability methods, TDHook aims to make it more accessible to build transparent and explainable AI pipelines.",
+    "category": "referencing",
+    "image": "/images/TDHook-A-Lightweight-Framework-for-Interpretability.png"
+  },
+  {
+    "title": "When and How Does CLIP Enable Domain and Compositional Generalization?",
+    "authors": "Elias Kempf, Simon Schrodi, Max Argus, Thomas Brox",
+    "venue": "International Conference on Machine Learning 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2502.09507",
+    "description": "Researchers investigate the factors behind the impressive generalization abilities of contrastive vision-language models like CLIP, exploring how they adapt to new domains and classes. By training CLIP models on carefully designed datasets, they uncover the importance of domain diversity in enabling successful generalization. Their findings highlight the need for models to learn shared representations in order to generalize effectively.",
+    "category": "uses_nnsight",
+    "image": "/images/When-and-How-Does-CLIP-Enable-Domain-and-Compositional-Generalization.png",
+    "github_repo_url": "https://github.com/lmb-freiburg/understanding-clip-ood"
+  },
+  {
+    "title": "A Primer on the Inner Workings of Transformer-based Language Models",
+    "authors": "Javier Ferrando, Gabriele Sarti, Arianna Bisazza, Marta R. Costa-jussà",
+    "venue": "arXiv (Cornell University) 2024",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2405.00208",
+    "description": "Researchers are working to better understand how advanced language models process and generate text, and this primer provides a technical foundation for interpreting their inner workings. By examining the techniques used to analyze Transformer-based language models, it sheds light on the underlying mechanisms that drive their performance. This comprehensive overview helps connect the dots between different approaches and identifies key areas of ongoing research.",
+    "category": "uses_nnsight",
+    "image": "/images/A-Primer-on-the-Inner-Workings-of-Transformer-based-Language-Models.png"
+  },
+  {
+    "title": "Comgra: A Tool for Analyzing and Debugging Neural Networks",
+    "authors": "Florian Dietz, Sophie Fellenz, Dietrich Klakow, Marius Kloft",
+    "venue": "arXiv (Cornell University) 2024",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2407.21656",
+    "description": "Researchers have developed a powerful tool to demystify neural networks, making it easier to understand how they work. Comgra, an open-source Python library, provides a user-friendly interface to visualize and analyze the internal workings of a model, enabling rapid testing of hypotheses and saving time. By shedding light on neural network behavior, comgra has far-reaching implications for debugging, designing more effective architectures, and gaining deeper insights into how these complex systems operate.",
+    "category": "referencing",
+    "image": "/images/Comgra-A-Tool-for-Analyzing-and-Debugging-Neural-Networks.png"
+  },
+  {
+    "title": "Evaluating Open-Source Sparse Autoencoders on Disentangling Factual Knowledge in GPT-2 Small",
+    "authors": "Maheep Chaudhary, Atticus Geiger",
+    "venue": "arXiv (Cornell University) 2024",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2409.04478",
+    "description": "Researchers investigate the effectiveness of high-dimensional sparse autoencoders (SAEs) in analyzing complex neural networks, specifically in understanding how they represent geographic knowledge. By testing SAEs on a benchmark task, they find that these models struggle to identify meaningful features that can be used for causal analysis, falling short of simpler alternatives. This work highlights the need for further development of SAEs for mechanistic interpretability.",
+    "category": "uses_nnsight",
+    "image": "/images/Evaluating-Open-Source-Sparse-Autoencoders-on-Disentangling-Factual-Knowledge-in-GPT-2-Small.png",
+    "github_repo_url": "https://github.com/MaheepChaudhary/SAE-Ravel"
+  },
+  {
+    "title": "Evidence of Learned Look-Ahead in a Chess-Playing Neural Network",
+    "authors": "Erik Jenner, Shreyas Kapur, Vasil Georgiev, Cameron Allen, Scott Emmons, Stuart Russell",
+    "venue": "Neural Information Processing Systems",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2406.00877",
+    "description": "Researchers investigated how neural networks, like those used in chess engines, make decisions, and found evidence that they can learn to \"look ahead\" and anticipate future moves. By analyzing the internal workings of Leela Chess Zero, they discovered that the network represents future optimal moves and uses this information to inform its decisions. This study provides insight into the capabilities of neural networks and how they solve complex problems.",
+    "category": "uses_nnsight",
+    "image": "/images/Evidence-of-Learned-Look-Ahead-in-a-Chess-Playing-Neural-Network.png"
+  },
+  {
+    "title": "ICLR: In-Context Learning of Representations",
+    "authors": "Core Francisco Park, Andrew Lee, Ekdeep Singh Lubana, Yongyi Yang, Maya Okawa, Kento Nishi, Martin Wattenberg, Hidenori Tanaka",
+    "venue": "International Conference on Learning Representations",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2501.00070",
+    "description": "Researchers investigate how large language models adapt their understanding of concepts when given new, context-specific information that contradicts their pretraining data. By analyzing the model's internal representations, they find that increasing the amount of context can lead to a sudden shift from pretraining-based semantics to new, context-driven representations. This discovery suggests that large language models may be capable of reorganizing their understanding of concepts in response to changing contexts, potentially unlocking new capabilities.",
+    "category": "uses_ndif",
+    "image": "/images/ICLR-In-Context-Learning-of-Representations.png"
+  },
+  {
+    "title": "InterPLM: Discovering Interpretable Features in Protein Language Models via Sparse Autoencoders",
+    "authors": "Elana Simon, James Zou",
+    "venue": "Nature Methods",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2412.12101",
+    "description": "Researchers have developed a method to uncover the hidden workings of protein language models, which have shown great promise in predicting protein structure and function. By analyzing these models, they've identified thousands of interpretable features that correspond to known biological concepts, revealing how the models represent complex protein biology. This breakthrough could lead to new insights into protein function and enable more accurate protein design and annotation.",
+    "category": "uses_nnsight",
+    "image": "/images/InterPLM-Discovering-Interpretable-Features-in-Protein-Language-Models-via-Sparse-Autoencoders.png"
+  },
+  {
+    "title": "Language Models Represent Beliefs of Self and Others",
+    "authors": "Wentao Zhu, Zhining Zhang, Yizhou Wang",
+    "venue": "International Conference on Machine Learning",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2402.18496",
+    "description": "Researchers have made a breakthrough in understanding how Large Language Models (LLMs) grasp social reasoning concepts, particularly Theory of Mind, which is the ability to attribute mental states to oneself and others. By analyzing the internal workings of LLMs, they've identified key representations that drive these capabilities, shedding light on the underlying mechanisms. This discovery has significant implications for developing more advanced language models that can navigate complex social situations.",
+    "category": "uses_nnsight",
+    "image": "/images/Language-Models-Represent-Beliefs-of-Self-and-Others.png"
+  },
+  {
+    "title": "Locating and Editing Factual Associations in Mamba",
+    "authors": "Arnab Sen Sharma, David Atkinson, David Bau",
+    "venue": "arXiv (Cornell University) 2024",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2404.03646",
+    "description": "Researchers explore how the Mamba state space model recalls factual information, drawing inspiration from previous studies on autoregressive transformer language models. By conducting a series of experiments, they shed light on the internal mechanisms of Mamba's factual recall, revealing similarities with transformer models despite their architectural differences. This work provides valuable insights into the inner workings of these complex models and how they store and retrieve knowledge.",
+    "category": "uses_nnsight",
+    "image": "/images/Locating-and-Editing-Factual-Associations-in-Mamba.png"
+  },
+  {
+    "title": "Multi-property Steering of Large Language Models with Dynamic Activation Composition",
+    "authors": "Daniel Scalena, Gabriele Sarti, Malvina Nissim",
+    "venue": "Proceedings of the 7th BlackboxNLP Workshop: Analyzing and Interpreting Neural Networks for NLP",
+    "year": 2024,
+    "url": "https://doi.org/10.18653/v1/2024.blackboxnlp-1.34",
+    "description": "Researchers have been exploring ways to control the output of language models by intervening in their internal workings, but these methods have only been tested in limited settings. A new study puts these techniques through a more rigorous evaluation, revealing that the best approach depends on the specific property being controlled. The authors propose a novel method that adapts to the changing needs of the generation process, allowing for more effective and flexible control over the model's output.",
+    "category": "uses_nnsight",
+    "image": "/images/Multi-property-Steering-of-Large-Language-Models-with-Dynamic-Activation-Composition.png"
+  },
+  {
+    "title": "Penzai + Treescope: A Toolkit for Interpreting, Visualizing, and Editing Models As Data",
+    "authors": "Daniel D. Johnson",
+    "venue": "arXiv (Cornell University) 2024",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2408.00211",
+    "description": "Researchers have developed a new approach to working with machine learning models, making it easier to understand, modify, and visualize them. By representing models as simple data structures, users can intervene on specific parts of the model, make edits, and immediately see the effects through interactive visualization. This approach enables a range of analyses and interventions without requiring explicit modifications to the model itself.",
+    "category": "referencing",
+    "image": "/images/Penzai-Treescope-A-Toolkit-for-Interpreting-Visualizing-and-Editing-Models-As-Data.png"
+  },
+  {
+    "title": "pyvene: A Library for Understanding and Improving PyTorch Models via Interventions",
+    "authors": "Zhengxuan Wu, Atticus Geiger, Aryaman Arora, Jing Huang, Zheng Wang, Noah D. Goodman, Christopher D. Manning, Christopher Potts",
+    "venue": "arXiv (Cornell University) 2024",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2403.07809",
+    "description": "Researchers have developed a new open-source library called pyvene that makes it easier to manipulate and analyze the internal workings of artificial intelligence models. By providing a flexible and customizable framework for intervening on model states, pyvene enables a range of applications, from improving model interpretability to enhancing robustness. This library has the potential to accelerate research in AI by making it simpler to share and compare results across different models and experiments.",
+    "category": "referencing",
+    "image": "/images/pyvene-A-Library-for-Understanding-and-Improving-PyTorch-Models-via-Interventions.png"
+  },
+  {
+    "title": "The Quest for the Right Mediator: Surveying Mechanistic Interpretability for NLP Through the Lens of Causal Mediation Analysis",
+    "authors": "Aaron Mueller, Jannik Brinkmann, Millicent Li, Samuel Marks, Koyena Pal, Nikhil Prakash, Can Rager, Aruna Sankaranarayanan, Arnab Sen Sharma, Jiuding Sun, Eric Todd, David Bau, Yonatan Belinkov",
+    "venue": "Computational Linguistics 2024",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2408.01416",
+    "description": "By establishing a common framework grounded in causal mediation analysis, researchers can better understand and compare the effectiveness of different techniques for interpreting language models. This approach helps to clarify the underlying mechanisms driving model behavior and provides a more cohesive narrative of the field. By standardizing evaluations and identifying key causal units, researchers can make more informed decisions about which methods to use and how to advance the field of interpretability.",
+    "category": "referencing",
+    "image": "/images/The-Quest-for-the-Right-Mediator-Surveying-Mechanistic-Interpretability-for-NLP-Through-the-Lens-of-Causal-Mediation-Analysis.png"
+  },
+  {
+    "title": "Token Erasure as a Footprint of Implicit Vocabulary Items in LLMs",
+    "authors": "Sheridan Feucht, David Atkinson, Byron Wallace, David Bau",
+    "venue": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2406.20086",
+    "description": "Researchers investigate how large language models (LLMs) convert sequences of tokens into meaningful representations, despite the tokens often being semantically unrelated to the words they comprise. They discover that LLMs rapidly forget information about previous tokens in early layers, leading to a loss of context. By analyzing this phenomenon, the researchers develop a method to uncover the implicit vocabulary of an LLM, shedding light on its inner workings.",
+    "category": "uses_nnsight",
+    "image": "/images/Token-Erasure-as-a-Footprint-of-Implicit-Vocabulary-Items-in-LLMs.png",
+    "github_repo_url": "https://github.com/sfeucht/footprints"
+  },
+  {
+    "title": "Understanding How CodeLLMs (Mis)Predict Types with Activation Steering",
+    "authors": "Francesca Lucchetti, Arjun Guha",
+    "venue": "Proceedings of the 8th BlackboxNLP Workshop: Analyzing and Interpreting Neural Networks for NLP",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2404.01903",
+    "description": "Researchers investigate the limitations of Large Language Models (LLMs) in understanding programming semantics, particularly in tasks like type prediction. They find that even minor code changes can significantly impact model performance, suggesting a shallow understanding of code semantics. However, by using a technique called activation steering, they demonstrate that LLMs can learn robust and generalizable representations of code semantics that transfer across programming languages.",
+    "category": "uses_ndif",
+    "image": "/images/Understanding-How-CodeLLMs-MisPredict-Types-with-Activation-Steering.png",
+    "github_repo_url": "https://github.com/nuprl/codetrace"
+  },
+  {
+    "title": "What needs to go right for an induction head? A mechanistic study of in-context learning circuits and their formation",
+    "authors": "Aaditya K. Singh, Ted Moskovitz, Felix Hill, Stephanie C. Y. Chan, Andrew M. Saxe",
+    "venue": "International Conference on Machine Learning",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2404.07129",
+    "description": "Researchers investigate the emergence of induction heads, a crucial component in transformer models that enables in-context learning. By studying the development of these components in a controlled setting, they uncover the diverse and interconnected nature of induction heads and identify the underlying subcircuits that drive their formation. This work provides new insights into the complex dynamics of transformer models and sheds light on the factors that contribute to their ability to learn from context.",
+    "category": "referencing",
+    "image": "/images/What-needs-to-go-right-for-an-induction-head-A-mechanistic-study-of-in-context-learning-circuits-and-their-formation.png"
+  }
+]
