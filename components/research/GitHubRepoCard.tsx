@@ -62,8 +62,9 @@ export default function GitHubRepoCard({ repo }: { repo: GitHubRepo }) {
       </div>
 
       <div className="text-2xs text-slate-400 dark:text-slate-500 mt-1.5">
-        Active {relativeFromNow(repo.last_commit)}
-        {repo.license && <span> · {repo.license}</span>}
+        {repo.last_commit && <span>Active {relativeFromNow(repo.last_commit)}</span>}
+        {repo.last_commit && repo.license && <span> · </span>}
+        {repo.license && <span>{repo.license}</span>}
       </div>
     </a>
   );

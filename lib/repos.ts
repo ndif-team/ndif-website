@@ -4,11 +4,8 @@ export type RepoBadge = "paper" | "popular" | "active" | "coursework";
 
 const SIX_MONTHS_MS = 1000 * 60 * 60 * 24 * 30 * 6;
 
-export function isLowSignal(r: GitHubRepo): boolean {
-  return r.stars === 0 && !r.description && !r.linked_paper_url;
-}
-
 export function isActive(r: GitHubRepo, now: Date = new Date()): boolean {
+  if (!r.last_commit) return false;
   const last = new Date(r.last_commit + "T00:00:00Z").getTime();
   if (Number.isNaN(last)) return false;
   return now.getTime() - last < SIX_MONTHS_MS;
@@ -49,7 +46,8 @@ const RELATIVE_UNITS: [number, Intl.RelativeTimeFormatUnit][] = [
   [Infinity, "year"],
 ];
 
-export function relativeFromNow(iso: string, now: Date = new Date()): string {
+export function relativeFromNow(iso: string | null, now: Date = new Date()): string {
+  if (!iso) return "unknown";
   const then = new Date(iso + "T00:00:00Z").getTime();
   if (Number.isNaN(then)) return "unknown";
   let diff = (now.getTime() - then) / 1000;

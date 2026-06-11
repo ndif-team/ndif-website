@@ -5,7 +5,7 @@ export interface GitHubRepo {
   description: string | null;
   stars: number;
   forks: number;
-  last_commit: string; // ISO "YYYY-MM-DD"
+  last_commit: string | null; // ISO "YYYY-MM-DD"; null until GitHub enrichment runs
   language: string | null;
   license: string | null;
   topics: string[];
