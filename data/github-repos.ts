@@ -15,6 +15,9 @@ export interface GitHubRepo {
   linked_paper_tier: number | null;
   repo_type: "research" | "course" | "experiment";
   parent_full_name: string | null;
+  // ISO "YYYY-MM-DD" — when the pipeline first observed the repo. The whole
+  // pre-2026-06-10 catalog shares one backfilled date; new repos get real ones.
+  first_seen: string | null;
   // Optional: upstream pipeline has not yet shipped emission of this field.
   // FeaturedCode component will fall back to top-stars among repos with a
   // linked paper and non-course repo_type when this is absent.

@@ -10,7 +10,7 @@ import GitHubRepoCard from "./GitHubRepoCard";
 import Pagination, { itemsOnPage } from "./Pagination";
 
 type Chip = "has-paper" | "popular" | "active";
-type Sort = "stars" | "recent" | "az";
+type Sort = "stars" | "recent" | "added" | "az";
 
 const PAGE_SIZE = 36;
 const REVEAL_STEP = 12;
@@ -34,6 +34,11 @@ function sortRepos(list: GitHubRepo[], sort: Sort): GitHubRepo[] {
     copy.sort((a, b) => b.stars - a.stars || (b.last_commit ?? "").localeCompare(a.last_commit ?? ""));
   } else if (sort === "recent") {
     copy.sort((a, b) => (b.last_commit ?? "").localeCompare(a.last_commit ?? ""));
+  } else if (sort === "added") {
+    copy.sort(
+      (a, b) =>
+        (b.first_seen ?? "").localeCompare(a.first_seen ?? "") || b.stars - a.stars
+    );
   } else {
     copy.sort((a, b) => `${a.owner}/${a.repo}`.localeCompare(`${b.owner}/${b.repo}`));
   }
@@ -61,7 +66,7 @@ export default function GitHubRepoList() {
       setChips(valid);
     }
     const s = params.get("sort");
-    if (s === "stars" || s === "recent" || s === "az") setSort(s);
+    if (s === "stars" || s === "recent" || s === "added" || s === "az") setSort(s);
     const pg = parseInt(params.get("page") ?? "1", 10);
     if (!Number.isNaN(pg) && pg > 0) setPage(pg);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -174,6 +179,7 @@ export default function GitHubRepoList() {
         >
           <option value="stars">Stars</option>
           <option value="recent">Recent</option>
+          <option value="added">Added</option>
           <option value="az">A–Z</option>
         </select>
       </div>
