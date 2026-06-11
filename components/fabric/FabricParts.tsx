@@ -93,7 +93,7 @@ export default function FabricParts() {
 
             {/* Content */}
             <div className="flex-1 min-w-0">
-              <div className="card-spotlight bg-white dark:bg-slate-800/30 rounded-2xl border border-slate-200 dark:border-slate-700/50 p-8 md:p-10">
+              <div key={current.id} className="card-spotlight bg-white dark:bg-slate-800/30 rounded-2xl border border-slate-200 dark:border-slate-700/50 p-8 md:p-10 animate-fade-in">
                 <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4">
                   {current.title}
                 </h3>
@@ -107,10 +107,10 @@ export default function FabricParts() {
                   href={current.externalHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium transition-colors"
+                  className="group/link inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium transition-colors"
                 >
                   {current.externalLabel}
-                  <span className="text-xs opacity-80">↗</span>
+                  <span className="text-xs opacity-80 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5">↗</span>
                 </a>
               </div>
             </div>

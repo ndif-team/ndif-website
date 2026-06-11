@@ -58,8 +58,8 @@ export default function CommunityWays() {
             const Icon = item.icon;
             return (
               <AnimateOnScroll key={item.title} delay={0.05}>
-                <div className="card-glass rounded-2xl p-8 h-full flex flex-col">
-                  <div className="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center mb-5 text-brand-600 dark:text-brand-400">
+                <div className="group card-glass rounded-2xl p-8 h-full flex flex-col">
+                  <div className="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center mb-5 text-brand-600 dark:text-brand-400 transition-transform duration-300 group-hover:scale-110">
                     <Icon size={24} />
                   </div>
                   <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">
@@ -73,16 +73,22 @@ export default function CommunityWays() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-brand-600 dark:text-brand-400 font-semibold text-sm hover:underline underline-offset-4 self-start"
+                      className="group/link inline-flex items-center gap-1.5 text-brand-600 dark:text-brand-400 font-semibold text-sm hover:underline underline-offset-4 self-start"
                     >
-                      {item.cta} <span aria-hidden="true">↗</span>
+                      {item.cta}{" "}
+                      <span aria-hidden="true" className="transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5">
+                        ↗
+                      </span>
                     </a>
                   ) : (
                     <a
                       href={item.href}
-                      className="inline-flex items-center gap-1.5 text-brand-600 dark:text-brand-400 font-semibold text-sm hover:underline underline-offset-4 self-start"
+                      className="group/link inline-flex items-center gap-1.5 text-brand-600 dark:text-brand-400 font-semibold text-sm hover:underline underline-offset-4 self-start"
                     >
-                      {item.cta} <span aria-hidden="true">&darr;</span>
+                      {item.cta}{" "}
+                      <span aria-hidden="true" className="transition-transform duration-200 group-hover/link:translate-y-0.5">
+                        &darr;
+                      </span>
                     </a>
                   )}
                 </div>
