@@ -97,7 +97,14 @@ function BackgroundCanvasImpl() {
 
     const isMobile = isMobileViewport();
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: !isMobile });
+    // WebGL may be unavailable (old hardware, disabled GPU, headless browsers).
+    // The canvas is decorative, so silently skip it rather than crash the page.
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: !isMobile });
+    } catch {
+      return;
+    }
     renderer.setSize(window.innerWidth, window.innerHeight);
     // Cap mobile DPR at 1 to keep the fragment-shading cost manageable; desktop
     // gets up to DPR 2 for crisp particles on Retina/4K.
