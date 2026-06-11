@@ -46,9 +46,9 @@ export default function WhatIsNDIF() {
             const Icon = pillar.icon;
             return (
               <StaggerItem key={pillar.title}>
-                <div className="card-glass p-8 rounded-2xl h-full focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 focus-visible:outline-none">
+                <div className="group card-glass p-8 rounded-2xl h-full focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 focus-visible:outline-none">
                   <div
-                    className="w-14 h-14 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center mb-6 text-brand-600 dark:text-brand-400"
+                    className="w-14 h-14 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center mb-6 text-brand-600 dark:text-brand-400 transition-transform duration-300 group-hover:scale-110"
                   >
                     <Icon size={28} />
                   </div>
@@ -67,10 +67,10 @@ export default function WhatIsNDIF() {
         <AnimateOnScroll className="text-center mt-12" delay={0.3}>
           <Link
             href="/fabric"
-            className="inline-flex items-center gap-2 text-brand-600 dark:text-brand-400 font-semibold hover:underline underline-offset-4 transition-colors"
+            className="group/link inline-flex items-center gap-2 text-brand-600 dark:text-brand-400 font-semibold hover:underline underline-offset-4 transition-colors"
           >
             Learn more about the Fabric
-            <span aria-hidden="true">&rarr;</span>
+            <span aria-hidden="true" className="transition-transform duration-200 group-hover/link:translate-x-0.5">&rarr;</span>
           </Link>
         </AnimateOnScroll>
       </div>

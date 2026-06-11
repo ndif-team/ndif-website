@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import dynamic from "next/dynamic";
 import Script from "next/script";
 import { SettingsProvider } from "components/SettingsProvider";
+import SpotlightEffect from "components/SpotlightEffect";
 import "styles/globals.css";
 
 const GA_MEASUREMENT_ID = "G-NQV89E9KBS";
@@ -70,6 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased selection:bg-brand-600 selection:text-white bg-white dark:bg-surface-950 text-slate-900 dark:text-slate-50 overflow-x-hidden`}>
         <SettingsProvider>
           <BackgroundCanvas />
+          <SpotlightEffect />
           {children}
         </SettingsProvider>
         <Script

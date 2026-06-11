@@ -19,7 +19,7 @@ export default function GitHubRepoCard({ repo }: { repo: GitHubRepo }) {
       href={repo.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col h-full rounded-2xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-1 hover:shadow-lg p-5"
+      className="card-spotlight group flex flex-col h-full rounded-2xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-1 hover:shadow-lg p-5"
     >
       {badges.length > 0 && (
         <div className="flex flex-wrap gap-1.5 mb-3">

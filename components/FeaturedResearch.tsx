@@ -43,7 +43,7 @@ export default function FeaturedResearch() {
                 href={paper.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col h-full rounded-2xl overflow-hidden bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="card-spotlight group flex flex-col h-full rounded-2xl overflow-hidden bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 {paper.image && (
                   <div className="relative aspect-[16/9] overflow-hidden bg-slate-100 dark:bg-slate-800">
@@ -80,10 +80,10 @@ export default function FeaturedResearch() {
         <AnimateOnScroll className="text-center mt-12" delay={0.3}>
           <Link
             href="/research"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium hover:border-brand-500 hover:text-brand-600 dark:hover:text-brand-400 transition-all hover:-translate-y-0.5"
+            className="group/link inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium hover:border-brand-500 hover:text-brand-600 dark:hover:text-brand-400 transition-all hover:-translate-y-0.5"
           >
             View all research
-            <span aria-hidden="true">&rarr;</span>
+            <span aria-hidden="true" className="transition-transform duration-200 group-hover/link:translate-x-0.5">&rarr;</span>
           </Link>
         </AnimateOnScroll>
       </div>

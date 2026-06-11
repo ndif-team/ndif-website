@@ -128,6 +128,53 @@
   outline: none;
 }
 
+/* Cursor-tracking spotlight (coordinates set by SpotlightEffect.tsx).
+   .card-glass gets it automatically; opt ad-hoc cards in with .card-spotlight. */
+.card-glass,
+.card-spotlight {
+  position: relative;
+}
+
+.card-glass::after,
+.card-spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    480px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(14, 165, 233, 0.08),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dark .card-glass::after,
+.dark .card-spotlight::after {
+  background: radial-gradient(
+    480px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(56, 189, 248, 0.1),
+    transparent 65%
+  );
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-glass:hover::after,
+  .card-spotlight:hover::after {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-glass::after,
+  .card-spotlight::after {
+    display: none;
+  }
+}
+
 /* Gradient Text - uses design tokens */
 .text-gradient {
   background: var(--gradient-brand);

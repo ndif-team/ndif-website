@@ -58,10 +58,10 @@ export default function FeaturedCode() {
         <AnimateOnScroll className="text-center mt-12" delay={0.3}>
           <Link
             href="/research?tab=code"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium hover:border-brand-500 hover:text-brand-600 dark:hover:text-brand-400 transition-all hover:-translate-y-0.5"
+            className="group/link inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium hover:border-brand-500 hover:text-brand-600 dark:hover:text-brand-400 transition-all hover:-translate-y-0.5"
           >
             Explore all code
-            <span aria-hidden="true">&rarr;</span>
+            <span aria-hidden="true" className="transition-transform duration-200 group-hover/link:translate-x-0.5">&rarr;</span>
           </Link>
         </AnimateOnScroll>
       </div>

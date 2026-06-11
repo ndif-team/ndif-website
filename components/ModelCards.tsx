@@ -46,7 +46,7 @@ export default function ModelCards() {
                   const meta = deploymentLevelMeta[model.level];
                   return (
                     <StaggerItem key={model.id}>
-                      <div className="p-5 rounded-xl bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-0.5 hover:shadow-md focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 focus-visible:outline-none">
+                      <div className="card-spotlight p-5 rounded-xl bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-0.5 hover:shadow-md focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 focus-visible:outline-none">
                         <div className="flex items-center justify-between mb-3">
                           <span
                             className="inline-flex items-center gap-1.5 text-xs font-semibold px-2 py-0.5 rounded-full"
