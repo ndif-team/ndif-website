@@ -50,7 +50,7 @@ function AnimatedStat({ value, numericValue, label, suffix = "", prefix = "" }: 
       transition={{ duration: 0.5 }}
       className="text-center px-4"
     >
-      <div className="text-4xl md:text-5xl font-bold font-display text-slate-900 dark:text-white mb-2" style={{ letterSpacing: '-0.02em' }}>
+      <div className="text-4xl md:text-5xl font-bold font-display text-slate-900 dark:text-white mb-2 tabular-nums" style={{ letterSpacing: '-0.02em' }}>
         {numericValue !== undefined ? (
           <>
             {prefix}
