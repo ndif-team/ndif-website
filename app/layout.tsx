@@ -67,7 +67,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased selection:bg-accent-500 selection:text-white bg-white dark:bg-surface-950 text-slate-900 dark:text-slate-50 overflow-x-hidden`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased selection:bg-brand-600 selection:text-white bg-white dark:bg-surface-950 text-slate-900 dark:text-slate-50 overflow-x-hidden`}>
         <SettingsProvider>
           <BackgroundCanvas />
           {children}

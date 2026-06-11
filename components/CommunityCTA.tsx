@@ -56,7 +56,7 @@ export default function CommunityCTA() {
             return (
               <StaggerItem key={ch.title}>
                 <div className="card-glass p-8 rounded-2xl h-full flex flex-col focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 focus-visible:outline-none">
-                  <div className="w-12 h-12 rounded-xl bg-accent-100 dark:bg-accent-900/40 flex items-center justify-center mb-5 text-accent-600 dark:text-accent-400">
+                  <div className="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center mb-5 text-brand-600 dark:text-brand-400">
                     <Icon size={24} />
                   </div>
                   <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">
@@ -65,7 +65,7 @@ export default function CommunityCTA() {
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-3 flex-1">
                     {ch.description}
                   </p>
-                  <p className="text-xs font-medium text-accent-600 dark:text-accent-400 mb-4">
+                  <p className="text-xs font-medium text-brand-600 dark:text-brand-400 mb-4">
                     {ch.valueProp}
                   </p>
                   {ch.external ? (
@@ -73,14 +73,14 @@ export default function CommunityCTA() {
                       href={ch.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-accent-600 dark:text-accent-400 font-semibold text-sm hover:underline underline-offset-4"
+                      className="inline-flex items-center gap-1.5 text-brand-600 dark:text-brand-400 font-semibold text-sm hover:underline underline-offset-4"
                     >
                       {ch.cta} <span aria-hidden="true">↗</span>
                     </a>
                   ) : (
                     <Link
                       href={ch.href}
-                      className="inline-flex items-center gap-1.5 text-accent-600 dark:text-accent-400 font-semibold text-sm hover:underline underline-offset-4"
+                      className="inline-flex items-center gap-1.5 text-brand-600 dark:text-brand-400 font-semibold text-sm hover:underline underline-offset-4"
                     >
                       {ch.cta} <span aria-hidden="true">&rarr;</span>
                     </Link>

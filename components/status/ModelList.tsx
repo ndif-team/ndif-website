@@ -312,7 +312,7 @@ function ModelCard({ model: m }: { model: CombinedModel }) {
         )}
 
         {pilot && (
-          <span className="text-xs font-medium text-accent-600 dark:text-accent-400 bg-accent-50 dark:bg-accent-900/30 px-2 py-0.5 rounded-full">
+          <span className="text-xs font-medium text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-900/30 px-2 py-0.5 rounded-full">
             Pilot Only
           </span>
         )}

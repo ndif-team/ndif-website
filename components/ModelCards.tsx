@@ -9,7 +9,7 @@ export default function ModelCards() {
     <section id="remote-model-access" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-3xl overflow-hidden bg-white/50 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-700/50 backdrop-blur-sm shadow-xl dark:shadow-none">
-          <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-accent-500/10 dark:bg-accent-600/20 rounded-full blur-[80px]" />
+          <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-brand-400/10 dark:bg-brand-600/20 rounded-full blur-[80px]" />
 
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <AnimateOnScroll className="p-10 md:p-16 flex flex-col justify-center">
