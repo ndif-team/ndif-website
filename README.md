@@ -1,23 +1,36 @@
 # ndif-website
 
-Source for the National Deep Inference Fabric site at [ndif.us](https://ndif.us).
+The website for the [National Deep Inference Fabric](https://ndif.us/) ([ndif.us](https://ndif.us/)).
 
-Next.js 14 (app router) + Tailwind CSS + Three.js.
+A Next.js 14 app lives in `src/`; the **built static site is committed to `public/`**,
+and anything in `public/` on `main` is automatically served — same contract as the
+previous Python-built site.
 
 ## Development
 
 ```bash
-bun install
-bun run dev
+cd src
+bun install     # or: npm install
+bun run dev     # http://localhost:3000
 ```
 
-Dev server runs at `http://localhost:3000`.
-
-## Production build
+## Build & deploy
 
 ```bash
-cp next.config.production.js next.config.js
-bun run build
+make all        # builds src/ and replaces public/ with the static export
 ```
 
-Output goes to `out/`. The production config sets `basePath` / `assetPrefix` to `/ndif-website` for GitHub Pages preview at `https://ndif-team.github.io/ndif-website/`.
+Then commit everything (including `public/`) and push to `main`. The server
+serves `public/` as-is — no Node required at runtime.
+
+## Data
+
+The research/code catalog (`src/public/data/*.json`, `src/public/images/`) is
+published by the [ndif-citations](https://github.com/ndif-team/ndif-citations)
+pipeline. After publishing new data, run `make all` and commit so the live site
+picks it up.
+
+## GitHub Pages preview
+
+`src/next.config.production.js` is an alternate config (basePath `/ndif-website`)
+for previewing at `https://ndif-team.github.io/ndif-website/` — not used for ndif.us.
