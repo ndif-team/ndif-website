@@ -45,3 +45,4 @@ __pycache__/
 # junk files
 .DS_Store
 package-lock.json
+.gstack/
