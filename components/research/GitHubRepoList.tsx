@@ -157,7 +157,7 @@ export default function GitHubRepoList() {
             className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-surface-950 ${
               chips.includes(c)
                 ? "bg-brand-600 border-brand-600 text-white shadow-sm"
-                : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-brand-400"
+                : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-brand-400 hover:text-brand-600 dark:hover:border-brand-400/70 dark:hover:bg-slate-700/70 dark:hover:text-brand-300"
             }`}
           >
             {CHIP_LABELS[c]}

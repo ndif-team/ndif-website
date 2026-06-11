@@ -319,7 +319,7 @@ function FilterChip({
             ? "bg-brand-600 border-brand-600 text-white shadow-sm"
             : disabled
               ? "bg-slate-100 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-600 cursor-not-allowed"
-              : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-brand-400 hover:text-brand-600 dark:hover:text-brand-400"
+              : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-brand-400 hover:text-brand-600 dark:hover:border-brand-400/70 dark:hover:bg-slate-700/70 dark:hover:text-brand-300"
         }`}
       >
         {children}
