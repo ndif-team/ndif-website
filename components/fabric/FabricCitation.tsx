@@ -27,7 +27,7 @@ function SelectableBlock({ text, label }: { text: string; label: string }) {
   }, [text]);
 
   return (
-    <div className="rounded-2xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 overflow-hidden mb-6">
+    <div className="rounded-2xl surface-glass border border-slate-200 dark:border-slate-700/50 overflow-hidden mb-6">
       <div className="px-6 py-4 bg-slate-50 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-700/50 flex items-center justify-between">
         <h3 className="font-semibold text-slate-900 dark:text-white">{label}</h3>
         <button

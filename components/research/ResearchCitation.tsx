@@ -29,7 +29,7 @@ function SelectableBlock({ text, label }: { text: string; label: string }) {
   }, [text]);
 
   return (
-    <div className="rounded-2xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 overflow-hidden mb-6">
+    <div className="rounded-2xl surface-glass border border-slate-200 dark:border-slate-700/50 overflow-hidden mb-6">
       <div className="px-6 py-4 bg-slate-50 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-700/50 flex items-center justify-between">
         <h2 className="font-semibold text-slate-900 dark:text-white">{label}</h2>
         <button
@@ -74,7 +74,7 @@ export default function ResearchCitation() {
             href={citation.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group block rounded-2xl overflow-hidden bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-1 hover:shadow-lg mb-8"
+            className="group block rounded-2xl overflow-hidden surface-glass border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-1 hover:shadow-lg mb-8"
           >
             <div className="relative aspect-[16/7] overflow-hidden bg-slate-100 dark:bg-slate-800">
               <Image

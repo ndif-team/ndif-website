@@ -128,6 +128,19 @@
   outline: none;
 }
 
+/* Glass surface for content cards that manage their own borders/hover.
+   Same translucency + blur as card-glass so every card reads identically
+   over the particle canvas in both themes. */
+.surface-glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.dark .surface-glass {
+  background: rgba(30, 41, 59, 0.45);
+}
+
 /* Cursor-tracking spotlight (coordinates set by SpotlightEffect.tsx).
    .card-glass gets it automatically; opt ad-hoc cards in with .card-spotlight. */
 .card-glass,

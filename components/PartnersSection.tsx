@@ -26,7 +26,7 @@ export default function PartnersSection() {
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col sm:flex-row items-start gap-6 p-8 rounded-2xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-1 hover:shadow-lg h-full"
+                className="group flex flex-col sm:flex-row items-start gap-6 p-8 rounded-2xl surface-glass border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-1 hover:shadow-lg h-full"
               >
                 <div className="flex-shrink-0 w-20 h-20 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center p-3">
                   <Image

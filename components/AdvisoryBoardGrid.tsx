@@ -11,7 +11,7 @@ function AdvisoryCard({ member }: { member: (typeof advisoryBoard)[number] }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="flex gap-4 p-5 rounded-xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:shadow-md">
+    <div className="flex gap-4 p-5 rounded-xl surface-glass border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:shadow-md">
       <div className="relative w-16 h-16 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-800 flex-shrink-0">
         <Image
           src={getAssetPath(member.image)}

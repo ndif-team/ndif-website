@@ -93,7 +93,7 @@ export default function FabricParts() {
 
             {/* Content */}
             <div className="flex-1 min-w-0">
-              <div key={current.id} className="card-spotlight bg-white dark:bg-slate-800/30 rounded-2xl border border-slate-200 dark:border-slate-700/50 p-8 md:p-10 animate-fade-in">
+              <div key={current.id} className="card-spotlight surface-glass rounded-2xl border border-slate-200 dark:border-slate-700/50 p-8 md:p-10 animate-fade-in">
                 <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4">
                   {current.title}
                 </h3>

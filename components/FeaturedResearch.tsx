@@ -43,7 +43,7 @@ export default function FeaturedResearch() {
                 href={paper.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card-spotlight group flex flex-col h-full rounded-2xl overflow-hidden bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="card-spotlight group flex flex-col h-full rounded-2xl overflow-hidden surface-glass border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 {paper.image && (
                   <div className="relative aspect-[16/9] overflow-hidden bg-slate-100 dark:bg-slate-800">
