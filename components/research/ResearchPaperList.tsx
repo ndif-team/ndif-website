@@ -307,17 +307,19 @@ function FilterChip({
     >
       <button
         onClick={onClick}
-        onFocus={() => setFocused(true)}
+        // Tooltip on keyboard focus only — Safari applies :focus-visible to
+        // mouse clicks on buttons, so gate on the actual match at focus time.
+        onFocus={(e) => setFocused(e.target.matches(":focus-visible"))}
         onBlur={() => setFocused(false)}
         disabled={disabled}
         aria-pressed={active}
         aria-describedby={description ? `chip-desc-${active}-${(children as string)?.toString?.()}` : undefined}
-        className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+        className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-surface-950 ${
           active
-            ? "bg-brand-600 text-white shadow-sm"
+            ? "bg-brand-600 border-brand-600 text-white shadow-sm"
             : disabled
-              ? "bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-600 cursor-not-allowed"
-              : "bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-brand-400 hover:text-brand-600 dark:hover:text-brand-400"
+              ? "bg-slate-100 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-600 cursor-not-allowed"
+              : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-brand-400 hover:text-brand-600 dark:hover:text-brand-400"
         }`}
       >
         {children}

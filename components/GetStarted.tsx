@@ -105,7 +105,7 @@ export default function GetStarted() {
         <AnimateOnScroll className="text-center mt-12" delay={0.3}>
           <Link
             href="/get-started"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold text-lg hover:opacity-90 transition-all hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold text-lg transition-all hover:-translate-y-0.5 hover:shadow-lg"
           >
             Full Setup Guide
             <span aria-hidden="true">&rarr;</span>

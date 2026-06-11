@@ -25,7 +25,7 @@ export default function ModelCards() {
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/status"
-                  className="px-5 py-2.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold hover:opacity-90 transition-all"
+                  className="px-5 py-2.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold transition-all hover:-translate-y-0.5 hover:shadow-md"
                 >
                   View All Models
                 </Link>
@@ -33,7 +33,7 @@ export default function ModelCards() {
                   href="https://nnsight.net"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-full bg-white/80 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-brand-500 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
+                  className="px-5 py-2.5 rounded-full bg-white/80 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-brand-500 hover:text-brand-600 dark:hover:text-brand-400 transition-all hover:-translate-y-0.5"
                 >
                   NNsight Docs ↗
                 </a>

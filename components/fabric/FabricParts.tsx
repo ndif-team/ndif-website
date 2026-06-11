@@ -107,7 +107,7 @@ export default function FabricParts() {
                   href={current.externalHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/link inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium transition-colors"
+                  className="group/link inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-md"
                 >
                   {current.externalLabel}
                   <span className="text-xs opacity-80 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5">↗</span>

@@ -142,7 +142,7 @@ export default function GetStartedSteps() {
             href="https://login.ndif.us/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-medium transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-medium transition-all hover:-translate-y-0.5 hover:shadow-md"
           >
             Register for your free API key
             <FiExternalLink size={16} />
