@@ -1,0 +1,61 @@
+# Builds the Next.js app in src/ and commits the static export to public/,
+# which is what the ndif.us server serves from main. Keeps the old
+# "anything in public on main is served" contract without contributors
+# having to remember `make all`.
+#
+# Fully reversible: delete this file and the manual `make all` + commit
+# workflow (README) is back to being the only path.
+name: Build site into public/
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "Makefile"
+      - ".github/workflows/build-public.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-public
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # The bot's own commits only touch public/ (filtered out by `paths`
+    # above) — this guard is belt-and-braces against loops.
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Build static export
+        working-directory: src
+        run: |
+          bun install --frozen-lockfile
+          bun run build
+
+      - name: Publish export to public/
+        run: |
+          rm -rf public
+          cp -R src/out public
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A public
+          if git diff --cached --quiet; then
+            echo "public/ unchanged — nothing to commit"
+            exit 0
+          fi
+          git commit -m "build: refresh public/ for ${GITHUB_SHA}"
+          # One rebase-retry in case another push landed mid-build.
+          git push origin main || (git pull --rebase origin main && git push origin main)
