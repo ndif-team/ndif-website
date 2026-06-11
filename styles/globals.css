@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * NDIF Design System
+ * ==================
+ *
+ * Elevation Scale (Shadow System):
+ *   --shadow-sm: buttons, small elements
+ *   --shadow-md: default cards
+ *   --shadow-lg: elevated cards, modals
+ *   --shadow-xl: hero elements, dropdowns
+ *   --shadow-card: default glass cards
+ *   --shadow-card-hover: hovered cards
+ *
+ * Border Radius Scale:
+ *   --radius-sm: 8px - small elements, pills
+ *   --radius-md: 16px - default cards
+ *   --radius-lg: 24px - large cards, modals
+ */
+
+/* Design Tokens - CSS Custom Properties */
+:root {
+  /* Brand colors */
+  --color-brand-400: #38bdf8;
+  --color-brand-500: #0ea5e9;
+  /* Accent colors */
+  --color-accent-500: #8b5cf6;
+  --color-accent-600: #7c3aed;
+
+  /* Elevation Scale (Shadow System) - FR-12 */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-card-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+
+  /* Border Radius Scale - FR-12 */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+@layer base {
+  :root {
+    /* Gradient definitions using design tokens */
+    --gradient-brand: linear-gradient(135deg, var(--color-brand-400) 0%, var(--color-accent-500) 100%);
+  }
+
+  /* Keyboard-navigation affordance everywhere; components that define their
+     own focus-visible ring also set outline-none, which overrides this. */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+  }
+}
+
+/* Custom Scrollbar — theme-aware */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass {
+  background: rgba(15, 23, 42, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Radius comes from the consumer's rounded-* utility: content cards use
+   rounded-2xl (16px), compact cards (status/model rows) rounded-xl (12px). */
+.card-glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  box-shadow: var(--shadow-card);
+}
+
+.dark .card-glass {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: none;
+}
+
+.card-glass:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(14, 165, 233, 0.35);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.dark .card-glass:hover {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+}
+
+/* Base focus-visible styles for card-glass - specific ring colors applied per component */
+.card-glass:focus-visible {
+  outline: none;
+}
+
+/* Glass surface for content cards that manage their own borders/hover.
+   Same translucency + blur as card-glass so every card reads identically
+   over the particle canvas in both themes. */
+.surface-glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.dark .surface-glass {
+  background: rgba(30, 41, 59, 0.45);
+}
+
+/* Cursor-tracking spotlight (coordinates set by SpotlightEffect.tsx).
+   .card-glass gets it automatically; opt ad-hoc cards in with .card-spotlight. */
+.card-glass,
+.card-spotlight {
+  position: relative;
+}
+
+.card-glass::after,
+.card-spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    480px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(14, 165, 233, 0.08),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dark .card-glass::after,
+.dark .card-spotlight::after {
+  background: radial-gradient(
+    480px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(56, 189, 248, 0.1),
+    transparent 65%
+  );
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-glass:hover::after,
+  .card-spotlight:hover::after {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-glass::after,
+  .card-spotlight::after {
+    display: none;
+  }
+}
+
+/* Gradient Text - uses design tokens */
+.text-gradient {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Minimal horizontal scrollbar for inline snippet popovers */
+.snippet-scrollbar::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+.snippet-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.snippet-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 9999px;
+}
+.snippet-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.75);
+}
+.dark .snippet-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.55);
+}
+.dark .snippet-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.8);
+}
+
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.6;
+}

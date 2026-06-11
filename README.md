@@ -1,10 +1,23 @@
 # ndif-website
 
-The website for the [National Deep Inference Fabric](https://ndif.us/) ([ndif.us](https://ndif.us/)).
+Source for the National Deep Inference Fabric site at [ndif.us](https://ndif.us).
 
-## Contributing
+Next.js 14 (app router) + Tailwind CSS + Three.js.
 
-1. Update your changes in `src`
-2. Run `make all`
-3. This will update the website in `public`. Commit everything in src and public and push to main.
-4. Anything in public on main is automatically served.
+## Development
+
+```bash
+bun install
+bun run dev
+```
+
+Dev server runs at `http://localhost:3000`.
+
+## Production build
+
+```bash
+cp next.config.production.js next.config.js
+bun run build
+```
+
+Output goes to `out/`. The production config sets `basePath` / `assetPrefix` to `/ndif-website` for GitHub Pages preview at `https://ndif-team.github.io/ndif-website/`.
