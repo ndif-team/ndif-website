@@ -16,13 +16,13 @@ function AnnouncementBanner({
   onDismiss: () => void;
 }) {
   return (
-    <div className="relative bg-gradient-to-r from-brand-600 to-accent-600 text-white text-sm text-center py-2 px-4">
+    <div className="relative bg-gradient-brand text-white text-sm text-center py-2 px-4">
       <div className="max-w-7xl mx-auto flex items-center justify-center gap-2">
         <span className="font-medium">
-          NDIF is now available — free remote access to large-scale AI models for research.
+          Participate in <b>Aletheia's Quest</b>, our deception detection competition running on NDIF!
         </span>
         <Link
-          href="/get-started"
+          href="https://aletheias-quest.github.io/"
           className="underline underline-offset-2 font-semibold hover:text-white/90 transition-colors whitespace-nowrap"
         >
           Get started →

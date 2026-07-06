@@ -59,7 +59,7 @@ export default function GetStarted() {
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white" style={{ textWrap: 'balance' }}>
             Get Started in Minutes
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-brand-500 to-accent-500 mx-auto rounded-full mb-6" aria-hidden="true" />
+          <div className="w-24 h-1 bg-gradient-brand mx-auto rounded-full mb-6" aria-hidden="true" />
           <p className="max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
             Three simple steps to start running experiments on large-scale AI models.
           </p>

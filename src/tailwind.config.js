@@ -11,7 +11,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['var(--font-space-grotesk)', 'Space Grotesk', 'sans-serif'],
+        display: ['Infra', 'Space Grotesk', 'system-ui', 'sans-serif'],
         mono: ['var(--font-jetbrains-mono)', 'JetBrains Mono', 'Fira Code', 'monospace'],
       },
       colors: {
@@ -105,7 +105,7 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-brand': 'linear-gradient(135deg, theme(colors.brand.400) 0%, theme(colors.accent.500) 100%)',
+        'gradient-brand': 'linear-gradient(to right, #b875b1 0%, #838cc1 50%, #4ea3d1 100%)',
         'gradient-dark': 'linear-gradient(180deg, #0f172a 0%, #020617 100%)',
       },
       boxShadow: {

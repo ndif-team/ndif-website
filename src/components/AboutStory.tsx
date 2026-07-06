@@ -8,10 +8,10 @@ export default function AboutStory() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll>
           <div className="text-center mb-12">
-            <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white">
-              About <span className="text-gradient">NDIF</span>
+            <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white" style={{ textWrap: "balance" }}>
+              The National <span className="text-gradient">Deep Inference Fabric</span>
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-brand-500 to-accent-500 mx-auto rounded-full" />
+            <div className="w-24 h-1 bg-gradient-brand mx-auto rounded-full" />
           </div>
         </AnimateOnScroll>
 
@@ -93,7 +93,7 @@ export default function AboutStory() {
                 at NCSA, University of Illinois Urbana-Champaign. The NDIF community is
                 developed in partnership with{" "}
                 <a
-                  href="https://pitcases.org/"
+                  href="https://pit-un.org/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-brand-600 dark:text-brand-400 font-semibold hover:underline underline-offset-2"

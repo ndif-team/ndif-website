@@ -57,7 +57,7 @@ export const faq: FAQItem[] = [
   {
     question: "Do I need to know how to code?",
     answer: [
-      { type: "text", content: "If you'd prefer to access NDIF resources without coding, check out Workbench, our web app! You can run experiments on NDIF models remotely, all from a browser. Try it today: " },
+      { type: "text", content: "If you'd prefer to access NDIF resources without coding, check out NDIF Workbench, our web app! You can run experiments on NDIF models remotely, all from a browser. Try it today: " },
       { type: "link", content: "workbench.ndif.us", href: "https://workbench.ndif.us/" },
     ],
   },

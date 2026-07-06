@@ -2,9 +2,40 @@
 
 import Link from "next/link";
 import AnimateOnScroll, { StaggerContainer, StaggerItem } from "./AnimateOnScroll";
-import { featuredModels, deploymentLevelMeta } from "data/models";
+import {
+  featuredModels,
+  deploymentLevelMeta,
+  type DeploymentLevel,
+} from "data/models";
+import { useStatusData } from "./status/useStatusData";
+import type { DeploymentLevel as LiveDeploymentLevel } from "./status/types";
+
+const liveLevelToLocal: Record<LiveDeploymentLevel, DeploymentLevel> = {
+  HOT: "hot",
+  WARM: "warm",
+  COLD: "cold",
+};
+
+// Higher = more available. Used to pick the hottest entry when the live API
+// reports the same repo id under multiple deployments.
+const levelRank: Record<DeploymentLevel, number> = { hot: 3, warm: 2, cold: 1 };
 
 export default function ModelCards() {
+  // Reflect the real deployment level reported by the Status page's live
+  // source (api.ndif.us/status), matched by repo id. Falls back to the
+  // static level while loading or if the API is unreachable / the model
+  // isn't currently deployed.
+  const { models: liveModels } = useStatusData();
+  const liveLevelByRepo = new Map<string, DeploymentLevel>();
+  for (const m of liveModels) {
+    const repo = m.repo_id.toLowerCase();
+    const level = liveLevelToLocal[m.deployment_level];
+    const existing = liveLevelByRepo.get(repo);
+    if (!existing || levelRank[level] > levelRank[existing]) {
+      liveLevelByRepo.set(repo, level);
+    }
+  }
+
   return (
     <section id="remote-model-access" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +74,10 @@ export default function ModelCards() {
             <div className="bg-slate-50/50 dark:bg-slate-900/50 p-8 md:p-12 border-t lg:border-t-0 lg:border-l border-slate-200 dark:border-slate-700/50">
               <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4" staggerDelay={0.08}>
                 {featuredModels.map((model) => {
-                  const meta = deploymentLevelMeta[model.level];
+                  const level =
+                    liveLevelByRepo.get(model.repoId.toLowerCase()) ??
+                    model.level;
+                  const meta = deploymentLevelMeta[level];
                   return (
                     <StaggerItem key={model.id}>
                       <div className="card-spotlight surface-glass p-5 rounded-xl border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-0.5 hover:shadow-md focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900 focus-visible:outline-none">

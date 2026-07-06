@@ -5,12 +5,11 @@ export interface NavLink {
 }
 
 export const mainNav: NavLink[] = [
-  { label: "The Fabric", href: "/fabric" },
   { label: "About", href: "/about" },
+  { label: "Tools", href: "/tools" },
   { label: "Research", href: "/research" },
   { label: "Community", href: "/community" },
   { label: "Status", href: "/status" },
-  { label: "NNsight", href: "https://nnsight.net", external: true },
 ];
 
 export const ctaNav: NavLink = {
@@ -21,8 +20,8 @@ export const ctaNav: NavLink = {
 export const footerNav = {
   navigation: [
     { label: "Home", href: "/" },
-    { label: "The Fabric", href: "/fabric" },
     { label: "About", href: "/about" },
+    { label: "Tools", href: "/tools" },
     { label: "Research", href: "/research" },
     { label: "Community", href: "/community" },
     { label: "Status", href: "/status" },
@@ -39,7 +38,7 @@ export const footerNav = {
     { label: "NSF Project Page", href: "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2408455", external: true },
     { label: "Northeastern University", href: "https://www.northeastern.edu/", external: true },
     { label: "NCSA Delta", href: "https://www.ncsa.illinois.edu/research/project-highlights/delta/", external: true },
-    { label: "PIT-UN", href: "https://pitcases.org/", external: true },
+    { label: "PIT-UN", href: "https://pit-un.org/", external: true },
   ] as NavLink[],
 };
 

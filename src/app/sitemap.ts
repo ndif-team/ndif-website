@@ -7,8 +7,8 @@ const SITE_URL = `${SITE_ORIGIN}${BASE_PATH}`;
 
 const routes = [
   { path: "/", priority: 1.0, changeFrequency: "monthly" as const },
-  { path: "/fabric", priority: 0.9, changeFrequency: "monthly" as const },
   { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/tools", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/research", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/community", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/status", priority: 0.6, changeFrequency: "daily" as const },

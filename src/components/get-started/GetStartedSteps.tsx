@@ -62,7 +62,7 @@ function StepSection({
         />
 
         {/* Step number badge */}
-        <div className="absolute left-0 top-0 w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-brand-400 to-accent-500 flex items-center justify-center text-white shadow-lg shadow-brand-400/25">
+        <div className="absolute left-0 top-0 w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-gradient-brand flex items-center justify-center text-white shadow-lg shadow-brand-400/25">
           <span className="font-display font-bold text-lg md:text-xl">
             {number}
           </span>

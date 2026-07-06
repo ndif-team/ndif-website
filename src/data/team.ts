@@ -57,21 +57,28 @@ export const team: TeamMember[] = [
   },
   {
     name: "Michael Ripa",
-    role: "Research Software Engineer",
+    role: "Research Engineer",
     image: "/images/michael.jpg",
     bio: "Contributes to NDIF's backend engineering efforts. He completed a BS at Carleton University in Mathematics and Computer Science.",
   },
   {
     name: "Gabriele Sarti",
-    role: "Postdoctoral Research Associate",
+    role: "Postdoctoral Researcher",
     image: "/images/Gabriele-Sarti.jpg",
     url: "https://gsarti.com/",
     bio: "Postdoctoral Research Associate at Northeastern University's Khoury College of Computer Sciences and a member of the BauLab. His research focuses on Natural Language Processing (NLP), deep learning interpretability, and human-AI interaction, with a goal of making the inner workings of large language models more transparent and trustworthy.",
   },
   {
     name: "Adam Belfki",
-    role: "Research Software Engineer",
+    role: "Research Engineer",
     image: "/images/adam.jpg",
     bio: "Contributes to the NNsight API and supports researchers using the NDIF platform. He completed his BS in Computer Science at Northeastern University.",
+  },
+  {
+    name: "Zikai Wang",
+    role: "PhD Student",
+    image: "/images/zikai.png",
+    url: "https://khaiwang.github.io/",
+    bio: "Zikai Wang is a second-year PhD student in Computer Science working on distributed systems and intervention system. At NDIF, he focuses on backend optimization, shipping scalable serving techniques for NDIF and NNSight. He is excited to translate interpretability needs into systems problems and to make interpretable machine learning practical and scalable in production.",
   },
 ];

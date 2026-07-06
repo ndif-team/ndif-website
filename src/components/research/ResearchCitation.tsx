@@ -7,7 +7,98 @@ import AnimateOnScroll from "../AnimateOnScroll";
 import { citation } from "data/research-papers";
 import { getAssetPath } from "../../lib/assetPath";
 
-function SelectableBlock({ text, label }: { text: string; label: string }) {
+// ── Minimal, dependency-free BibTeX syntax highlighter ───────────
+const BIB = {
+  entry: "text-fuchsia-600 dark:text-fuchsia-400 font-semibold",
+  key: "text-amber-600 dark:text-amber-500",
+  field: "text-sky-600 dark:text-sky-400",
+  str: "text-emerald-600 dark:text-emerald-400",
+  num: "text-orange-600 dark:text-orange-400",
+  punct: "text-slate-400 dark:text-slate-500",
+};
+
+type BibTok = { t: string; c?: string };
+
+function tokenizeBibValue(val: string): BibTok[] {
+  const toks: BibTok[] = [];
+  let buf = "";
+  const flush = () => {
+    if (!buf) return;
+    toks.push(/^\d+$/.test(buf) ? { t: buf, c: BIB.num } : { t: buf, c: BIB.str });
+    buf = "";
+  };
+  for (const ch of val) {
+    if (ch === "{" || ch === "}" || ch === '"') {
+      flush();
+      toks.push({ t: ch, c: BIB.punct });
+    } else {
+      buf += ch;
+    }
+  }
+  flush();
+  return toks;
+}
+
+function tokenizeBibLine(line: string): BibTok[] {
+  // @type{citekey,
+  let m = line.match(/^(@\w+)(\{)([^,]*)(,?)\s*$/);
+  if (m) {
+    const out: BibTok[] = [
+      { t: m[1], c: BIB.entry },
+      { t: m[2], c: BIB.punct },
+      { t: m[3], c: BIB.key },
+    ];
+    if (m[4]) out.push({ t: m[4], c: BIB.punct });
+    return out;
+  }
+  // <indent>field = value,
+  m = line.match(/^(\s*)([A-Za-z][\w-]*)(\s*=\s*)(.*?)(,?)\s*$/);
+  if (m) {
+    const out: BibTok[] = [
+      { t: m[1] },
+      { t: m[2], c: BIB.field },
+      { t: m[3], c: BIB.punct },
+    ];
+    out.push(...tokenizeBibValue(m[4]));
+    if (m[5]) out.push({ t: m[5], c: BIB.punct });
+    return out;
+  }
+  // closing brace / stray punctuation
+  if (/^\s*\}?\s*$/.test(line)) return [{ t: line, c: BIB.punct }];
+  return [{ t: line }];
+}
+
+function BibtexHighlight({ code }: { code: string }) {
+  const lines = code.split("\n");
+  return (
+    <>
+      {lines.map((line, i) => (
+        <span key={i}>
+          {tokenizeBibLine(line).map((tok, j) =>
+            tok.c ? (
+              <span key={j} className={tok.c}>
+                {tok.t}
+              </span>
+            ) : (
+              tok.t
+            )
+          )}
+          {i < lines.length - 1 ? "\n" : ""}
+        </span>
+      ))}
+    </>
+  );
+}
+
+function SelectableBlock({
+  text,
+  label,
+  language,
+}: {
+  text: string;
+  label: string;
+  language?: "bibtex";
+}) {
   const [copied, setCopied] = useState(false);
   const preRef = useRef<HTMLPreElement>(null);
 
@@ -47,7 +138,7 @@ function SelectableBlock({ text, label }: { text: string; label: string }) {
           title="Click to select all"
           className="text-sm font-mono text-slate-700 dark:text-slate-300 whitespace-pre-wrap break-words leading-relaxed cursor-pointer select-all hover:bg-slate-50 dark:hover:bg-slate-700/30 rounded-lg p-2 -m-2 transition-colors"
         >
-          {text}
+          {language === "bibtex" ? <BibtexHighlight code={text} /> : text}
         </pre>
       </div>
     </div>
@@ -61,10 +152,14 @@ export default function ResearchCitation() {
         {/* Hero — minimal glass blur on subtitle only */}
         <div className="text-center mb-12">
           <AnimateOnScroll>
-            <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white">
-              Citing <span className="text-gradient">NDIF</span>
+            <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white" style={{ textWrap: "balance" }}>
+              Democratizing Access to <span className="text-gradient">Frontier Model Internals</span>
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-brand-500 to-accent-500 mx-auto rounded-full" />
+            <div className="w-24 h-1 bg-gradient-brand mx-auto rounded-full mb-6" />
+            <p className="max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+              Explore the research powered by NDIF and NNsight — and cite our work if these
+              resources support yours.
+            </p>
           </AnimateOnScroll>
         </div>
 
@@ -110,7 +205,7 @@ export default function ResearchCitation() {
           </p>
 
           {/* BibTeX — click to select */}
-          <SelectableBlock label="BibTeX" text={citation.bibtex} />
+          <SelectableBlock label="BibTeX" text={citation.bibtex} language="bibtex" />
 
           <div className="rounded-xl bg-brand-50 dark:bg-brand-950/30 border border-brand-200 dark:border-brand-800/40 p-5">
             <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">

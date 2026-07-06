@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Infra — NDIF brand display typeface (headings / wordmarks).
+   Hotlinked from the public ndif-team/design-assets repo via jsDelivr, so the
+   site carries no font copies (see design-assets/brand/typography). */
+@font-face {
+  font-family: "Infra";
+  src: url("https://cdn.jsdelivr.net/gh/ndif-team/design-assets@main/brand/typography/InfraRegular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Infra";
+  src: url("https://cdn.jsdelivr.net/gh/ndif-team/design-assets@main/brand/typography/InfraBold.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*
  * NDIF Design System
  * ==================
@@ -45,8 +65,9 @@
 
 @layer base {
   :root {
-    /* Gradient definitions using design tokens */
-    --gradient-brand: linear-gradient(135deg, var(--color-brand-400) 0%, var(--color-accent-500) 100%);
+    /* Official NDIF gradient: fuchsia → periwinkle → azure, always left-to-right
+       (see design-assets/brand/GUIDELINES.md). */
+    --gradient-brand: linear-gradient(to right, #b875b1 0%, #838cc1 50%, #4ea3d1 100%);
   }
 
   /* Keyboard-navigation affordance everywhere; components that define their

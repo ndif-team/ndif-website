@@ -33,7 +33,7 @@ export default function WhatIsNDIF() {
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white" style={{ textWrap: 'balance' }}>
             What is NDIF?
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-brand-500 to-accent-500 mx-auto rounded-full mb-6" aria-hidden="true" />
+          <div className="w-24 h-1 bg-gradient-brand mx-auto rounded-full mb-6" aria-hidden="true" />
           <p className="max-w-3xl mx-auto text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
             The National Deep Inference Fabric is a unique nationwide research computing
             fabric that enables scientists to perform transparent and reproducible
@@ -66,10 +66,10 @@ export default function WhatIsNDIF() {
 
         <AnimateOnScroll className="text-center mt-12" delay={0.3}>
           <Link
-            href="/fabric"
+            href="/about"
             className="group/link inline-flex items-center gap-2 text-brand-600 dark:text-brand-400 font-semibold hover:underline underline-offset-4 transition-colors"
           >
-            Learn more about the Fabric
+            Learn more about NDIF
             <span aria-hidden="true" className="transition-transform duration-200 group-hover/link:translate-x-0.5">&rarr;</span>
           </Link>
         </AnimateOnScroll>

@@ -13,7 +13,7 @@ export default function PartnersSection() {
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white">
             Our Partners
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-brand-500 to-accent-500 mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-gradient-brand mx-auto rounded-full" />
         </AnimateOnScroll>
 
         <StaggerContainer
@@ -28,12 +28,12 @@ export default function PartnersSection() {
                 rel="noopener noreferrer"
                 className="group flex flex-col sm:flex-row items-start gap-6 p-8 rounded-2xl surface-glass border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-1 hover:shadow-lg h-full"
               >
-                <div className="flex-shrink-0 w-20 h-20 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center p-3">
+                <div className="flex-shrink-0 w-full sm:w-40 h-24 rounded-xl bg-white border border-slate-200 dark:border-slate-300 flex items-center justify-center p-4">
                   <Image
                     src={getAssetPath(partner.logo)}
                     alt={partner.name}
-                    width={64}
-                    height={64}
+                    width={144}
+                    height={80}
                     className="w-full h-full object-contain"
                   />
                 </div>

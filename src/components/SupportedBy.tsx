@@ -24,7 +24,7 @@ export default function SupportedBy() {
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="flex items-center rounded-xl px-4 py-3 opacity-90 hover:opacity-100 hover:-translate-y-0.5 transition-all duration-300 dark:bg-white/95 dark:shadow-sm dark:ring-1 dark:ring-black/5 dark:hover:bg-white"
                 title={s.name}
               >
                 <Image

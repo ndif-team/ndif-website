@@ -19,7 +19,7 @@ export const partners: Partner[] = [
     name: "Public Interest Technology University Network (New Venture Fund)",
     shortName: "PIT-UN",
     logo: "/images/New_Venture_Fund.png",
-    url: "https://pitcases.org/",
+    url: "https://pit-un.org/",
     description:
       "A consortium of 63 universities and colleges that study and apply technology expertise to advance the public interest. PIT-UN works with NDIF to build and support a broad community of users across geographies, institutions, and fields of study.",
   },
@@ -55,6 +55,6 @@ export const supporters: Supporter[] = [
   {
     name: "PIT-UN",
     logo: "/images/pitun.png",
-    url: "https://pitcases.org/",
+    url: "https://pit-un.org/",
   },
 ];

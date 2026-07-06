@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import dynamic from "next/dynamic";
 import Script from "next/script";
 import { SettingsProvider } from "components/SettingsProvider";
@@ -9,7 +9,6 @@ import "styles/globals.css";
 const GA_MEASUREMENT_ID = "G-NQV89E9KBS";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono" });
 
 // Loaded after first paint so three.js stays out of the shared baseline JS chunk.
@@ -68,7 +67,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased selection:bg-brand-600 selection:text-white bg-white dark:bg-surface-950 text-slate-900 dark:text-slate-50 overflow-x-hidden`}>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased selection:bg-brand-600 selection:text-white bg-white dark:bg-surface-950 text-slate-900 dark:text-slate-50 overflow-x-hidden`}>
         <SettingsProvider>
           <BackgroundCanvas />
           <SpotlightEffect />

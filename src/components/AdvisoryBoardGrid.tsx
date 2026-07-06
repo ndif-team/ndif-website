@@ -71,7 +71,7 @@ export default function AdvisoryBoardGrid() {
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white">
             External Advisory Board
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-brand-500 to-accent-500 mx-auto rounded-full mb-6" />
+          <div className="w-24 h-1 bg-gradient-brand mx-auto rounded-full mb-6" />
           <p className="max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-400">
             The ESAB 2025 advises NDIF on strategic direction, community needs,
             and impact across disciplines.

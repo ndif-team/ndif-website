@@ -12,7 +12,7 @@ export default function CommunityHero() {
               <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white">
                 Get <span className="text-gradient">Involved</span>
               </h1>
-              <div className="w-24 h-1 bg-gradient-to-r from-brand-500 to-accent-500 mx-auto rounded-full" />
+              <div className="w-24 h-1 bg-gradient-brand mx-auto rounded-full" />
             </div>
           </AnimateOnScroll>
           <AnimateOnScroll delay={0.1}>

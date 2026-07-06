@@ -39,9 +39,9 @@ export default function FeaturedCode() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white" style={{ textWrap: "balance" }}>
-            Featured Code
+            Featured Projects
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-brand-500 to-accent-500 mx-auto rounded-full mb-6" aria-hidden="true" />
+          <div className="w-24 h-1 bg-gradient-brand mx-auto rounded-full mb-6" aria-hidden="true" />
           <p className="max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
             Open-source repositories using NDIF and NNsight — production-grade interpretability tools, libraries, and research code from the community.
           </p>

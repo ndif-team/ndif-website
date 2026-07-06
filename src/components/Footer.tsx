@@ -89,7 +89,7 @@ export default function Footer() {
               at NCSA, UIUC. The NDIF community is supported in partnership
               with{" "}
               <a
-                href="https://pitcases.org/"
+                href="https://pit-un.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-brand-600 dark:text-brand-400 hover:underline"

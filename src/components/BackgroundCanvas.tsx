@@ -130,7 +130,7 @@ function BackgroundCanvasImpl() {
     geometry.setAttribute("scale", new THREE.BufferAttribute(scales, 1));
 
     const material = new THREE.PointsMaterial({
-      color: 0x38bdf8,
+      color: 0x4ea3d1, // NDIF azure
       size: 0.4,
       transparent: true,
       opacity: 0.8,
@@ -147,7 +147,7 @@ function BackgroundCanvasImpl() {
     }
     geometry2.setAttribute("position", new THREE.BufferAttribute(positions2, 3));
     const material2 = new THREE.PointsMaterial({
-      color: 0x8b5cf6,
+      color: 0xb875b1, // NDIF fuchsia
       size: 0.5,
       transparent: true,
       opacity: 0.6,

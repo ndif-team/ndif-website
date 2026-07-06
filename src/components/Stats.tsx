@@ -81,10 +81,10 @@ const starsRounded = Math.floor(totalStars / 100) * 100;
 const STATIC_GPU_COUNT = 32;
 
 const stats: StatProps[] = [
-  { value: `${papersRounded}+`, numericValue: papersRounded, label: "Research Papers", suffix: "+" },
-  { value: `${reposRounded}+`, numericValue: reposRounded, label: "Open-source Repos", suffix: "+" },
-  { value: `${starsRounded}+`, numericValue: starsRounded, label: "GitHub Stars", suffix: "+" },
-  { value: `${STATIC_GPU_COUNT}`, numericValue: STATIC_GPU_COUNT, label: "GPUs" },
+  { value: `${papersRounded}+`, numericValue: papersRounded, label: "Research Papers Using our Tools", suffix: "+" },
+  { value: `${reposRounded}+`, numericValue: reposRounded, label: "Open-source Repos Built on NNSight", suffix: "+" },
+  { value: `${starsRounded}+`, numericValue: starsRounded, label: "GitHub Stars Across Related Projects", suffix: "+" },
+  { value: `${STATIC_GPU_COUNT}`, numericValue: STATIC_GPU_COUNT, label: "GPUs for Remote NDIF Execution" },
 ];
 
 export default function Stats() {
