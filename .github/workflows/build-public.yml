@@ -14,6 +14,11 @@ on:
       - "src/**"
       - "Makefile"
       - ".github/workflows/build-public.yml"
+  # Weekly refresh so the GitHub star stats baked into the homepage stay
+  # current even when nobody pushes. No-op when the numbers haven't moved
+  # (deterministic build id + fetch script only rewrites on change).
+  schedule:
+    - cron: "0 6 * * 1"
   workflow_dispatch: {}
 
 permissions:
@@ -38,6 +43,10 @@ jobs:
 
       - name: Build static export
         working-directory: src
+        env:
+          # Lifts the GitHub API rate limit for scripts/fetch-org-stats.mjs
+          # (which degrades to the committed org-stats.json on any failure).
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           bun install --frozen-lockfile
           bun run build
@@ -51,7 +60,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A public
+          # org-stats.json is included so the committed fallback for the
+          # star count tracks the freshly fetched value.
+          git add -A public src/data/org-stats.json
           if git diff --cached --quiet; then
             echo "public/ unchanged — nothing to commit"
             exit 0

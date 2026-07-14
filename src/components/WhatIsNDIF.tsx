@@ -3,6 +3,11 @@
 import Link from "next/link";
 import AnimateOnScroll, { StaggerContainer, StaggerItem } from "./AnimateOnScroll";
 import { FiCpu, FiCode, FiUsers } from "react-icons/fi";
+import orgStats from "data/org-stats.json";
+
+// Refreshed at build time by scripts/fetch-org-stats.mjs; floored so the
+// claim stays safe between rebuilds.
+const nnsightStarsRounded = Math.floor(orgStats.nnsightStars / 50) * 50;
 
 const pillars = [
   {
@@ -15,7 +20,7 @@ const pillars = [
     icon: FiCode,
     title: "NNsight Library",
     description:
-      "An open-source PyTorch-based toolkit (850+ GitHub stars) that lets researchers inspect, modify, and customize internal computations of AI models, complete with remote access to large scale models.",
+      `An open-source PyTorch-based toolkit (${nnsightStarsRounded}+ GitHub stars) that lets researchers inspect, modify, and customize internal computations of AI models, complete with remote access to large scale models.`,
   },
   {
     icon: FiUsers,

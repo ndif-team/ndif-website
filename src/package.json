@@ -4,7 +4,7 @@
   "description": "NSF National Deep Inference Fabric – official website",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/fetch-org-stats.mjs && next build",
     "start": "next start",
     "lint": "next lint"
   },
