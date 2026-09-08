@@ -4,6 +4,7 @@ import Header from "components/Header";
 import Footer from "components/Footer";
 import ResearchCitation from "components/research/ResearchCitation";
 import ResearchTabs from "components/research/ResearchTabs";
+import HighlightsPromo from "components/research/HighlightsPromo";
 
 export const metadata: Metadata = {
   title: "Research",
@@ -17,6 +18,7 @@ export default function ResearchPage() {
       <Header />
       <main>
         <ResearchCitation />
+        <HighlightsPromo />
         <Suspense fallback={null}>
           <ResearchTabs />
         </Suspense>
