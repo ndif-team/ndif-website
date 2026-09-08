@@ -19,13 +19,13 @@ function AnnouncementBanner({
     <div className="relative bg-gradient-brand text-white text-sm text-center py-2 px-4">
       <div className="max-w-7xl mx-auto flex items-center justify-center gap-2">
         <span className="font-medium">
-          Participate in <b>Aletheia's Quest</b>, our deception detection competition running on NDIF!
+          Join NDIF&apos;s <b>bi-weekly reading group</b> on meta-learning and cognition in AI models!
         </span>
         <Link
-          href="https://aletheias-quest.github.io/"
+          href="https://luma.com/ndif-team"
           className="underline underline-offset-2 font-semibold hover:text-white/90 transition-colors whitespace-nowrap"
         >
-          Get started →
+          Calendar →
         </Link>
       </div>
       <button
