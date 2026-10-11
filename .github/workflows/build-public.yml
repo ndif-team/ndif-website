@@ -52,6 +52,13 @@ jobs:
           set -euo pipefail
           FORCE="${FORCE:-}"
           src=_citations/output
+          # A symlinked output/ or output/images/ (git stores symlinks) would resolve outside the checkout.
+          if [ -L "$src" ] || [ -L "$src/images" ]; then
+            echo "::warning::$src or $src/images is a symlink — keeping the site's data"
+            echo "Catalog sync **skipped**: output directory is a symlink" >> "$GITHUB_STEP_SUMMARY"
+            echo "blocked=output-symlink" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           # Before the catalog's first commit (Phase 2 Task 5) output/ doesn't exist; afterwards a
           # missing slim file is a real break: new=-1 below reports it as blocked.
           [ -d "$src" ] || { echo "No catalog in ndif-citations yet — keeping the site's data" >> "$GITHUB_STEP_SUMMARY"; exit 0; }
@@ -76,15 +83,19 @@ jobs:
               exit 0
             fi
           done
-          # Images are additive: copy new ones; overwrite an existing file only if the site's CURRENT
-          # catalog already references it (never a headshot/logo that shares the folder). JSON goes last.
+          # Images are additive: always copy a new file; overwrite an existing one only if the site's CURRENT
+          # (pre-copy) catalog references it, the bytes differ, AND its filename appears nowhere in site
+          # source (headshots/logos/diagrams are referenced from src/data, src/components, ...). JSON goes last.
           jq -r '.[].image // empty' src/public/data/research-papers.json > "$RUNNER_TEMP/cur-images.txt" 2>/dev/null || : > "$RUNNER_TEMP/cur-images.txt"
           jq -r '.[].image // empty' "$src/research-papers.json" | while read -r img; do
             name=$(basename "$img")
             s="$src/images/$name"; d="src/public/images/$name"
             [ -f "$s" ] && [ ! -L "$s" ] || continue
             if [ ! -e "$d" ]; then cp "$s" "$d"
-            elif grep -qxF "/images/$name" "$RUNNER_TEMP/cur-images.txt" && ! cmp -s "$s" "$d"; then cp "$s" "$d"; fi
+            elif grep -qxF "/images/$name" "$RUNNER_TEMP/cur-images.txt" && ! cmp -s "$s" "$d" \
+                 && ! grep -rqF --exclude-dir=public --exclude-dir=out --exclude-dir=.next --exclude-dir=node_modules -- "$name" src; then
+              cp "$s" "$d"
+            fi
           done
           cp "$src/research-papers.json" "$src/github-repos.json" src/public/data/
           echo "Catalog synced from ndif-citations@$(git -C _citations rev-parse --short HEAD)" >> "$GITHUB_STEP_SUMMARY"
