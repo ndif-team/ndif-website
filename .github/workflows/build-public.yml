@@ -14,10 +14,6 @@ on:
     - cron: "41 7 * * *"   # daily, after the Monday 05:17 catalog run; off the hour
   workflow_dispatch: {}
 
-permissions:
-  contents: write
-  issues: write
-
 concurrency:
   group: build-public
   cancel-in-progress: true
@@ -25,10 +21,15 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
     # The bot's own commits only touch public/ + synced data — belt-and-braces against loops.
     if: github.actor != 'github-actions[bot]'
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: main
 
       - name: Fetch the citations catalog
         id: citations
@@ -37,6 +38,7 @@ jobs:
         with:
           repository: ndif-team/ndif-citations
           path: _citations
+          persist-credentials: false
           sparse-checkout: output
           fetch-depth: 1
 
@@ -48,13 +50,25 @@ jobs:
           FORCE: ${{ vars.CATALOG_SYNC_FORCE }}   # set to 1 once to accept a legitimate >10% drop
         run: |
           set -euo pipefail
+          FORCE="${FORCE:-}"
           src=_citations/output
           # Before the catalog's first commit (Phase 2 Task 5) output/ doesn't exist; afterwards a
           # missing slim file is a real break: new=-1 below reports it as blocked.
           [ -d "$src" ] || { echo "No catalog in ndif-citations yet — keeping the site's data" >> "$GITHUB_STEP_SUMMARY"; exit 0; }
+          [ "$FORCE" = 1 ] && echo "::warning::CATALOG_SYNC_FORCE=1 is set — the 90% check is off; delete the variable after this build"
+          # Length of the single top-level array if it is well-formed and safe, else -1. Entries must be
+          # objects; url/linked_paper_url must be http(s); image must be /images/<name>.<png|jpg|jpeg|webp|gif>.
+          # (\A..\z: jq regexes are Ruby-style, where ^/$ match at line breaks.)
+          prog='def okurl: . == null or . == "" or (type == "string" and test("\\Ahttps?://"; "i"));
+                def okimg: . == null or . == "" or (type == "string" and test("\\A/images/[^/\\p{Cc}]+\\.(png|jpe?g|webp|gif)\\z"; "i"));
+                if length == 1 and (.[0] | type) == "array"
+                   and (.[0] | all(type == "object" and (.url | okurl) and (.linked_paper_url | okurl) and (.image | okimg)))
+                then (.[0] | length) else -1 end'
           for f in research-papers.json github-repos.json; do
-            new=$(jq 'if type == "array" then length else -1 end' "$src/$f" 2>/dev/null || echo -1)
-            cur=$(jq 'length' "src/public/data/$f" 2>/dev/null || echo 0)
+            if [ -f "$src/$f" ] && [ ! -L "$src/$f" ]; then new=$(jq -s "$prog" "$src/$f" 2>/dev/null) || new=-1; else new=-1; fi
+            [[ $new =~ ^[0-9]+$ ]] || new=-1
+            cur=$(jq 'length' "src/public/data/$f" 2>/dev/null) || cur=0
+            [[ $cur =~ ^[0-9]+$ ]] || cur=0
             if [ "$new" -lt 0 ] || { [ "$FORCE" != 1 ] && [ $((new * 10)) -lt $((cur * 9)) ]; }; then
               echo "::warning::$f failed the sanity check (new=$new, current=$cur) — keeping the site's data"
               echo "Catalog sync **skipped**: $f new=$new current=$cur" >> "$GITHUB_STEP_SUMMARY"
@@ -62,12 +76,17 @@ jobs:
               exit 0
             fi
           done
-          cp "$src/research-papers.json" "$src/github-repos.json" src/public/data/
+          # Images are additive: copy new ones; overwrite an existing file only if the site's CURRENT
+          # catalog already references it (never a headshot/logo that shares the folder). JSON goes last.
+          jq -r '.[].image // empty' src/public/data/research-papers.json > "$RUNNER_TEMP/cur-images.txt" 2>/dev/null || : > "$RUNNER_TEMP/cur-images.txt"
           jq -r '.[].image // empty' "$src/research-papers.json" | while read -r img; do
             name=$(basename "$img")
-            [ -f "$src/images/$name" ] || continue
-            cmp -s "$src/images/$name" "src/public/images/$name" || cp "$src/images/$name" "src/public/images/$name"
+            s="$src/images/$name"; d="src/public/images/$name"
+            [ -f "$s" ] && [ ! -L "$s" ] || continue
+            if [ ! -e "$d" ]; then cp "$s" "$d"
+            elif grep -qxF "/images/$name" "$RUNNER_TEMP/cur-images.txt" && ! cmp -s "$s" "$d"; then cp "$s" "$d"; fi
           done
+          cp "$src/research-papers.json" "$src/github-repos.json" src/public/data/
           echo "Catalog synced from ndif-citations@$(git -C _citations rev-parse --short HEAD)" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Report a blocked catalog sync
@@ -77,7 +96,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           BLOCKED: ${{ steps.sync.outputs.blocked || 'the catalog fetch/sync step failed' }}
         run: |
-          msg="Daily catalog sync was **skipped**: $BLOCKED (sanity check: new list must parse and keep ≥90% of the current entries). If the drop is legitimate, set the repo variable CATALOG_SYNC_FORCE=1 for one build, then delete it."
+          msg="Daily catalog sync was **skipped**: $BLOCKED (sanity check: new list must parse and keep ≥90% of the current entries). If the drop is legitimate, set the repo variable CATALOG_SYNC_FORCE=1 for one build, then delete it. Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
           n=$(gh issue list --label catalog-sync-blocked --state open --json number --jq '.[0].number // empty')
           if [ -n "$n" ]; then gh issue comment "$n" --body "$msg"
           else gh label create catalog-sync-blocked --color d73a4a --force >/dev/null
@@ -90,6 +109,7 @@ jobs:
         run: |
           api="https://api.github.com/repos/ndif-team/ndif-citations/actions/workflows/catalog-run.yml/runs?status=success&per_page=1"
           if ! body=$(curl -fsS "$api"); then
+            echo "::warning::Dead-man check could not query catalog-run.yml runs"
             echo "Dead-man check skipped: API error" >> "$GITHUB_STEP_SUMMARY"; exit 0
           fi
           last=$(jq -r '.workflow_runs[0].updated_at // empty' <<< "$body")
@@ -99,7 +119,7 @@ jobs:
           age=$(( ( $(date -u +%s) - $(date -u -d "$last" +%s) ) / 86400 ))
           echo "Last successful catalog run: $last ($age days ago)" >> "$GITHUB_STEP_SUMMARY"
           if [ "$age" -gt 8 ]; then
-            msg="The ndif-citations catalog pipeline last succeeded **$age days ago** ($last). See https://github.com/ndif-team/ndif-citations/actions and the README \"Operations runbook\"."
+            msg="The ndif-citations catalog pipeline last succeeded **$age days ago** ($last). See https://github.com/ndif-team/ndif-citations/actions and the README \"Operations runbook\". Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
             n=$(gh issue list --label catalog-stale --state open --json number --jq '.[0].number // empty')
             if [ -n "$n" ]; then
               gh issue comment "$n" --body "$msg"
