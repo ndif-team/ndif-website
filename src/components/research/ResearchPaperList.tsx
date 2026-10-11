@@ -40,38 +40,60 @@ const CHIP_CLASSES: Record<Exclude<FilterCategory, "all">, string> = {
   referencing: "bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300",
 };
 
+/** Prefilled "Report a problem" issue form in ndif-citations. No `labels=` param:
+ *  it needs label permission and 404s for the public; the template sets the label. */
+function reportUrl(paper: ResearchPaper): string {
+  const q = new URLSearchParams({
+    template: "report-problem.yml",
+    title: `Problem: ${paper.title}`,
+    paper_url: paper.url,
+  });
+  return `https://github.com/ndif-team/ndif-citations/issues/new?${q.toString()}`;
+}
+
 function PaperCard({ paper }: { paper: ResearchPaper }) {
   return (
-    <a
-      href={paper.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="card-spotlight group flex flex-col h-full rounded-2xl overflow-hidden surface-glass border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-1 hover:shadow-lg"
-    >
-      {paper.image && (
-        <div className="relative aspect-[16/9] overflow-hidden bg-slate-100 dark:bg-slate-800">
-          <Image src={getAssetPath(paper.image)} alt={paper.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+    <div className="relative h-full">
+      <a
+        href={paper.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="card-spotlight group flex flex-col h-full rounded-2xl overflow-hidden surface-glass border border-slate-200 dark:border-slate-700/50 hover:border-brand-400 dark:hover:border-brand-500/50 transition-all hover:-translate-y-1 hover:shadow-lg"
+      >
+        {paper.image && (
+          <div className="relative aspect-[16/9] overflow-hidden bg-slate-100 dark:bg-slate-800">
+            <Image src={getAssetPath(paper.image)} alt={paper.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+          </div>
+        )}
+        <div className="flex flex-col flex-1 p-5 pb-7">
+          <div className="flex flex-wrap items-center gap-2 mb-2">
+            <span className="inline-block px-2 py-0.5 text-2xs font-semibold rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
+              {paper.venue}
+            </span>
+            <span
+              className={`inline-block px-2 py-0.5 text-2xs font-semibold rounded-full ${CHIP_CLASSES[paper.category]}`}
+              title={CHIP_DESCRIPTIONS[paper.category]}
+            >
+              {CHIP_LABELS[paper.category]}
+            </span>
+          </div>
+          <h3 className="font-display text-slate-900 dark:text-white leading-snug mb-2 line-clamp-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors" style={{ letterSpacing: "-0.01em" }}>
+            {paper.title}
+          </h3>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mb-3 line-clamp-1">{paper.authors}</p>
+          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3 mt-auto">{paper.description}</p>
         </div>
-      )}
-      <div className="flex flex-col flex-1 p-5">
-        <div className="flex flex-wrap items-center gap-2 mb-2">
-          <span className="inline-block px-2 py-0.5 text-2xs font-semibold rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
-            {paper.venue}
-          </span>
-          <span
-            className={`inline-block px-2 py-0.5 text-2xs font-semibold rounded-full ${CHIP_CLASSES[paper.category]}`}
-            title={CHIP_DESCRIPTIONS[paper.category]}
-          >
-            {CHIP_LABELS[paper.category]}
-          </span>
-        </div>
-        <h3 className="font-display text-slate-900 dark:text-white leading-snug mb-2 line-clamp-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors" style={{ letterSpacing: "-0.01em" }}>
-          {paper.title}
-        </h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mb-3 line-clamp-1">{paper.authors}</p>
-        <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3 mt-auto">{paper.description}</p>
-      </div>
-    </a>
+      </a>
+      <a
+        href={reportUrl(paper)}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Report a problem with “${paper.title}”`}
+        className="absolute bottom-2 right-3 z-10 text-2xs text-slate-400 hover:text-brand-600 dark:text-slate-500 dark:hover:text-brand-400"
+      >
+        Report
+      </a>
+    </div>
   );
 }
 
