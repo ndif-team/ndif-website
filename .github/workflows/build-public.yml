@@ -1,10 +1,6 @@
-# Builds the Next.js app in src/ and commits the static export to public/,
-# which is what the ndif.us server serves from main. Keeps the old
-# "anything in public on main is served" contract without contributors
-# having to remember `make all`.
-#
-# Fully reversible: delete this file and the manual `make all` + commit
-# workflow (README) is back to being the only path.
+# Builds the Next.js app in src/ and commits the static export to public/ (served
+# from main). Daily, it first pulls the published research catalog from
+# ndif-team/ndif-citations (spec §5.6) and checks that the catalog pipeline is alive.
 name: Build site into public/
 
 on:
@@ -14,15 +10,13 @@ on:
       - "src/**"
       - "Makefile"
       - ".github/workflows/build-public.yml"
-  # Weekly refresh so the GitHub star stats baked into the homepage stay
-  # current even when nobody pushes. No-op when the numbers haven't moved
-  # (deterministic build id + fetch script only rewrites on change).
   schedule:
-    - cron: "0 6 * * 1"
+    - cron: "41 7 * * *"   # daily, after the Monday 05:17 catalog run; off the hour
   workflow_dispatch: {}
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: build-public
@@ -31,13 +25,91 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # The bot's own commits only touch public/ (filtered out by `paths`
-    # above) — this guard is belt-and-braces against loops.
+    # The bot's own commits only touch public/ + synced data — belt-and-braces against loops.
     if: github.actor != 'github-actions[bot]'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: oven-sh/setup-bun@v2
+      - name: Fetch the citations catalog
+        id: citations
+        continue-on-error: true
+        uses: actions/checkout@v7
+        with:
+          repository: ndif-team/ndif-citations
+          path: _citations
+          sparse-checkout: output
+          fetch-depth: 1
+
+      - name: Sync catalog into src/public (sanity-checked; images additive)
+        id: sync
+        if: steps.citations.outcome == 'success'
+        continue-on-error: true
+        env:
+          FORCE: ${{ vars.CATALOG_SYNC_FORCE }}   # set to 1 once to accept a legitimate >10% drop
+        run: |
+          set -euo pipefail
+          src=_citations/output
+          # Before the catalog's first commit (Phase 2 Task 5) output/ doesn't exist; afterwards a
+          # missing slim file is a real break: new=-1 below reports it as blocked.
+          [ -d "$src" ] || { echo "No catalog in ndif-citations yet — keeping the site's data" >> "$GITHUB_STEP_SUMMARY"; exit 0; }
+          for f in research-papers.json github-repos.json; do
+            new=$(jq 'if type == "array" then length else -1 end' "$src/$f" 2>/dev/null || echo -1)
+            cur=$(jq 'length' "src/public/data/$f" 2>/dev/null || echo 0)
+            if [ "$new" -lt 0 ] || { [ "$FORCE" != 1 ] && [ $((new * 10)) -lt $((cur * 9)) ]; }; then
+              echo "::warning::$f failed the sanity check (new=$new, current=$cur) — keeping the site's data"
+              echo "Catalog sync **skipped**: $f new=$new current=$cur" >> "$GITHUB_STEP_SUMMARY"
+              echo "blocked=$f new=$new current=$cur" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          done
+          cp "$src/research-papers.json" "$src/github-repos.json" src/public/data/
+          jq -r '.[].image // empty' "$src/research-papers.json" | while read -r img; do
+            name=$(basename "$img")
+            [ -f "$src/images/$name" ] || continue
+            cmp -s "$src/images/$name" "src/public/images/$name" || cp "$src/images/$name" "src/public/images/$name"
+          done
+          echo "Catalog synced from ndif-citations@$(git -C _citations rev-parse --short HEAD)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Report a blocked catalog sync
+        if: steps.citations.outcome == 'failure' || steps.sync.outcome == 'failure' || steps.sync.outputs.blocked != ''
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BLOCKED: ${{ steps.sync.outputs.blocked || 'the catalog fetch/sync step failed' }}
+        run: |
+          msg="Daily catalog sync was **skipped**: $BLOCKED (sanity check: new list must parse and keep ≥90% of the current entries). If the drop is legitimate, set the repo variable CATALOG_SYNC_FORCE=1 for one build, then delete it."
+          n=$(gh issue list --label catalog-sync-blocked --state open --json number --jq '.[0].number // empty')
+          if [ -n "$n" ]; then gh issue comment "$n" --body "$msg"
+          else gh label create catalog-sync-blocked --color d73a4a --force >/dev/null
+               gh issue create --label catalog-sync-blocked --title "Catalog sync blocked" --body "$msg"; fi
+
+      - name: Dead-man's switch (is the catalog pipeline still running?)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          api="https://api.github.com/repos/ndif-team/ndif-citations/actions/workflows/catalog-run.yml/runs?status=success&per_page=1"
+          if ! body=$(curl -fsS "$api"); then
+            echo "Dead-man check skipped: API error" >> "$GITHUB_STEP_SUMMARY"; exit 0
+          fi
+          last=$(jq -r '.workflow_runs[0].updated_at // empty' <<< "$body")
+          if [ -z "$last" ]; then
+            echo "Dead-man check: no successful catalog run yet (no data)" >> "$GITHUB_STEP_SUMMARY"; exit 0
+          fi
+          age=$(( ( $(date -u +%s) - $(date -u -d "$last" +%s) ) / 86400 ))
+          echo "Last successful catalog run: $last ($age days ago)" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$age" -gt 8 ]; then
+            msg="The ndif-citations catalog pipeline last succeeded **$age days ago** ($last). See https://github.com/ndif-team/ndif-citations/actions and the README \"Operations runbook\"."
+            n=$(gh issue list --label catalog-stale --state open --json number --jq '.[0].number // empty')
+            if [ -n "$n" ]; then
+              gh issue comment "$n" --body "$msg"
+            else
+              gh label create catalog-stale --color d73a4a --force >/dev/null
+              gh issue create --label catalog-stale --title "Citations catalog is stale" --body "$msg"
+            fi
+          fi
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
         with:
           bun-version: latest
 
@@ -60,13 +132,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # org-stats.json is included so the committed fallback for the
-          # star count tracks the freshly fetched value.
-          git add -A public src/data/org-stats.json
+          git add -A public src/data/org-stats.json src/public/data src/public/images
           if git diff --cached --quiet; then
             echo "public/ unchanged — nothing to commit"
             exit 0
           fi
           git commit -m "build: refresh public/ for ${GITHUB_SHA}"
-          # One rebase-retry in case another push landed mid-build.
           git push origin main || (git pull --rebase origin main && git push origin main)
