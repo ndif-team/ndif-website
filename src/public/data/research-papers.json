@@ -339,7 +339,7 @@
     "image": "/images/IRIS-A-Visual-Cortex-Inspired-Framework-for-Analyzing-Orientation-Selectivity-in-Vision-Transformers.png"
   },
   {
-    "title": "Jailbreak Strength and Model Similarity Predict Transferability",
+    "title": "Jailbreak Transferability Emerges from Shared Representations",
     "authors": "Rico Angell, Jannik Brinkmann, He He",
     "venue": "ICLR 2026",
     "year": 2026,
@@ -926,16 +926,6 @@
     "description": "Researchers have developed Interpreto, an open-source library that helps make sense of complex language models by providing tools to understand how they work. By offering two types of explanation methods, Interpreto bridges the gap between research and practical applications, making it easier to interpret and understand the decisions made by these models. This library is particularly notable for its ability to provide more nuanced explanations that go beyond simple feature attributions.",
     "category": "uses_nnsight",
     "image": "/images/Interpreto-An-Explainability-Library-for-Transformers.png"
-  },
-  {
-    "title": "Jailbreak transferability emerges from shared representations",
-    "authors": "Rico Angell, Jannik Brinkmann, He He",
-    "venue": "ICLR 2026",
-    "year": 2025,
-    "url": "https://arxiv.org/abs/2506.12913",
-    "description": "Investigates what determines when jailbreaks transfer from one model to another, finding that transfer success depends on both jailbreak strength (effectiveness on the source model) and contextual representation similarity between models. The authors show transferability can be increased by distilling from the target model into the source model using only benign prompts, with the distilled model serving as a more effective surrogate for generating transferable attacks, suggesting jailbreak success reflects fundamental flaws in contextual representations.",
-    "category": "uses_nnsight",
-    "image": "/images/Jailbreak-transferability-emerges-from-shared-representations.png"
   },
   {
     "title": "Language Models use Lookbacks to Track Beliefs",
