@@ -89,7 +89,7 @@ function PaperCard({ paper }: { paper: ResearchPaper }) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Report a problem with “${paper.title}”`}
-        className="absolute bottom-2 right-3 z-10 text-2xs text-slate-400 hover:text-brand-600 dark:text-slate-500 dark:hover:text-brand-400"
+        className="absolute bottom-2 right-3 z-10 -mr-1.5 -mb-[5px] px-1.5 py-[5px] text-2xs text-slate-500 hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400"
       >
         Report
       </a>
