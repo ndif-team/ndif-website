@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import dynamic from "next/dynamic";
 import Script from "next/script";
 import { SettingsProvider } from "components/SettingsProvider";
 import SpotlightEffect from "components/SpotlightEffect";
+import BackgroundCanvas from "components/BackgroundCanvasLazy";
 import "styles/globals.css";
 import { OG_IMAGE_PATH, SITE_NAME, SITE_TITLE, SITE_DESCRIPTION } from "lib/seo";
 
@@ -12,15 +12,9 @@ const GA_MEASUREMENT_ID = "G-NQV89E9KBS";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono" });
 
-// Loaded after first paint so three.js stays out of the shared baseline JS chunk.
-const BackgroundCanvas = dynamic(() => import("components/BackgroundCanvas"), {
-  ssr: false,
-  loading: () => null,
-});
-
 // metadataBase MUST be a bare origin (no basePath). Next 14 does NOT prepend
 // basePath to relative paths in metadata fields, so include basePath in any
-// asset URLs we hand to openGraph/twitter (see OG_IMAGE_PATH below).
+// asset URLs we hand to openGraph/twitter (see OG_IMAGE_PATH in lib/seo.ts).
 const SITE_ORIGIN =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://ndif-team.github.io";
 

@@ -15,17 +15,18 @@ export function pageSeo(
   description = SITE_DESCRIPTION,
 ): Pick<Metadata, "alternates" | "openGraph" | "twitter"> {
   return {
-    alternates: { canonical: path },
+    alternates: { canonical: `${BASE_PATH}${path}` },
     openGraph: {
       type: "website",
       siteName: SITE_NAME,
       title,
       description,
-      url: path,
+      url: `${BASE_PATH}${path}`,
       locale: "en_US",
       images: [{ url: OG_IMAGE_PATH, width: 1200, height: 630, alt: SITE_TITLE }],
     },
     twitter: {
+      // title/description deliberately stay the site defaults.
       card: "summary_large_image",
       site: "@ndif_team",
       creator: "@ndif_team",
