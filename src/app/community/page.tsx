@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "lib/seo";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import CommunityHero from "components/community/CommunityHero";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   title: "Community",
   description:
     "Get involved with NDIF — join our Discord community, use NNsight, contribute to open-source, attend workshops, and explore job opportunities.",
+  ...pageSeo("/community/"),
 };
 
 export default function CommunityPage() {

@@ -5,6 +5,7 @@ import Script from "next/script";
 import { SettingsProvider } from "components/SettingsProvider";
 import SpotlightEffect from "components/SpotlightEffect";
 import "styles/globals.css";
+import { OG_IMAGE_PATH, SITE_NAME, SITE_TITLE, SITE_DESCRIPTION } from "lib/seo";
 
 const GA_MEASUREMENT_ID = "G-NQV89E9KBS";
 
@@ -22,12 +23,6 @@ const BackgroundCanvas = dynamic(() => import("components/BackgroundCanvas"), {
 // asset URLs we hand to openGraph/twitter (see OG_IMAGE_PATH below).
 const SITE_ORIGIN =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://ndif-team.github.io";
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-const OG_IMAGE_PATH = `${BASE_PATH}/og-image.png`;
-const SITE_NAME = "NDIF";
-const SITE_TITLE = "NSF | National Deep Inference Fabric";
-const SITE_DESCRIPTION =
-  "Cracking open the mysteries inside large-scale Artificial Intelligence systems.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
@@ -43,7 +38,6 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    url: "/",
     locale: "en_US",
     // Static .png file in public/ — see DEFERRED.md "OG / Twitter card image"
     // for how to regenerate. The JSX source was at app/opengraph-image.tsx

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "lib/seo";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import GetStartedHero from "components/get-started/GetStartedHero";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   title: "Get Started",
   description:
     "Get started with NDIF and NNsight — install the library, register for a free API key, access LLM internals remotely, and join the community.",
+  ...pageSeo("/get-started/"),
 };
 
 export default function GetStartedPage() {

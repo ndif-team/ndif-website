@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "lib/seo";
 import { Suspense } from "react";
 import Header from "components/Header";
 import Footer from "components/Footer";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   title: "Research",
   description:
     "Citing NDIF in your research. Browse published papers and open-source repos using or referencing NDIF and NNsight.",
+  ...pageSeo("/research/"),
 };
 
 export default function ResearchPage() {

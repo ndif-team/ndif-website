@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "lib/seo";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import StatusDashboard from "components/status/StatusDashboard";
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   title: "Status",
   description:
     "Live status dashboard for the NDIF cluster — view model availability, deployment levels, GPU utilization, and system health in real time.",
+  ...pageSeo("/status/"),
 };
 
 export default function StatusPage() {

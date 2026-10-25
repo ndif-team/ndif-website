@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageSeo } from "lib/seo";
 import Header from "components/Header";
 import AboutStory from "components/AboutStory";
 import FabricParts from "components/fabric/FabricParts";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Learn about NDIF's mission, its three parts, meet our team, and discover our partners working to democratize access to large-scale AI model internals.",
+  ...pageSeo("/about/"),
 };
 
 export default function AboutPage() {

@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageSeo } from "lib/seo";
 import Header from "components/Header";
 import Hero from "components/Hero";
 import SupportedBy from "components/SupportedBy";
@@ -9,6 +11,8 @@ import FeaturedCode from "components/FeaturedCode";
 import GetStarted from "components/GetStarted";
 import CommunityCTA from "components/CommunityCTA";
 import Footer from "components/Footer";
+
+export const metadata: Metadata = pageSeo("/");
 
 export default function Page() {
   return (
