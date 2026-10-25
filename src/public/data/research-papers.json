@@ -355,7 +355,7 @@
     "year": 2026,
     "url": "https://arxiv.org/abs/2604.03532",
     "description": "Researchers have developed a new method, LangFIR, to improve control over the language of outputs from large language models. By analyzing how these models respond to random sequences of words, LangFIR can identify the specific features that are unique to a particular language, even with limited data. This breakthrough enables more accurate language control in multilingual models, paving the way for more effective and flexible language generation systems.",
-    "category": "uses_nnsight",
+    "category": "uses_ndif",
     "image": "/images/LangFIR-Discovering-Sparse-Language-Specific-Features-from-Monolingual-Data-for-Language-Steering.png"
   },
   {
