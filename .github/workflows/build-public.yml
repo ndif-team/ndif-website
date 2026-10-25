@@ -154,6 +154,7 @@ jobs:
           # (which degrades to the committed org-stats.json on any failure).
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          echo "BUILD_ID=$BUILD_ID" >> "$GITHUB_ENV"  # reused by the commit message
           bun install --frozen-lockfile
           bun run build
 
@@ -163,8 +164,6 @@ jobs:
           cp -R src/out public
 
       - name: Commit if changed
-        env:
-          BUILD_ID: ${{ hashFiles('src/**', '!src/node_modules/**', '!src/out/**', '!src/.next/**') }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
