@@ -43,17 +43,21 @@ async function fetchOrgRepos() {
   return repos;
 }
 
+// The UI only shows stars floored to 50 (nnsight) / 100 (total), so store them
+// at 50 granularity: a single new star then doesn't touch the build output.
+const floor50 = (n) => Math.floor(n / 50) * 50;
+
 try {
   const repos = await fetchOrgRepos();
-  const totalStars = repos.reduce((sum, r) => sum + (r.stargazers_count ?? 0), 0);
-  if (repos.length === 0 || !Number.isFinite(totalStars) || totalStars <= 0) {
-    throw new Error(`implausible stats (${repos.length} repos, ${totalStars} stars)`);
+  const rawTotal = repos.reduce((sum, r) => sum + (r.stargazers_count ?? 0), 0);
+  if (repos.length === 0 || !Number.isFinite(rawTotal) || rawTotal <= 0) {
+    throw new Error(`implausible stats (${repos.length} repos, ${rawTotal} stars)`);
   }
+  const totalStars = floor50(rawTotal);
 
   const previous = JSON.parse(await readFile(OUT, "utf8"));
-  const nnsightStars =
-    repos.find((r) => r.name === "nnsight")?.stargazers_count ??
-    previous.nnsightStars;
+  const nnsightRaw = repos.find((r) => r.name === "nnsight")?.stargazers_count;
+  const nnsightStars = nnsightRaw === undefined ? previous.nnsightStars : floor50(nnsightRaw);
 
   // Only rewrite when the numbers moved — keeps builds byte-identical when
   // nothing changed, so CI's "commit if changed" step stays a no-op.
