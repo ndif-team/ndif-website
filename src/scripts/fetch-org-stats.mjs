@@ -43,9 +43,11 @@ async function fetchOrgRepos() {
   return repos;
 }
 
-// The UI only shows stars floored to 50 (nnsight) / 100 (total), so store them
-// at 50 granularity: a single new star then doesn't touch the build output.
-const floor50 = (n) => Math.floor(n / 50) * 50;
+// The UI only shows stars floored to 100 (total) / 50 (nnsight), so store them
+// at that granularity: a single new star then doesn't touch the build output.
+const floorTo = (step) => (n) => Math.floor(n / step) * step;
+const floor100 = floorTo(100);
+const floor50 = floorTo(50);
 
 try {
   const repos = await fetchOrgRepos();
@@ -53,7 +55,7 @@ try {
   if (repos.length === 0 || !Number.isFinite(rawTotal) || rawTotal <= 0) {
     throw new Error(`implausible stats (${repos.length} repos, ${rawTotal} stars)`);
   }
-  const totalStars = floor50(rawTotal);
+  const totalStars = floor100(rawTotal);
 
   const previous = JSON.parse(await readFile(OUT, "utf8"));
   const nnsightRaw = repos.find((r) => r.name === "nnsight")?.stargazers_count;
