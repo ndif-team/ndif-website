@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { FiActivity, FiBookOpen, FiFileText, FiStar, FiGitBranch } from "react-icons/fi";
 import type { GitHubRepo } from "../../data/github-repos";
 import { selectBadges, relativeFromNow } from "../../lib/repos";
@@ -13,7 +14,10 @@ const BADGE_META = {
 } as const;
 
 export default function GitHubRepoCard({ repo }: { repo: GitHubRepo }) {
-  const badges = selectBadges(repo);
+  // Set after mount so prerendered HTML never embeds the build-time clock.
+  const [now, setNow] = useState<Date | null>(null);
+  useEffect(() => setNow(new Date()), []);
+  const badges = selectBadges(repo, now ?? undefined);
   return (
     <a
       href={repo.url}
@@ -62,8 +66,8 @@ export default function GitHubRepoCard({ repo }: { repo: GitHubRepo }) {
       </div>
 
       <div className="text-2xs text-slate-400 dark:text-slate-500 mt-1.5">
-        {repo.last_commit && <span>Active {relativeFromNow(repo.last_commit)}</span>}
-        {repo.last_commit && repo.license && <span> · </span>}
+        {repo.last_commit && now && <span>Active {relativeFromNow(repo.last_commit, now)}</span>}
+        {repo.last_commit && now && repo.license && <span> · </span>}
         {repo.license && <span>{repo.license}</span>}
       </div>
     </a>

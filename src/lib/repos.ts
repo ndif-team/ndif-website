@@ -26,11 +26,12 @@ export function isCoursework(r: GitHubRepo): boolean {
 /**
  * Returns up to 3 badges. Coursework is dropped first if more than 3 qualify.
  */
-export function selectBadges(r: GitHubRepo): RepoBadge[] {
+export function selectBadges(r: GitHubRepo, now?: Date): RepoBadge[] {
   const all: RepoBadge[] = [];
   if (hasPaper(r)) all.push("paper");
   if (isPopular(r)) all.push("popular");
-  if (isActive(r)) all.push("active");
+  // No `now` (prerender) => no active badge, so output never depends on the clock.
+  if (now && isActive(r, now)) all.push("active");
   if (isCoursework(r)) all.push("coursework");
   if (all.length <= 3) return all;
   return all.filter((b) => b !== "coursework").slice(0, 3);
