@@ -24,7 +24,7 @@ const routes = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map(({ path, priority, changeFrequency }) => ({
-    url: `${SITE_URL}${path}`,
+    url: `${SITE_URL}${path}${path.endsWith("/") ? "" : "/"}`, // trailingSlash: true in next.config.js
     changeFrequency,
     priority,
   }));
