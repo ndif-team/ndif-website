@@ -12,7 +12,7 @@ const nextConfig = {
   // Deterministic build id: same source tree → byte-identical export, so CI
   // skips the publish commit when nothing actually changed. CI stamps the
   // triggering commit's SHA; local builds use a fixed id.
-  generateBuildId: async () => process.env.GITHUB_SHA ?? "local",
+  generateBuildId: async () => process.env.BUILD_ID || "local",
 };
 
 module.exports = nextConfig;

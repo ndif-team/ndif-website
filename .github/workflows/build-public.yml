@@ -147,6 +147,9 @@ jobs:
       - name: Build static export
         working-directory: src
         env:
+          # Build ID derives from the build inputs (not the commit SHA), so a
+          # bot commit that changes no input yields byte-identical output.
+          BUILD_ID: ${{ hashFiles('src/**', '!src/node_modules/**', '!src/out/**', '!src/.next/**') }}
           # Lifts the GitHub API rate limit for scripts/fetch-org-stats.mjs
           # (which degrades to the committed org-stats.json on any failure).
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -160,6 +163,8 @@ jobs:
           cp -R src/out public
 
       - name: Commit if changed
+        env:
+          BUILD_ID: ${{ hashFiles('src/**', '!src/node_modules/**', '!src/out/**', '!src/.next/**') }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -168,5 +173,5 @@ jobs:
             echo "public/ unchanged — nothing to commit"
             exit 0
           fi
-          git commit -m "build: refresh public/ for ${GITHUB_SHA}"
+          git commit -m "build: refresh public/ (inputs ${BUILD_ID:0:12})"
           git push origin main || (git pull --rebase origin main && git push origin main)
