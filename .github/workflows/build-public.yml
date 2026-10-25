@@ -149,7 +149,7 @@ jobs:
         env:
           # Build ID derives from the build inputs (not the commit SHA), so a
           # bot commit that changes no input yields byte-identical output.
-          BUILD_ID: ${{ hashFiles('src/**', '!src/node_modules/**', '!src/out/**', '!src/.next/**') }}
+          BUILD_ID: ${{ hashFiles('src/**', '!src/node_modules/**', '!src/out/**', '!src/.next/**', '!src/data/org-stats.json') }}
           # Lifts the GitHub API rate limit for scripts/fetch-org-stats.mjs
           # (which degrades to the committed org-stats.json on any failure).
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
