@@ -1,30 +1,25 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { FiChevronDown } from "react-icons/fi";
+import { FiChevronDown, FiExternalLink, FiMail } from "react-icons/fi";
 import AnimateOnScroll from "../AnimateOnScroll";
+import { openRoles, CAREERS_EMAIL, type JobRole } from "data/jobs";
 
-interface JobItem {
-  title: string;
-  content: string;
-}
+const OTHER_ROLES =
+  "We anticipate hiring for the following roles in the future: Student research assistants and Student co-ops. We also welcome research collaborators and unpaid open-source contributors; for open-source community opportunities, get in touch through our community Discord.";
 
-const jobs: JobItem[] = [
-  {
-    title: "Other roles",
-    content:
-      "We anticipate hiring for the following roles in the future: Student research assistants and Student co-ops. We also welcome research collaborators and unpaid open-source contributors; for open-source community opportunities, get in touch through our community Discord.",
-  },
-];
-
-function JobAccordion({
-  item,
+function Accordion({
+  title,
+  subtitle,
   isOpen,
   onToggle,
+  children,
 }: {
-  item: JobItem;
+  title: string;
+  subtitle?: string;
   isOpen: boolean;
   onToggle: () => void;
+  children: React.ReactNode;
 }) {
   return (
     <div className="border-b border-slate-200 dark:border-slate-700/50">
@@ -34,8 +29,15 @@ function JobAccordion({
           className="flex items-center justify-between w-full py-5 text-left group"
           aria-expanded={isOpen}
         >
-          <span className="font-semibold text-slate-900 dark:text-white pr-4 text-base">
-            {item.title}
+          <span className="pr-4">
+            <span className="block font-semibold text-slate-900 dark:text-white text-base">
+              {title}
+            </span>
+            {subtitle && (
+              <span className="block text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+                {subtitle}
+              </span>
+            )}
           </span>
           <FiChevronDown
             size={20}
@@ -45,15 +47,71 @@ function JobAccordion({
           />
         </button>
       </h3>
+      {/* grid-rows 0fr->1fr animates to the content's real height, so long
+          postings are never clipped the way a fixed max-height would.
+          `invisible` keeps a collapsed posting out of the tab order and the
+          accessibility tree; visibility animates discretely, so it still flips
+          to visible at the start of the expand and to hidden at the end of the
+          collapse. */}
       <div
-        className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-[600px] pb-5" : "max-h-0"
+        className={`grid transition-all duration-300 ease-out ${
+          isOpen
+            ? "grid-rows-[1fr] opacity-100 pb-6"
+            : "grid-rows-[0fr] opacity-0 invisible"
         }`}
       >
-        <p className="text-slate-600 dark:text-slate-400 leading-relaxed pr-8">
-          {item.content}
-        </p>
+        <div className="overflow-hidden">{children}</div>
       </div>
+    </div>
+  );
+}
+
+function RoleBody({ role }: { role: JobRole }) {
+  return (
+    <div className="pr-0 sm:pr-8">
+      <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-5">
+        {role.summary}
+      </p>
+
+      <h4 className="font-semibold text-slate-900 dark:text-white text-sm mb-2">
+        What you will do
+      </h4>
+      <ul className="list-disc pl-5 mb-5 space-y-1.5 text-slate-600 dark:text-slate-400 leading-relaxed">
+        {role.responsibilities.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+
+      <h4 className="font-semibold text-slate-900 dark:text-white text-sm mb-2">
+        What we are looking for
+      </h4>
+      <ul className="list-disc pl-5 mb-6 space-y-1.5 text-slate-600 dark:text-slate-400 leading-relaxed">
+        {role.qualifications.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+
+      {role.applyUrl ? (
+        <a
+          href={role.applyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-slate-900 dark:bg-white/10 border border-slate-700 dark:border-slate-600 hover:border-brand-500 text-sm font-medium text-white transition-all hover:bg-slate-800 dark:hover:bg-white/20"
+        >
+          Apply for this role
+          <FiExternalLink size={14} aria-hidden="true" />
+        </a>
+      ) : (
+        <a
+          href={`mailto:${CAREERS_EMAIL}?subject=${encodeURIComponent(
+            `Application: ${role.title}`
+          )}`}
+          className="inline-flex items-center gap-1.5 text-brand-600 dark:text-brand-400 font-semibold text-sm hover:underline underline-offset-4"
+        >
+          <FiMail size={14} aria-hidden="true" />
+          Express interest by email
+        </a>
+      )}
     </div>
   );
 }
@@ -77,21 +135,36 @@ export default function CommunityJobs() {
             Jobs and Community Opportunities
           </h2>
           <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-10">
-            We don&apos;t currently have any open roles, but please check back
-            later for future job openings.
+            We are hiring across science, engineering, communication, and
+            operations. All positions are at Northeastern University&apos;s
+            Khoury College of Computer Sciences and support NDIF, an NSF-funded
+            open research platform for AI.
           </p>
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={0.1}>
           <div role="region" aria-label="Jobs and community opportunities">
-            {jobs.map((item, i) => (
-              <JobAccordion
-                key={item.title}
-                item={item}
+            {openRoles.map((role, i) => (
+              <Accordion
+                key={role.title}
+                title={role.title}
+                subtitle={role.reportsTo ? `Reports to ${role.reportsTo}` : undefined}
                 isOpen={openIndex === i}
                 onToggle={() => toggle(i)}
-              />
+              >
+                <RoleBody role={role} />
+              </Accordion>
             ))}
+
+            <Accordion
+              title="Other roles"
+              isOpen={openIndex === openRoles.length}
+              onToggle={() => toggle(openRoles.length)}
+            >
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed pr-0 sm:pr-8">
+                {OTHER_ROLES}
+              </p>
+            </Accordion>
           </div>
         </AnimateOnScroll>
       </div>
