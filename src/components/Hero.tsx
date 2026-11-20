@@ -2,8 +2,11 @@
 
 import Link from "next/link";
 import AnimateOnScroll from "./AnimateOnScroll";
+import { getAssetPath } from "lib/assetPath";
+import { useSettings } from "./SettingsProvider";
 
 export default function Hero() {
+  const { isAnimationEnabled } = useSettings();
   return (
     <section className="relative pt-28 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -59,6 +62,37 @@ export default function Hero() {
               Learn About NDIF
             </Link>
           </div>
+        </AnimateOnScroll>
+
+        {/* The Looped Lens Challenge: its mark and a way in. A plain link, since
+            that page is a static file and not an app route. The mark keeps
+            turning, unless the visitor has paused the site's animation or asks
+            for reduced motion. */}
+        <AnimateOnScroll variant="fadeUp" duration={0.5} delay={0.55}>
+          <a
+            href={getAssetPath("/looped-lens-challenge/")}
+            className="group mt-10 mx-auto flex w-fit max-w-full flex-col sm:flex-row items-center gap-4 sm:gap-5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm px-5 py-4 transition-all hover:-translate-y-0.5 hover:border-brand-500"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={getAssetPath("/looped-lens-challenge/assets/favicon.svg")}
+              alt=""
+              width={56}
+              height={56}
+              className={`h-14 w-14 shrink-0 ${isAnimationEnabled ? "motion-safe:animate-[spin_6s_linear_infinite]" : ""}`}
+            />
+            <span className="text-center sm:text-left">
+              <span className="block font-display text-lg font-bold text-slate-900 dark:text-white">
+                The Looped Lens Challenge
+              </span>
+              <span className="block text-sm text-slate-600 dark:text-slate-400">
+                An open competition on Inkling 2 Mini, a looped transformer. Registration is open.
+              </span>
+            </span>
+            <span className="shrink-0 rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-bold text-white whitespace-nowrap">
+              View the challenge →
+            </span>
+          </a>
         </AnimateOnScroll>
       </div>
 
