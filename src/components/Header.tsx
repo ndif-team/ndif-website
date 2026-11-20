@@ -9,6 +9,7 @@ import { FiSun, FiMoon, FiPlay, FiPause, FiX } from "react-icons/fi";
 import ndifLogo from "assets/NSF_NDIF_Lockup.png";
 import Image from "next/image";
 import { mainNav, ctaNav } from "data/navigation";
+import { getAssetPath } from "lib/assetPath";
 
 function AnnouncementBanner({
   onDismiss,
@@ -19,14 +20,15 @@ function AnnouncementBanner({
     <div className="relative bg-gradient-brand text-white text-sm text-center py-2 px-4">
       <div className="max-w-7xl mx-auto flex items-center justify-center gap-2">
         <span className="font-medium">
-          Join NDIF&apos;s <b>bi-weekly reading group</b> on meta-learning and cognition in AI models!
+          The <b>Looped Lens Challenge</b> is open for registration: build the lens that best reads Inkling 2 Mini.
         </span>
-        <Link
-          href="https://luma.com/ndif-team"
+        {/* A plain link: the challenge page is a static file, not an app route. */}
+        <a
+          href={getAssetPath("/looped-lens-challenge/")}
           className="underline underline-offset-2 font-semibold hover:text-white/90 transition-colors whitespace-nowrap"
         >
-          Calendar →
-        </Link>
+          Details →
+        </a>
       </div>
       <button
         onClick={onDismiss}

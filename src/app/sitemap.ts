@@ -20,6 +20,8 @@ const routes = [
   { path: "/community", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/status", priority: 0.6, changeFrequency: "daily" as const },
   { path: "/get-started", priority: 0.9, changeFrequency: "monthly" as const },
+  // A standalone static page in public/looped-lens-challenge/, not an app route.
+  { path: "/looped-lens-challenge", priority: 0.8, changeFrequency: "weekly" as const },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

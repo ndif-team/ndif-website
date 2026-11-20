@@ -30,6 +30,13 @@ published by the [ndif-citations](https://github.com/ndif-team/ndif-citations)
 pipeline. After publishing new data, run `make all` and commit so the live site
 picks it up.
 
+## Looped Lens Challenge page
+
+`src/public/looped-lens-challenge/` is a standalone static page (plain HTML and
+CSS, no build step), served at `https://ndif.us/looped-lens-challenge/`. It does
+not use the app's layout, header or styles. Edit its files directly; the banner
+in `src/components/Header.tsx` links to it.
+
 ## GitHub Pages preview
 
 `src/next.config.production.js` is an alternate config (basePath `/ndif-website`)
