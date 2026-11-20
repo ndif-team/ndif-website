@@ -1,0 +1,236 @@
+/* The Looped Lens Challenge.
+   Set in NDIF's brand kit (github.com/ndif-team/design-assets): the Infra
+   typeface, dark slate for text, silver for rules, and the purple-to-blue
+   gradient, always left to right, kept for the one line that marks the page.
+   The hero shows the challenge's mark, in the same purple and blue. */
+
+@font-face {
+  font-family: Infra; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/ndif-team/design-assets@main/brand/typography/InfraRegular.otf") format("opentype");
+}
+@font-face {
+  font-family: Infra; font-weight: 700; font-style: normal; font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/ndif-team/design-assets@main/brand/typography/InfraBold.otf") format("opentype");
+}
+
+:root {
+  --bg: #fff;
+  --ink: #1d1e22;     /* headings, links, the dark button */
+  --text: #4a4c53;    /* running text */
+  --slate: #66686e;   /* NDIF slate: secondary text */
+  --silver: #c8c9d2;  /* NDIF silver: rules and borders */
+  --wash: #f4f4f7;    /* silver thinned out: code blocks */
+
+  --ink-purple: #b771cf;  /* the left end of NDIF's logo */
+  --ink-mid: #7890e6;     /* its middle */
+  --ink-blue: #38affd;    /* its right end */
+  --ink-black: #000;
+  --gradient: linear-gradient(to right, var(--ink-purple), var(--ink-mid), var(--ink-blue));
+
+  --font: Infra, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  --header: 60px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --wide: 72rem;
+  --measure: 44rem;
+  --column-gap: clamp(2rem, 5vw, 4.5rem);
+  --section-gap: clamp(72px, 40px + 6vw, 128px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header) + 24px); }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 1.0625rem/1.65 var(--font);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1.5px; text-decoration-color: var(--ink-mid); text-underline-offset: 3px; transition: text-decoration-color .2s; }
+a:hover { text-decoration-color: var(--ink-purple); }
+:focus-visible { outline: 2px solid var(--ink-blue); outline-offset: 4px; border-radius: 2px; }
+::selection { background: color-mix(in srgb, var(--ink-mid) 28%, var(--bg)); }
+
+h1, h2, h3, p, ol, ul, dl, dd, figure { margin: 0; }
+ol, ul { padding: 0; list-style: none; }
+
+/* ---------- header ---------- */
+
+/* The title, centred, over the one gradient line on the page. */
+.site-header {
+  position: fixed; inset: 0 0 auto 0; z-index: 10;
+  height: var(--header);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg);
+}
+.site-header::after { content: ""; position: absolute; inset: auto 0 0 0; height: 3px; background: var(--gradient); }
+.site-title { display: inline-flex; align-items: center; gap: .6rem; font-weight: 700; font-size: 1rem; letter-spacing: -.01em; white-space: nowrap; color: var(--ink); text-decoration: none; }
+.site-title img { display: block; width: 22px; height: 22px; }
+
+/* ---------- hero ---------- */
+
+/* Words on the left, the mark on the right. */
+.hero {
+  max-width: calc(var(--wide) + 2 * var(--gutter));
+  min-height: min(100svh, 860px);
+  margin: 0 auto;
+  padding: calc(var(--header) + clamp(32px, 6svh, 72px)) var(--gutter) clamp(32px, 6svh, 72px);
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: var(--column-gap); align-items: center;
+}
+.hero-name { font-weight: 700; color: var(--slate); margin-bottom: 1rem; }
+.hero h1 { font-weight: 700; font-size: clamp(2.5rem, 4.9vw, 4.25rem); line-height: 1.02; letter-spacing: -.03em; color: var(--ink); text-wrap: balance; }
+.hero-text { max-width: 33rem; margin-top: 1.4rem; font-size: 1.125rem; line-height: 1.55; }
+/* When it starts, under the question. */
+.hero-launch { margin-top: .75rem; font-weight: 700; font-size: 1.125rem; line-height: 1.55; color: var(--ink); text-wrap: balance; }
+/* The mark turns while the pointer is on it, and stops where it is when the
+   pointer leaves. The frame around it stays still, so the pointer cannot fall
+   off a turning corner. */
+.hero-art { justify-self: center; width: min(100%, 440px); }
+.hero-art img { display: block; width: 100%; height: auto; }
+
+.actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.9rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: .45rem;
+  min-height: 46px; padding: 0 1.15rem;
+  border: 1.5px solid var(--silver); border-radius: 10px;
+  background: var(--bg);
+  font: 700 .9375rem/1 var(--font); color: var(--ink); text-decoration: none; white-space: nowrap;
+  transition: border-color .2s, background-color .2s, transform .12s;
+}
+.btn:hover { border-color: var(--slate); }
+.btn:active { transform: translateY(1px); }
+.btn svg { width: 11px; height: 11px; transition: transform .2s; }
+.btn:hover svg { transform: translate(1.5px, -1.5px); }
+.btn.dark { border-color: var(--ink); background: var(--ink); color: #fff; }
+.btn.dark:hover { border-color: #35373d; background: #35373d; }
+
+/* ---------- sections ---------- */
+
+/* A silver rule, the heading in a narrow column on the left, the content on
+   the right. The heading stays in view while its section scrolls past. */
+.section {
+  max-width: calc(var(--wide) + 2 * var(--gutter));
+  margin: var(--section-gap) auto 0; padding-inline: var(--gutter);
+  display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); column-gap: var(--column-gap); align-items: start;
+}
+.section::before { content: ""; grid-column: 1 / -1; grid-row: 1; height: 1px; margin-bottom: clamp(28px, 4vw, 48px); background: var(--silver); }
+.section > * { grid-column: 2; max-width: var(--measure); }
+.section > h2 {
+  grid-column: 1; grid-row: 2 / span 12;
+  position: sticky; top: calc(var(--header) + 28px);
+  font-weight: 700; font-size: clamp(1.6rem, 2.5vw, 2.125rem); line-height: 1.12; letter-spacing: -.02em; color: var(--ink); text-wrap: balance;
+}
+.prose p + p { margin-top: 1.1rem; }
+/* The first paragraph of a section is its summary. */
+.prose p:first-child, .model-lead { font-size: 1.25rem; line-height: 1.5; letter-spacing: -.005em; color: var(--ink); text-wrap: pretty; }
+.note { margin-top: 1.75rem; font-size: .9375rem; color: var(--slate); }
+
+/* ---------- the model ---------- */
+
+.model-lead { margin-bottom: 2rem; }
+.section > .visits { max-width: none; }
+.visits { padding: clamp(1.1rem, 3vw, 2rem); border: 1px solid var(--silver); border-radius: 14px; }
+.visits-heads, .visits-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: clamp(8px, 2vw, 18px); }
+.visits-heads { margin-bottom: 12px; font-size: .9375rem; font-weight: 700; line-height: 1.35; color: var(--ink); }
+.visits-heads span { display: block; font-size: .8125rem; font-weight: 400; white-space: nowrap; color: var(--slate); }
+.visits-heads > :nth-child(2) { grid-column: span 2; }
+.visits-grid { row-gap: clamp(8px, 2vw, 18px); }
+.block { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(2px, .6vw, 5px); }
+.cell { aspect-ratio: 1; border-radius: 50%; background: var(--ink-black); }
+.pass-1 .cell { background: var(--ink-purple); }
+.pass-2 .cell { background: var(--ink-mid); }
+.pass-3 .cell { background: var(--ink-blue); }
+.legend { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; margin-top: 1.25rem; font-size: .9rem; line-height: 1.4; color: var(--ink); }
+.legend li { display: inline-flex; align-items: baseline; white-space: nowrap; }
+.legend i { width: 9px; height: 9px; border-radius: 50%; margin-right: .4rem; background: var(--ink-black); }
+.legend .pass-1 { background: var(--ink-purple); }
+.legend .pass-2 { background: var(--ink-mid); }
+.legend .pass-3 { background: var(--ink-blue); }
+.visits figcaption { margin-top: .75rem; font-size: .8125rem; line-height: 1.5; color: var(--slate); }
+
+/* ---------- the competition ---------- */
+
+/* The rules: a name on the left, the rule beside it, a silver line between rows. */
+.rules { margin-top: 2rem; }
+.rules > div { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); column-gap: 1.5rem; padding: 1rem 0; border-top: 1px solid var(--silver); }
+.rules > div:last-child { border-bottom: 1px solid var(--silver); }
+.rules dt { font-weight: 700; color: var(--ink); }
+.rules dd { text-wrap: pretty; }
+.rules var { font: 400 .92em var(--mono); color: var(--ink); }
+
+/* ---------- take part ---------- */
+
+/* The challenge's mark beside NDIF's logo. */
+.cta-art { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.75rem; }
+.cta-art a { display: block; width: 150px; }
+.cta-art img { display: block; width: 100%; height: auto; }
+.cta-art .cta-mark { width: 72px; }
+/* The one thing to take away from the section. */
+.cta-launch { font-weight: 700; font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.15; letter-spacing: -.02em; color: var(--ink); text-wrap: balance; }
+.cta-text { font-size: 1.25rem; line-height: 1.5; color: var(--ink); }
+.howto { margin-top: 2rem; counter-reset: how; }
+.howto > li { counter-increment: how; display: grid; grid-template-columns: 2rem minmax(0, 1fr); padding: 1.1rem 0; border-top: 1px solid var(--silver); }
+.howto > li::before { content: counter(how); font-weight: 700; color: var(--ink); }
+.howto pre { grid-column: 2; margin: .7rem 0 .2rem; padding: .85rem 1rem; border-radius: 10px; background: var(--wash); overflow-x: auto; }
+.howto code { font: 400 .8125rem/1.6 var(--mono); color: var(--ink); }
+
+/* ---------- organizers ---------- */
+
+.section > .logos { max-width: none; }
+.logos { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem clamp(2rem, 5vw, 4rem); }
+.logos a { display: block; text-decoration: none; transition: opacity .2s; }
+.logos a:hover { opacity: .75; }
+.logos img { display: block; width: auto; height: var(--h, 52px); }
+/* Thinking Machines' name, set in type. */
+.logos .wordmark { font-weight: 700; font-size: 1.0625rem; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; color: var(--slate); }
+
+/* ---------- footer ---------- */
+
+.site-footer { max-width: calc(var(--wide) + 2 * var(--gutter)); margin: var(--section-gap) auto 0; padding: 0 var(--gutter) 3rem; }
+.footer-note { padding-top: 1.5rem; border-top: 1px solid var(--silver); font-size: .9375rem; color: var(--slate); }
+
+/* Something still to be filled in before the page goes public. */
+.todo { background: color-mix(in srgb, #ffce52 45%, transparent); border-radius: 2px; padding: 0 .2em; color: var(--ink); }
+
+/* ---------- motion ---------- */
+
+@keyframes turn { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-art img { animation: turn 4s linear infinite paused; }
+  .hero-art:hover img { animation-play-state: running; }
+  .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s cubic-bezier(.22, 1, .36, 1); transition-delay: var(--delay, 0ms); }
+  .js .reveal.is-in { opacity: 1; transform: none; }
+  .js .visits .cell { opacity: 0; transform: scale(.58); transition: opacity .34s ease, transform .34s cubic-bezier(.16, 1, .3, 1); transition-delay: calc(var(--i, 0) * 30ms + 200ms); }
+  .js .visits.is-in .cell { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .btn svg { transition: none; }
+}
+
+/* ---------- narrower screens ---------- */
+
+/* One column: the words, then the mark; each heading above its content. */
+@media (max-width: 900px) {
+  .hero { min-height: 0; grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; }
+  .section { grid-template-columns: minmax(0, 1fr); }
+  .section::before { margin-bottom: 1.75rem; }
+  .section > *, .section > h2 { grid-column: 1; grid-row: auto; }
+  .section > h2 { position: static; margin-bottom: 1.25rem; }
+}
+@media (max-width: 640px) {
+  body { font-size: 1rem; }
+  .site-title { font-size: .9375rem; }
+  .hero-text { font-size: 1.0625rem; }
+  .prose p:first-child, .model-lead, .cta-text { font-size: 1.125rem; }
+  .rules > div { grid-template-columns: minmax(0, 1fr); row-gap: .15rem; }
+  .howto pre { padding: .75rem .85rem; }
+  .howto code { font-size: .75rem; }
+  .logos img { height: calc(var(--h, 52px) * .85); }
+}

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Looped Lens Challenge</title>
+<meta name="description" content="An open competition on NDIF: build the lens that best reads Inkling 2 Mini, a looped open-weights model from Thinking Machines.">
+<meta property="og:title" content="The Looped Lens Challenge">
+<meta property="og:description" content="Build the lens that best reads Inkling 2 Mini, a looped open-weights model. Open to anyone with an NDIF key.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ndif.us/looped-lens-challenge/">
+<!-- The picture a link to this page shows where it is shared. Its address has to be a full one. -->
+<meta property="og:image" content="https://ndif.us/looped-lens-challenge/assets/social-card.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Looped Lens Challenge: Inkling 2 Mini on NDIF, with the challenge's mark and NDIF's logo.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ndif.us/looped-lens-challenge/assets/social-card.png">
+<meta name="twitter:image:alt" content="The Looped Lens Challenge: Inkling 2 Mini on NDIF, with the challenge's mark and NDIF's logo.">
+<link rel="canonical" href="https://ndif.us/looped-lens-challenge/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
+<!-- PostHog analytics. The key below is the project's public one: it can send events and read nothing. -->
+<script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="Eh Rh Ph Oh Dh qh init yd bd dd fd Sd wc md xd ad Ed Ad Rd Pd Od Fd capture getExtension gr pd gd calculateEventProperties Dd register register_once register_for_session unregister unregister_for_session zd hd jd getFeatureFlag getFeatureFlagPayload getFeatureFlagResult getAllFeatureFlags isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys onActiveMatchingSurveysChanged renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Hd identify setPersonProperties unsetPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset Ud shutdown setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty qd Td createPersonProfile setInternalOrTestUser Bd Uh zh opt_in_capturing opt_out_capturing Hh has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing $d debug kc Ds getPageViewId captureTraceFeedback captureTraceMetric rd".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_s8CX2CUN9eGVuv9kiGc8zyeKakH44rsN5RqipKMBUyMy', {
+        api_host: 'https://us.i.posthog.com',
+        defaults: '2026-05-30',
+        person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
+    })
+</script>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <a class="site-title" href="#top"><img src="assets/favicon.svg" alt="" width="22" height="22">Looped Lens Challenge</a>
+</header>
+
+<main>
+
+<section class="hero" aria-labelledby="title">
+  <div class="hero-copy">
+    <p class="hero-name">Inkling 2 Mini on NDIF</p>
+    <h1 id="title">The Looped Lens Challenge</h1>
+    <p class="hero-text">Can you surface what <a href="https://thinkingmachines.ai/news/inkling-2-mini/">Inkling 2 Mini</a> computes but doesn't write?</p>
+    <p class="hero-launch">Competition opens Nov&nbsp;23</p>
+    <div class="actions">
+      <a class="btn dark" href="https://login.ndif.us">Get an NDIF key <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
+      <a class="btn" href="https://forms.gle/enBNFNUBDj5SWvfC9">Register <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
+      <!-- <a class="btn" href="https://huggingface.co/spaces/NDIF/looped-lens-challenge">Leaderboard <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a> -->
+    </div>
+  </div>
+  <!-- The challenge's mark, large. It turns while the pointer is on it. -->
+  <div class="hero-art">
+    <img src="assets/favicon.svg" alt="" width="308" height="308">
+  </div>
+</section>
+
+<section class="section" id="challenge">
+  <h2 class="reveal">The challenge</h2>
+  <div class="prose reveal">
+    <p>A lens reads an activation from inside a model and says, in tokens, what the model is computing at that point. The logit lens and its relatives all read the same thing: the residual stream, the running sum that every layer of an ordinary transformer adds to.</p>
+    <p><a href="https://thinkingmachines.ai/news/inkling-2-mini/">Inkling 2 Mini</a> is a small open-weights model from Thinking Machines. It loops its middle layers, so it does more computation on each token instead of writing more tokens. It also has no single residual stream: each layer reads its own mix of what earlier layers wrote. So what happens to the lenses we use to understand and monitor a model? Does a Jacobian lens still work the same way?</p>
+    <p>This challenge asks the community to find out: build the lens that best reads Inkling 2 Mini. It runs on <a href="https://ndif.us">NDIF</a>, which hosts the model, and it is open to anyone with an NDIF key. You write an experiment on your own machine with <a href="https://nnsight.net">nnsight</a>, and NDIF runs it on the model.</p>
+  </div>
+</section>
+
+<section class="section" id="model">
+  <h2 class="reveal">Inside Inkling 2 Mini</h2>
+  <p class="model-lead reveal">Inkling 2 Mini has 24 layers of weights and applies 48 to every token. The middle twelve run three times, with the same weights on each pass.</p>
+  <figure class="visits reveal">
+    <div class="visits-heads" aria-hidden="true">
+      <div>Prelude <span>layers 0–5</span></div>
+      <div>Core <span>layers 6–17, three passes</span></div>
+      <div>Coda <span>layers 18–23</span></div>
+    </div>
+    <div class="visits-grid" role="img" aria-label="Six prelude layers run once, twelve core layers run three times, and six coda layers run once: 48 layer applications in all.">
+      <div class="block" style="grid-area:1/1"><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i></div>
+      <div class="block pass-1" style="grid-area:1/2"><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i></div>
+      <div class="block pass-1" style="grid-area:1/3"><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i></div>
+      <div class="block pass-2" style="grid-area:2/2"><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i></div>
+      <div class="block pass-2" style="grid-area:2/3"><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i></div>
+      <div class="block pass-3" style="grid-area:3/2"><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i></div>
+      <div class="block pass-3" style="grid-area:3/3"><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i></div>
+      <div class="block" style="grid-area:3/4"><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i></div>
+    </div>
+    <ul class="legend">
+      <li><i></i>Prelude and coda, run once</li>
+      <li><i class="pass-1"></i>Core, pass 1</li>
+      <li><i class="pass-2"></i>Pass 2</li>
+      <li><i class="pass-3"></i>Pass 3</li>
+    </ul>
+    <figcaption>Each dot is one layer applied to a token, in the order it happens: left to right, then down. A gap ends a block of six layers.</figcaption>
+  </figure>
+</section>
+
+<section class="section" id="why">
+  <h2 class="reveal">Why it matters</h2>
+  <div class="prose reveal">
+    <p>Looped transformers are getting attention as an architecture that performs well, and as a subject for interpretability. Inkling 2 Mini is a major one: it runs on a laptop, and it is performant enough to power workflows in coding, agentic work, computer use and design.</p>
+    <p>At the same time, frontier models can do more and more of their reasoning inside a single forward pass, with no chain of thought to read: see the reports from <a href="https://blog.redwoodresearch.org/p/estimating-no-cot-task-completion">Redwood Research</a>, <a href="https://x.com/EpochAIResearch/status/2122762411287748696">Epoch AI</a> and the <a href="https://www.alignmentforum.org/posts/eRmzz8J8Qkzqvzrgg/astra-can-do-a-concerning-amount-with-no-chain-of-thought">Alignment Forum</a>. As part of this release, Thinking Machines studied the effects of looping on chain-of-thought monitorability for Inkling 2 Mini and is publishing the results, along with a second model built for studying looping.</p>
+    <p>Reasoning that a model does not write down can only be read from its activations. Lenses do that, and they have had little testing on looped models.</p>
+  </div>
+</section>
+
+<section class="section" id="competition">
+  <h2 class="reveal">The competition</h2>
+  <div class="prose reveal">
+    <p>The goal is to crowdsource two things: new tools for working on this class of model, and general insights into Inkling 2 Mini itself. You enter by writing a lens. These are the rules.</p>
+  </div>
+  <dl class="rules reveal">
+    <div>
+      <dt>Submission</dt>
+      <dd>A Python script, limited in size, with your lens artifacts sent as files or as links to files.</dd>
+    </div>
+    <div>
+      <dt>Input</dt>
+      <dd>Your program receives one prompt from our evaluation set.</dd>
+    </div>
+    <div>
+      <dt>Read locations</dt>
+      <dd>You choose <var>N</var> layers to read on each prompt, so picking good layers is part of the task. Readouts are taken at a single token position per prompt. You can choose that too, though it should probably be the final token.</dd>
+    </div>
+    <div>
+      <dt>Output</dt>
+      <dd>The top <var>K</var> ranked tokens at each of your <var>N</var> read locations: <var>N</var> × <var>K</var> tokens for the prompt, labelled with the layer they came from.</dd>
+    </div>
+    <div>
+      <dt>Scoring</dt>
+      <dd>The readouts for a prompt are collected into one list, and the list is given to a judge.</dd>
+    </div>
+    <div>
+      <dt>Phases</dt>
+      <dd>The competition will probably run in several phases of increasing complexity. Phase one is single-token readouts on relatively simple tasks, in the style of <a href="https://github.com/camila-blank/workspace-bench">workspace-bench</a>.</dd>
+    </div>
+    <div>
+      <dt>Entry</dt>
+      <dd>Anyone can enroll. You need an NDIF key and a <a href="https://forms.gle/enBNFNUBDj5SWvfC9">registration</a>.</dd>
+    </div>
+    <div>
+      <dt>Dates</dt>
+      <dd>Phase one opens on November 23. Its closing date will be announced here.</dd>
+    </div>
+  </dl>
+  <!-- <p class="note reveal">The <a href="https://github.com/ndif-team/looped-lens-challenge">repository</a> has the exact format and limits.</p> -->
+</section>
+
+<section class="section" id="take-part">
+  <div class="cta-art reveal">
+    <img class="cta-mark" src="assets/favicon.svg" alt="The Looped Lens Challenge" width="308" height="308">
+    <a href="https://ndif.us"><img src="assets/ndif.png" alt="NDIF, the National Deep Inference Fabric" width="798" height="526"></a>
+  </div>
+  <h2 class="reveal">Take part</h2>
+  <p class="cta-launch reveal">Competition opens Nov&nbsp;23</p>
+  <!-- <p class="cta-text reveal">Anyone can enter. You need an NDIF key, a registration and a copy of the repository.</p> -->
+  <!--
+  <ol class="howto">
+    <li class="reveal">
+      <div>Get an API key at <a href="https://login.ndif.us">login.ndif.us</a>.</div>
+    </li>
+    <li class="reveal">
+      <div>Register for the challenge with the <a href="https://forms.gle/enBNFNUBDj5SWvfC9">registration form</a>. Use the email your NDIF key was created with.</div>
+    </li>
+    <li class="reveal">
+      <div>Clone the repository and install it.</div>
+      <pre><code>git clone --recurse-submodules \
+    https://github.com/ndif-team/looped-lens-challenge
+cd looped-lens-challenge
+uv sync &amp;&amp; source .venv/bin/activate</code></pre>
+    </li>
+    <li class="reveal">
+      <div>Run the starter lens from your machine. It executes on NDIF.</div>
+      <pre><code>export NDIF_API_KEY=...
+python submit.py --local</code></pre>
+    </li>
+    <li class="reveal">
+      <div>Write your own lens in <code>submission/</code>, then submit it. Your score appears on the <a href="https://huggingface.co/spaces/NDIF/looped-lens-challenge">leaderboard</a>.</div>
+      <pre><code>python submit.py --team "My Team" --wait</code></pre>
+    </li>
+  </ol>
+  -->
+  <div class="actions reveal">
+    <a class="btn dark" href="https://login.ndif.us">Get an NDIF key <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
+    <a class="btn" href="https://forms.gle/enBNFNUBDj5SWvfC9">Register <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
+    <a class="btn" href="https://discord.com/invite/6uFJmCSwW7">Ask on Discord <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
+  </div>
+</section>
+
+<section class="section" id="organizers">
+  <h2 class="reveal">Organizers and partners</h2>
+  <div class="logos reveal">
+    <a href="https://ndif.us" style="--h:58px"><img src="assets/ndif.png" alt="NDIF, the National Deep Inference Fabric" width="798" height="526"></a>
+    <a class="wordmark" href="https://thinkingmachines.ai">Thinking Machines</a>
+    <a href="https://www.goodfire.ai" style="--h:30px"><img src="assets/goodfire.svg" alt="Goodfire" width="163" height="35"></a>
+    <a href="https://www.northeastern.edu" style="--h:54px"><img src="assets/northeastern.png" alt="Northeastern University" width="432" height="432"></a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-note">The Looped Lens Challenge runs on NDIF, the National Deep Inference Fabric.</p>
+</footer>
+
+<script>
+// Sections rise into place as they come into view. Without this script, or
+// with reduced motion, everything is simply there.
+(function () {
+  var root = document.documentElement;
+  try {
+    var cells = document.querySelectorAll('.visits .cell');
+    for (var i = 0; i < cells.length; i++) cells[i].style.setProperty('--i', i);
+    var items = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) throw new Error('no observer');
+    var seen = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-in');
+        seen.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    for (var j = 0; j < items.length; j++) seen.observe(items[j]);
+  } catch (error) {
+    root.classList.remove('js');
+  }
+})();
+</script>
+</body>
+</html>
