@@ -124,39 +124,7 @@
   <dl class="rules reveal">
     <div>
       <dt>Submission</dt>
-      <dd>A Python script, limited in size, with your lens artifacts sent as files or as links to files.
-        <details class="howto-fold" id="how-to-enter">
-        <summary class="howto-lead">TLDR, a submission workflow looks like this:</summary>
-        <ol class="howto">
-          <li>
-            <div>Get an API key at <a href="https://login.ndif.us">login.ndif.us</a>.</div>
-          </li>
-          <li>
-            <div>Register for the challenge with the <a href="https://forms.gle/enBNFNUBDj5SWvfC9">registration/waitlist form</a>. Use the email your NDIF key was created with.</div>
-          </li>
-          <li>
-            <div>Clone the <a href="https://github.com/ndif-team/looped-lens-challenge">repository</a> and install it with <a href="https://docs.astral.sh/uv/">uv</a>.</div>
-            <pre><code>git clone https://github.com/ndif-team/looped-lens-challenge
-cd looped-lens-challenge
-uv sync &amp;&amp; source .venv/bin/activate
-export NDIF_API_KEY=...</code></pre>
-          </li>
-          <li>
-            <div>Run the starter logit lens on the 10 practice questions. It executes on NDIF and is scored on your machine by exact matching. To score with the leaderboard's judge instead, run <code>uv sync --group evaluator</code> and set <code>OPENAI_API_KEY</code>.</div>
-            <pre><code>python submit.py --local</code></pre>
-          </li>
-          <li>
-            <div>Write your lens in <code>submission/lenses.py</code>. For each question it reads up to 10 of the model's 48 effective layers and returns 10 tokens from each. Trained weights go on the Hugging Face Hub and are loaded with <code>lenses.fetch</code>.</div>
-          </li>
-          <li>
-            <div>Submit. The team name is needed the first time only, and one NDIF account is one team. Your best score appears on the <a href="https://ndif-looped-lens-challenge.hf.space/">leaderboard</a>.</div>
-            <pre><code>python submit.py --team "My Team" --wait
-python submit.py --status</code></pre>
-          </li>
-        </ol>
-        <p class="howto-lead">The repository's <a href="https://github.com/ndif-team/looped-lens-challenge#writing-a-lens">README</a> has the exact output format, the limits and the scoring.</p>
-        </details>
-      </dd>
+      <dd>A Python script, limited in size, with your lens artifacts sent as files or as links to files. The steps to submit are under <a href="#take-part">Take part</a>.</dd>
     </div>
     <div>
       <dt>Input</dt>
@@ -207,6 +175,61 @@ python submit.py --status</code></pre>
   <!-- <p class="note reveal">The <a href="https://github.com/ndif-team/looped-lens-challenge">repository</a> has the exact format and limits.</p> -->
 </section>
 
+<section class="section" id="take-part">
+  <div class="cta-art reveal">
+    <img class="cta-mark" src="assets/favicon.svg" alt="The Looped Lens Challenge" width="308" height="308">
+    <a href="https://ndif.us"><img src="assets/ndif.png" alt="NDIF, the National Deep Inference Fabric" width="798" height="526"></a>
+  </div>
+  <h2 class="reveal">Take part</h2>
+  <p class="cta-launch reveal">Competition is open</p>
+  <!-- <p class="cta-text reveal">Anyone can enter. You need an NDIF key, a registration/waitlist entry and a copy of the repository.</p> -->
+  <div class="actions reveal">
+    <a class="btn dark" href="https://login.ndif.us">Get an NDIF key <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
+    <a class="btn" href="https://forms.gle/enBNFNUBDj5SWvfC9">Registration/Waitlist <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
+    <a class="btn" href="https://discord.com/invite/6uFJmCSwW7">Ask on Discord <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
+  </div>
+  <p class="howto-lead reveal" id="how-to-enter">TLDR, a submission workflow looks like this:</p>
+  <ol class="howto reveal">
+    <li>
+      <div>Get an API key at <a href="https://login.ndif.us">login.ndif.us</a>.</div>
+    </li>
+    <li>
+      <div>Register for the challenge with the <a href="https://forms.gle/enBNFNUBDj5SWvfC9">registration/waitlist form</a>. Use the email your NDIF key was created with.</div>
+    </li>
+    <li>
+      <div>Clone the <a href="https://github.com/ndif-team/looped-lens-challenge">repository</a> and install it with <a href="https://docs.astral.sh/uv/">uv</a>.</div>
+      <pre><code>git clone https://github.com/ndif-team/looped-lens-challenge
+cd looped-lens-challenge
+uv sync &amp;&amp; source .venv/bin/activate
+export NDIF_API_KEY=...</code></pre>
+    </li>
+    <li>
+      <div>Run the starter logit lens on the 10 practice questions. It executes on NDIF and is scored on your machine by exact matching. To score with the leaderboard's judge instead, run <code>uv sync --group evaluator</code> and set <code>OPENAI_API_KEY</code>.</div>
+      <pre><code>python submit.py --local</code></pre>
+    </li>
+    <li>
+      <div>Write your lens in <code>submission/lenses.py</code>. For each question it reads up to 10 of the model's 48 effective layers and returns 10 tokens from each. Trained weights go on the Hugging Face Hub and are loaded with <code>lenses.fetch</code>.</div>
+    </li>
+    <li>
+      <div>Submit. The team name is needed the first time only, and one NDIF account is one team. Your best score appears on the <a href="https://ndif-looped-lens-challenge.hf.space/">leaderboard</a>.</div>
+      <pre><code>python submit.py --team "My Team" --wait
+python submit.py --status</code></pre>
+    </li>
+  </ol>
+  <p class="note reveal">The repository's <a href="https://github.com/ndif-team/looped-lens-challenge#writing-a-lens">README</a> has the exact output format, the limits and the scoring.</p>
+</section>
+
+<section class="section" id="organizers">
+  <h2 class="reveal">Organizers and partners</h2>
+  <div class="logos reveal">
+    <a href="https://ndif.us" style="--h:58px"><img src="assets/ndif.png" alt="NDIF, the National Deep Inference Fabric" width="798" height="526"></a>
+    <a class="wordmark" href="https://thinkingmachines.ai">Thinking Machines</a>
+    <a href="https://www.goodfire.ai" style="--h:30px"><img src="assets/goodfire.svg" alt="Goodfire" width="163" height="35"></a>
+    <a href="https://www.northeastern.edu" style="--h:54px"><img src="assets/northeastern.png" alt="Northeastern University" width="432" height="432"></a>
+  </div>
+  <p class="note reveal">This challenge is organized by: Jaden&nbsp;Fiotto-Kaufman, Adam&nbsp;Belfki, Zikai&nbsp;Wang, Tobias&nbsp;Moser, Emma&nbsp;Bortz, Benno&nbsp;Krojer, David&nbsp;Bau</p>
+</section>
+
 <section class="section" id="eligibility">
   <h2 class="reveal">Eligibility</h2>
   <div class="prose legal reveal">
@@ -221,77 +244,12 @@ python submit.py --status</code></pre>
   </div>
 </section>
 
-<section class="section" id="take-part">
-  <div class="cta-art reveal">
-    <img class="cta-mark" src="assets/favicon.svg" alt="The Looped Lens Challenge" width="308" height="308">
-    <a href="https://ndif.us"><img src="assets/ndif.png" alt="NDIF, the National Deep Inference Fabric" width="798" height="526"></a>
-  </div>
-  <h2 class="reveal">Take part</h2>
-  <p class="cta-launch reveal">Competition is open</p>
-  <!-- <p class="cta-text reveal">Anyone can enter. You need an NDIF key, a registration/waitlist entry and a copy of the repository.</p> -->
-  <!--
-  <ol class="howto">
-    <li class="reveal">
-      <div>Get an API key at <a href="https://login.ndif.us">login.ndif.us</a>.</div>
-    </li>
-    <li class="reveal">
-      <div>Register for the challenge with the <a href="https://forms.gle/enBNFNUBDj5SWvfC9">registration/waitlist form</a>. Use the email your NDIF key was created with.</div>
-    </li>
-    <li class="reveal">
-      <div>Clone the repository and install it.</div>
-      <pre><code>git clone --recurse-submodules \
-    https://github.com/ndif-team/looped-lens-challenge
-cd looped-lens-challenge
-uv sync &amp;&amp; source .venv/bin/activate</code></pre>
-    </li>
-    <li class="reveal">
-      <div>Run the starter lens from your machine. It executes on NDIF.</div>
-      <pre><code>export NDIF_API_KEY=...
-python submit.py --local</code></pre>
-    </li>
-    <li class="reveal">
-      <div>Write your own lens in <code>submission/</code>, then submit it. Your score appears on the <a href="https://ndif-looped-lens-challenge.hf.space/">leaderboard</a>.</div>
-      <pre><code>python submit.py --team "My Team" --wait</code></pre>
-    </li>
-  </ol>
-  -->
-  <div class="actions reveal">
-    <a class="btn dark" href="https://login.ndif.us">Get an NDIF key <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
-    <a class="btn" href="https://forms.gle/enBNFNUBDj5SWvfC9">Registration/Waitlist <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
-    <a class="btn" href="https://discord.com/invite/6uFJmCSwW7">Ask on Discord <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
-  </div>
-  <p class="note reveal">How to enter: <a href="#how-to-enter">see the submission steps</a> under the rules.</p>
-</section>
-
-<section class="section" id="organizers">
-  <h2 class="reveal">Organizers and partners</h2>
-  <div class="logos reveal">
-    <a href="https://ndif.us" style="--h:58px"><img src="assets/ndif.png" alt="NDIF, the National Deep Inference Fabric" width="798" height="526"></a>
-    <a class="wordmark" href="https://thinkingmachines.ai">Thinking Machines</a>
-    <a href="https://www.goodfire.ai" style="--h:30px"><img src="assets/goodfire.svg" alt="Goodfire" width="163" height="35"></a>
-    <a href="https://www.northeastern.edu" style="--h:54px"><img src="assets/northeastern.png" alt="Northeastern University" width="432" height="432"></a>
-  </div>
-  <p class="note reveal">This challenge is organized by: Jaden&nbsp;Fiotto-Kaufman, Adam&nbsp;Belfki, Zikai&nbsp;Wang, Tobias&nbsp;Moser, Emma&nbsp;Bortz, Benno&nbsp;Krojer, David&nbsp;Bau</p>
-</section>
-
 </main>
 
 <footer class="site-footer">
   <p class="footer-note">The Looped Lens Challenge runs on NDIF, the National Deep Inference Fabric.</p>
 </footer>
 
-<script>
-// A link to #how-to-enter opens the submission steps it points at.
-(function () {
-  var fold = document.getElementById('how-to-enter');
-  if (!fold) return;
-  if (location.hash === '#how-to-enter') fold.open = true;
-  document.addEventListener('click', function (event) {
-    var link = event.target.closest && event.target.closest('a[href="#how-to-enter"]');
-    if (link) fold.open = true;
-  });
-})();
-</script>
 <script>
 // Sections rise into place as they come into view. Without this script, or
 // with reduced motion, everything is simply there.

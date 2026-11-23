@@ -184,13 +184,8 @@ ol, ul { padding: 0; list-style: none; }
 .howto > li::before { content: counter(how); font-weight: 700; color: var(--ink); }
 .howto pre { grid-column: 2; margin: .7rem 0 .2rem; padding: .85rem 1rem; border-radius: 10px; background: var(--wash); overflow-x: auto; }
 .howto code { font: 400 .8125rem/1.6 var(--mono); color: var(--ink); }
-.howto-lead { margin-top: .9rem; }
-.howto-fold summary { cursor: pointer; list-style: none; color: var(--ink); font-weight: 600; }
-.howto-fold summary::-webkit-details-marker { display: none; }
-.howto-fold summary::before { content: "▸"; display: inline-block; width: 1.1em; transition: transform .2s; }
-.howto-fold[open] summary::before { transform: rotate(90deg); }
-.rules .howto { margin-top: .4rem; }
-.rules .howto > li { padding: .7rem 0; }
+.howto-lead { margin-top: 2.25rem; font-weight: 600; color: var(--ink); }
+.howto-lead + .howto { margin-top: .75rem; }
 
 /* ---------- organizers ---------- */
 
