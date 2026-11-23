@@ -142,7 +142,7 @@ uv sync &amp;&amp; source .venv/bin/activate
 export NDIF_API_KEY=...</code></pre>
           </li>
           <li>
-            <div>Run the starter logit lens on the 10 practice questions. It executes on NDIF and is scored on your machine by exact matching; set <code>OPENROUTER_API_KEY</code> to score with the leaderboard's judge instead.</div>
+            <div>Run the starter logit lens on the 10 practice questions. It executes on NDIF and is scored on your machine by exact matching. To score with the leaderboard's judge instead, run <code>uv sync --group evaluator</code> and set <code>OPENAI_API_KEY</code>.</div>
             <pre><code>python submit.py --local</code></pre>
           </li>
           <li>
