@@ -46,7 +46,7 @@
     <p class="hero-name">Inkling 2 Mini on NDIF</p>
     <h1 id="title">The Looped Lens Challenge</h1>
     <p class="hero-text">Can you surface what <a href="https://thinkingmachines.ai/news/inkling-2-mini/">Inkling 2 Mini</a> computes but doesn't write?</p>
-    <p class="hero-launch">Competition opens Nov&nbsp;23</p>
+    <p class="hero-launch">Competition is open</p>
     <div class="actions">
       <a class="btn dark" href="https://login.ndif.us">Get an NDIF key <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
       <a class="btn" href="https://forms.gle/enBNFNUBDj5SWvfC9">Registration/Waitlist <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
@@ -125,7 +125,7 @@
     <div>
       <dt>Submission</dt>
       <dd>A Python script, limited in size, with your lens artifacts sent as files or as links to files.
-        <details class="howto-fold">
+        <details class="howto-fold" id="how-to-enter">
         <summary class="howto-lead">TLDR, a submission workflow looks like this:</summary>
         <ol class="howto">
           <li>
@@ -227,7 +227,7 @@ python submit.py --status</code></pre>
     <a href="https://ndif.us"><img src="assets/ndif.png" alt="NDIF, the National Deep Inference Fabric" width="798" height="526"></a>
   </div>
   <h2 class="reveal">Take part</h2>
-  <p class="cta-launch reveal">Competition opens Nov&nbsp;23</p>
+  <p class="cta-launch reveal">Competition is open</p>
   <!-- <p class="cta-text reveal">Anyone can enter. You need an NDIF key, a registration/waitlist entry and a copy of the repository.</p> -->
   <!--
   <ol class="howto">
@@ -260,6 +260,7 @@ python submit.py --local</code></pre>
     <a class="btn" href="https://forms.gle/enBNFNUBDj5SWvfC9">Registration/Waitlist <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
     <a class="btn" href="https://discord.com/invite/6uFJmCSwW7">Ask on Discord <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
   </div>
+  <p class="note reveal">How to enter: <a href="#how-to-enter">see the submission steps</a> under the rules.</p>
 </section>
 
 <section class="section" id="organizers">
@@ -279,6 +280,18 @@ python submit.py --local</code></pre>
   <p class="footer-note">The Looped Lens Challenge runs on NDIF, the National Deep Inference Fabric.</p>
 </footer>
 
+<script>
+// A link to #how-to-enter opens the submission steps it points at.
+(function () {
+  var fold = document.getElementById('how-to-enter');
+  if (!fold) return;
+  if (location.hash === '#how-to-enter') fold.open = true;
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest && event.target.closest('a[href="#how-to-enter"]');
+    if (link) fold.open = true;
+  });
+})();
+</script>
 <script>
 // Sections rise into place as they come into view. Without this script, or
 // with reduced motion, everything is simply there.
