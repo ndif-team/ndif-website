@@ -129,6 +129,8 @@ ol, ul { padding: 0; list-style: none; }
 .prose p + p { margin-top: 1.1rem; }
 /* The first paragraph of a section is its summary. */
 .prose p:first-child, .model-lead { font-size: 1.25rem; line-height: 1.5; letter-spacing: -.005em; color: var(--ink); text-wrap: pretty; }
+/* Fine print: no summary paragraph. */
+.legal p:first-child { font-size: inherit; line-height: inherit; letter-spacing: normal; color: inherit; }
 .note { margin-top: 1.75rem; font-size: .9375rem; color: var(--slate); }
 
 /* ---------- the model ---------- */
@@ -162,6 +164,9 @@ ol, ul { padding: 0; list-style: none; }
 .rules > div:last-child { border-bottom: 1px solid var(--silver); }
 .rules dt { font-weight: 700; color: var(--ink); }
 .rules dd { text-wrap: pretty; }
+.rules dd > * + * { margin-top: .6rem; }
+.rule-list { list-style: disc; padding-left: 1.2rem; }
+.rule-list li + li { margin-top: .25rem; }
 .rules var { font: 400 .92em var(--mono); color: var(--ink); }
 
 /* ---------- take part ---------- */
@@ -179,6 +184,13 @@ ol, ul { padding: 0; list-style: none; }
 .howto > li::before { content: counter(how); font-weight: 700; color: var(--ink); }
 .howto pre { grid-column: 2; margin: .7rem 0 .2rem; padding: .85rem 1rem; border-radius: 10px; background: var(--wash); overflow-x: auto; }
 .howto code { font: 400 .8125rem/1.6 var(--mono); color: var(--ink); }
+.howto-lead { margin-top: .9rem; }
+.howto-fold summary { cursor: pointer; list-style: none; color: var(--ink); font-weight: 600; }
+.howto-fold summary::-webkit-details-marker { display: none; }
+.howto-fold summary::before { content: "▸"; display: inline-block; width: 1.1em; transition: transform .2s; }
+.howto-fold[open] summary::before { transform: rotate(90deg); }
+.rules .howto { margin-top: .4rem; }
+.rules .howto > li { padding: .7rem 0; }
 
 /* ---------- organizers ---------- */
 

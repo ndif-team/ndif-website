@@ -49,8 +49,8 @@
     <p class="hero-launch">Competition opens Nov&nbsp;23</p>
     <div class="actions">
       <a class="btn dark" href="https://login.ndif.us">Get an NDIF key <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
-      <a class="btn" href="https://forms.gle/enBNFNUBDj5SWvfC9">Register <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
-      <!-- <a class="btn" href="https://huggingface.co/spaces/NDIF/looped-lens-challenge">Leaderboard <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a> -->
+      <a class="btn" href="https://forms.gle/enBNFNUBDj5SWvfC9">Registration/Waitlist <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
+      <a class="btn" href="https://ndif-looped-lens-challenge.hf.space/">Leaderboard <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
     </div>
   </div>
   <!-- The challenge's mark, large. It turns while the pointer is on it. -->
@@ -107,6 +107,15 @@
   </div>
 </section>
 
+<section class="section" id="science">
+  <h2 class="reveal">The science of lenses</h2>
+  <div class="prose reveal">
+    <p>One of the grand challenges in our field of AI interpretability is building good lenses: at some layer in the model, how do we know what concepts or &ldquo;thoughts&rdquo; the model is considering? This is challenging both methodologically (what are the right subspaces and transformations for the best lens?) and from a ground-truth perspective. How can we ever know what a model is <em>truly</em> thinking? Who should decide what the ground truth here is, and the appropriate benchmark examples to test our lenses?</p>
+    <p>Since the &ldquo;first&rdquo; lens in 2020, the <a href="https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens">logit lens</a> (and, if you consider <a href="https://arxiv.org/abs/1610.01644">linear probes</a>, much earlier), our field has come up with highly sophisticated lenses. Some of them are improvements over the logit lens, such as the <a href="https://arxiv.org/abs/2303.08112">tuned lens</a> or the <a href="https://arxiv.org/abs/2607.15495">J-lens</a>, while others take very different approaches, such as <a href="https://arxiv.org/abs/2602.00462">LatentLens</a>, or even use a second meta-model (<a href="https://www.anthropic.com/research/natural-language-autoencoders">NLAs</a>, <a href="https://arxiv.org/abs/2512.15674">Activation Oracles</a>), which can sometimes be the same model itself again (<a href="https://arxiv.org/abs/2401.06102">Patchscopes</a>). With the popularity of the lens question, we see new lenses pop up every week. Let&rsquo;s see if this competition can bring forth some better ones! Or some that are particularly suited to Inkling 2 Mini&rsquo;s looped layers and its lack of a single residual stream.</p>
+    <p>So how good are these lenses? There are surprisingly few stand-alone, unified benchmarks that measure this; many lens papers instead come with their own evaluation. Recently, <a href="https://www.lesswrong.com/posts/Zeg2JztbdhguL48uH/workspacebench-evaluating-interpretability-methods-for-the">WorkspaceBench</a> was proposed by Camila Blank et al., which we use as inspiration for our competition. The overall philosophy of such evaluations is simple: let&rsquo;s try to find prompts where we can be relatively certain some intermediate concept is needed to get to the right final answer (i.e. &ldquo;multi-hop&rdquo; tasks). For example, when a model computes &ldquo;(3 + 5) &times; 4&rdquo; in a <em>single</em> forward pass, it first needs to compute the result of 3 + 5 before outputting the final answer 32. <a href="https://github.com/camila-blank/workspace-bench">WorkspaceBench</a> applies this idea across 20+ task families. When looking at the overall accuracy of all the lenses, it becomes clear: there is a lot of headroom for improvement!</p>
+  </div>
+</section>
+
 <section class="section" id="competition">
   <h2 class="reveal">The competition</h2>
   <div class="prose reveal">
@@ -115,7 +124,39 @@
   <dl class="rules reveal">
     <div>
       <dt>Submission</dt>
-      <dd>A Python script, limited in size, with your lens artifacts sent as files or as links to files.</dd>
+      <dd>A Python script, limited in size, with your lens artifacts sent as files or as links to files.
+        <details class="howto-fold">
+        <summary class="howto-lead">TLDR, a submission workflow looks like this:</summary>
+        <ol class="howto">
+          <li>
+            <div>Get an API key at <a href="https://login.ndif.us">login.ndif.us</a>.</div>
+          </li>
+          <li>
+            <div>Register for the challenge with the <a href="https://forms.gle/enBNFNUBDj5SWvfC9">registration/waitlist form</a>. Use the email your NDIF key was created with.</div>
+          </li>
+          <li>
+            <div>Clone the <a href="https://github.com/ndif-team/looped-lens-challenge">repository</a> and install it with <a href="https://docs.astral.sh/uv/">uv</a>.</div>
+            <pre><code>git clone https://github.com/ndif-team/looped-lens-challenge
+cd looped-lens-challenge
+uv sync &amp;&amp; source .venv/bin/activate
+export NDIF_API_KEY=...</code></pre>
+          </li>
+          <li>
+            <div>Run the starter logit lens on the 10 practice questions. It executes on NDIF and is scored on your machine by exact matching; set <code>OPENROUTER_API_KEY</code> to score with the leaderboard's judge instead.</div>
+            <pre><code>python submit.py --local</code></pre>
+          </li>
+          <li>
+            <div>Write your lens in <code>submission/lenses.py</code>. For each question it reads up to 10 of the model's 48 effective layers and returns 10 tokens from each. Trained weights go on the Hugging Face Hub and are loaded with <code>lenses.fetch</code>.</div>
+          </li>
+          <li>
+            <div>Submit. The team name is needed the first time only, and one NDIF account is one team. Your best score appears on the <a href="https://ndif-looped-lens-challenge.hf.space/">leaderboard</a>.</div>
+            <pre><code>python submit.py --team "My Team" --wait
+python submit.py --status</code></pre>
+          </li>
+        </ol>
+        <p class="howto-lead">The repository's <a href="https://github.com/ndif-team/looped-lens-challenge#writing-a-lens">README</a> has the exact output format, the limits and the scoring.</p>
+        </details>
+      </dd>
     </div>
     <div>
       <dt>Input</dt>
@@ -123,30 +164,61 @@
     </div>
     <div>
       <dt>Read locations</dt>
-      <dd>You choose <var>N</var> layers to read on each prompt, so picking good layers is part of the task. Readouts are taken at a single token position per prompt. You can choose that too, though it should probably be the final token.</dd>
+      <dd>You choose up to 10 of the 48 effective layers to read on each prompt, so picking good layers is part of the task. Readouts are taken at a single token position per prompt. You can choose that too, though it should probably be the final token.</dd>
     </div>
     <div>
       <dt>Output</dt>
-      <dd>The top <var>K</var> ranked tokens at each of your <var>N</var> read locations: <var>N</var> × <var>K</var> tokens for the prompt, labelled with the layer they came from.</dd>
+      <dd>The top 10 ranked tokens at each of up to 10 read locations: at most 10 × 10 tokens for the prompt, labelled with the layer they came from.</dd>
     </div>
     <div>
       <dt>Scoring</dt>
-      <dd>The readouts for a prompt are collected into one list, and the list is given to a judge.</dd>
+      <dd>The readouts for a prompt are collected into one list, and the list is given to an LLM judge.</dd>
     </div>
     <div>
-      <dt>Phases</dt>
-      <dd>The competition will probably run in several phases of increasing complexity. Phase one is single-token readouts on relatively simple tasks, in the style of <a href="https://github.com/camila-blank/workspace-bench">workspace-bench</a>.</dd>
+      <dt>Increasing complexity</dt>
+      <dd>Our initial evaluation set is meant to be easier (e.g., single-token readouts). Throughout the competition we will increase complexity. The initial phase is designed to get participants started with the competition, and consists of single-token readouts on relatively simple tasks in the style of <a href="https://github.com/camila-blank/workspace-bench">workspace-bench</a>. The final leaderboard will be a mix of the early simpler and later more complex evaluation.</dd>
     </div>
     <div>
       <dt>Entry</dt>
-      <dd>Anyone can enroll. You need an NDIF key and a <a href="https://forms.gle/enBNFNUBDj5SWvfC9">registration</a>.</dd>
+      <dd>Anyone can enroll. You need an NDIF key and a <a href="https://forms.gle/enBNFNUBDj5SWvfC9">registration/waitlist</a>. Due to limited compute capacity, we have a waitlist for later participants.</dd>
     </div>
     <div>
       <dt>Dates</dt>
       <dd>Phase one opens on November 23. Its closing date will be announced here.</dd>
     </div>
+    <div>
+      <dt>What makes a valid submission?</dt>
+      <dd>
+        <p>This competition is about exploring the new Inkling model using NDIF and pushing the frontier of interpretability techniques; the goal is not to find the best way to game our scoring system. With that in mind, we require that all valid submissions to the Looped Lens challenge represent legitimate attempts to build lenses for Inkling. Examples of invalid submissions include scripts that:</p>
+        <ul class="rule-list">
+          <li>Don’t look at activations at all</li>
+          <li>Rely on calls to external models in order to produce readouts (Note: this may be relaxed in future phases to allow for tools like NLAs, activation oracles, etc)</li>
+          <li>Rely on analysis of the input prompt itself to construct readouts</li>
+          <li>Etc</li>
+        </ul>
+        <p>All winning submissions will be audited, and any that do not fit the spirit of the competition will be disqualified.</p>
+      </dd>
+    </div>
+    <div>
+      <dt>Competition updates</dt>
+      <dd>Both the model and the systems being used to evaluate lenses in this competition are new, so we fully expect there to be a learning curve on our end in terms of best to organize the Looped Lens challenge. We therefore reserve the right to alter the backend evaluation system as the competition progresses, including changing the eval datasets, judge prompts, and scoring code. Competition scores and rankings may shift as a result of these changes.</dd>
+    </div>
   </dl>
   <!-- <p class="note reveal">The <a href="https://github.com/ndif-team/looped-lens-challenge">repository</a> has the exact format and limits.</p> -->
+</section>
+
+<section class="section" id="eligibility">
+  <h2 class="reveal">Eligibility</h2>
+  <div class="prose legal reveal">
+    <p>This competition is not directed at minors. Participants must be 18 years of age or older to apply, compete, or receive prizes.</p>
+    <p>US government-restricted/sanctioned parties are ineligible to participate. Prizes cannot be awarded to government-restricted/sanctioned parties. All potential winners must go through Northeastern's Restricted Party Screening.</p>
+    <p>Government employees and officials must obtain a release and/or affirmative permission from their employer before any prize can be awarded, per government gift and ethics restrictions. Potential winners in this category will be connected with <a href="mailto:compliance@northeastern.edu">compliance@northeastern.edu</a> to discuss prior to prize announcement.</p>
+    <p>Contest organizers, dataset builders, and any other individuals with knowledge about the dataset design may not participate.</p>
+    <p>Each individual may only be part of one team.</p>
+    <p>Prize eligibility is determined at the individual level. If a team includes members who are ineligible to receive prizes (e.g., government employees pending release), eligible members may still receive their proportional share, subject to organizer discretion and compliance review.</p>
+    <p>Please note that U.S. participants with some type of immigration status (e.g., international students) may have restrictions on award collection so as not to trigger a violation of immigration status. Participants in this category will need to discuss with their personal attorney and/or potentially their host organization or institution for guidance on how or whether participating and collecting prize money could be considered a violation. These persons are still eligible to participate and may be able to receive prize money pending these conversations.</p>
+    <p>By making a submission, you agree that all submissions, code, and associated materials will be made publicly available under an open-source license (MIT license) during and following the competition. By submitting, participants grant the organizers a perpetual, royalty-free license to publish and reproduce their submissions as part of the competition report and public repository. Participants retain authorship credit for their work.</p>
+  </div>
 </section>
 
 <section class="section" id="take-part">
@@ -156,14 +228,14 @@
   </div>
   <h2 class="reveal">Take part</h2>
   <p class="cta-launch reveal">Competition opens Nov&nbsp;23</p>
-  <!-- <p class="cta-text reveal">Anyone can enter. You need an NDIF key, a registration and a copy of the repository.</p> -->
+  <!-- <p class="cta-text reveal">Anyone can enter. You need an NDIF key, a registration/waitlist entry and a copy of the repository.</p> -->
   <!--
   <ol class="howto">
     <li class="reveal">
       <div>Get an API key at <a href="https://login.ndif.us">login.ndif.us</a>.</div>
     </li>
     <li class="reveal">
-      <div>Register for the challenge with the <a href="https://forms.gle/enBNFNUBDj5SWvfC9">registration form</a>. Use the email your NDIF key was created with.</div>
+      <div>Register for the challenge with the <a href="https://forms.gle/enBNFNUBDj5SWvfC9">registration/waitlist form</a>. Use the email your NDIF key was created with.</div>
     </li>
     <li class="reveal">
       <div>Clone the repository and install it.</div>
@@ -178,14 +250,14 @@ uv sync &amp;&amp; source .venv/bin/activate</code></pre>
 python submit.py --local</code></pre>
     </li>
     <li class="reveal">
-      <div>Write your own lens in <code>submission/</code>, then submit it. Your score appears on the <a href="https://huggingface.co/spaces/NDIF/looped-lens-challenge">leaderboard</a>.</div>
+      <div>Write your own lens in <code>submission/</code>, then submit it. Your score appears on the <a href="https://ndif-looped-lens-challenge.hf.space/">leaderboard</a>.</div>
       <pre><code>python submit.py --team "My Team" --wait</code></pre>
     </li>
   </ol>
   -->
   <div class="actions reveal">
     <a class="btn dark" href="https://login.ndif.us">Get an NDIF key <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
-    <a class="btn" href="https://forms.gle/enBNFNUBDj5SWvfC9">Register <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
+    <a class="btn" href="https://forms.gle/enBNFNUBDj5SWvfC9">Registration/waitlist <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
     <a class="btn" href="https://discord.com/invite/6uFJmCSwW7">Ask on Discord <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 9 9 2M3.5 2H9v5.5"/></svg></a>
   </div>
 </section>
@@ -198,6 +270,7 @@ python submit.py --local</code></pre>
     <a href="https://www.goodfire.ai" style="--h:30px"><img src="assets/goodfire.svg" alt="Goodfire" width="163" height="35"></a>
     <a href="https://www.northeastern.edu" style="--h:54px"><img src="assets/northeastern.png" alt="Northeastern University" width="432" height="432"></a>
   </div>
+  <p class="note reveal">This challenge is organized by: Jaden&nbsp;Fiotto-Kaufman, Adam&nbsp;Belfki, Zikai&nbsp;Wang, Tobias&nbsp;Moser, Emma&nbsp;Bortz, Benno&nbsp;Krojer, David&nbsp;Bau</p>
 </section>
 
 </main>
