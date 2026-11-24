@@ -105,13 +105,16 @@ export default function Header() {
                 alt="NDIF Logo"
                 priority
               />
-              <span className="font-display font-bold text-lg tracking-tight text-slate-900 dark:text-white hidden lg:inline">
+              {/* xl, not lg: the wordmark plus the full menu needs ~1150px. */}
+              <span className="font-display font-bold text-lg tracking-tight text-slate-900 dark:text-white hidden xl:inline">
                 NSF National Deep Inference Fabric
               </span>
             </Link>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-6">
+            {/* Tighter gaps below lg: six links plus the controls and CTA have to
+                fit beside the logo at 768px. */}
+            <div className="hidden md:flex items-center space-x-3 lg:space-x-6">
               {mainNav.map((link) =>
                 link.external ? (
                   <a
@@ -168,7 +171,7 @@ export default function Header() {
 
               <Link
                 href={ctaNav.href}
-                className="px-5 py-2 rounded-full bg-slate-900 dark:bg-white/10 border border-slate-700 dark:border-slate-600 hover:border-brand-500 text-sm font-medium text-white transition-all hover:bg-slate-800 dark:hover:bg-white/20"
+                className="px-5 py-2 rounded-full whitespace-nowrap bg-slate-900 dark:bg-white/10 border border-slate-700 dark:border-slate-600 hover:border-brand-500 text-sm font-medium text-white transition-all hover:bg-slate-800 dark:hover:bg-white/20"
               >
                 {ctaNav.label}
               </Link>

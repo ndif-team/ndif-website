@@ -18,6 +18,7 @@ const routes = [
     changeFrequency: "yearly" as const,
   })),
   { path: "/community", priority: 0.7, changeFrequency: "monthly" as const },
+  { path: "/careers", priority: 0.7, changeFrequency: "weekly" as const },
   { path: "/status", priority: 0.6, changeFrequency: "daily" as const },
   { path: "/get-started", priority: 0.9, changeFrequency: "monthly" as const },
   // A standalone static page in public/looped-lens-challenge/, not an app route.
