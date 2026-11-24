@@ -11,11 +11,18 @@ import {
   FiBarChart2,
 } from "react-icons/fi";
 import type { IconType } from "react-icons";
+import { getAssetPath } from "lib/assetPath";
 
 // Logos are hotlinked from the public ndif-team/design-assets repo via the
 // jsDelivr CDN (serves SVG with the correct content-type, cached), so the
 // site never carries its own copies.
 const LOGO = "https://cdn.jsdelivr.net/gh/ndif-team/design-assets@main";
+
+// NNterp and Workbench are the exception: their repos adopted new logos that
+// design-assets does not have yet, so public/images/ carries copies made from
+// the repo files. nnterp-logo.png is ndif-team/nnterp's nnterp_logo.png scaled
+// to 256px. workbench-logo.svg is the mosaic from ndif-team/workbench's
+// workbench_logo.svg without the wordmark, which is unreadable in a square tile.
 
 interface ToolLink {
   label: string;
@@ -67,7 +74,7 @@ const coreTools: Tool[] = [
     tagline: "Standardized transformer interface",
     description:
       "A unified interface for mechanistic interpretability, extending NNsight with efficient built-in methods and standardized naming.",
-    logo: `${LOGO}/projects/nnterp/nnterp-logo-color.svg`,
+    logo: getAssetPath("/images/nnterp-logo.png"),
     install: "pip install nnterp",
     links: [
       { label: "Documentation", href: "https://ndif-team.github.io/nnterp/", external: true, icon: FiBookOpen, primary: true },
@@ -79,7 +86,7 @@ const coreTools: Tool[] = [
     tagline: "Interactive research UI",
     description:
       "Explore prompts and steer model behavior in our web interface for interactive interpretability backed by NDIF remote execution.",
-    logo: `${LOGO}/projects/workbench/workbench-logo-color.svg`,
+    logo: getAssetPath("/images/workbench-logo.svg"),
     links: [
       { label: "View on GitHub", href: "https://github.com/ndif-team/workbench", external: true, icon: FiGithub },
       { label: "Open NDIF Workbench", href: "https://workbench.ndif.us", external: true, icon: FiExternalLink, primary: true },
