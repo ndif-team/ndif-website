@@ -59,6 +59,15 @@
   </div>
 </section>
 
+<section class="section" id="updates">
+  <h2 class="reveal">Updates <span aria-hidden="true">❗</span></h2>
+  <div class="prose reveal">
+    <ul class="rule-list">
+      <li><strong>November 24:</strong> We clarified the rules of the ongoing competition, specifically how we define a readout and what information is allowed to be used. In short: 1) each readout is one lens applied to one layer visit, and all readouts of a prompt are taken at the same single token position; 2) readouts may not be built, filtered or reranked using the prompt's text. Please check your lens against the clarified rules <a href="#rule-clarifications">here</a>. We will remove submissions that go against them, to be fair to everyone. (We acknowledge that, in general lens research, reading from more positions or more layers can make sense. However, for a large-scale competition, we have to keep it simple and scalable.)</li>
+    </ul>
+  </div>
+</section>
+
 <section class="section" id="challenge">
   <h2 class="reveal">The challenge</h2>
   <div class="prose reveal">
@@ -242,6 +251,54 @@ python submit.py --status</code></pre>
     <p>Please note that U.S. participants with some type of immigration status (e.g., international students) may have restrictions on award collection so as not to trigger a violation of immigration status. Participants in this category will need to discuss with their personal attorney and/or potentially their host organization or institution for guidance on how or whether participating and collecting prize money could be considered a violation. These persons are still eligible to participate and may be able to receive prize money pending these conversations.</p>
     <p>By making a submission, you agree that all submissions, code, and associated materials will be made publicly available under an open-source license (MIT license) during and following the competition. By submitting, participants grant the organizers a perpetual, royalty-free license to publish and reproduce their submissions as part of the competition report and public repository. Participants retain authorship credit for their work.</p>
   </div>
+</section>
+
+<section class="section" id="rule-clarifications">
+  <h2 class="reveal">Rule clarifications</h2>
+  <div class="prose reveal">
+    <p>November 24. The first submissions in the last 24h interpret our rules in different ways. Since our scoring code does not check them, we clarify the rules here in more detail. Note: we don't add any new rules; each point restates a rule <a href="#competition">above</a>.</p>
+  </div>
+  <dl class="rules reveal">
+    <div>
+      <dt>One position</dt>
+      <dd>All readouts for a prompt are taken at the same single token position. You may choose it from the activations (counting any visit you read to decide, see below), or use the prompt's punctuation or chat template to find it (for example, the last question mark). You may not choose it by comparing what readouts at several candidate positions say.</dd>
+    </div>
+    <div>
+      <dt>One visit per readout</dt>
+      <dd>A prompt reads at most 10 of the 48 layer visits, counting visits used only to make decisions. Each readout is the top 10 of one lens applied to the state at one visit, and is labelled with that visit's number, 0 to 47. No visit appears twice. A lens may run the model's own later layers on that state, as a coda lens does; the model's own attention then sees the other positions, which is fine.</dd>
+    </div>
+    <div>
+      <dt>No prompt text</dt>
+      <dd>Readouts may not be built, filtered or reranked using the prompt's text or token ids.</dd>
+    </div>
+    <div>
+      <dt>Allowed</dt>
+      <dd>
+        <ul class="rule-list">
+          <li>Logit, tuned, translator and coda lenses on one visit at the chosen position. Example: a tuned lens at ten visits between 20 and 47, all at the last token, each labelled with its visit.</li>
+          <li>An ensemble of lenses on the same visit and position, combined into one readout. Example: the logit lens and a tuned lens at visit 40, last token, with their probabilities averaged into one top-10 labelled 40.</li>
+          <li>Different visits, or a different position, for each prompt. Example: visits 20–29 for one prompt and 38–47 for another; the last token for one prompt and the last “?” for another.</li>
+          <li>Cleaning a readout: removing control tokens such as <var>&lt;|end_message|&gt;</var>, and repeats of a token in another casing or spacing (“ Paris” after “Paris”).</li>
+        </ul>
+      </dd>
+    </div>
+    <div>
+      <dt>Not allowed</dt>
+      <dd>
+        <ul class="rule-list">
+          <li>More than one readout from the same visit (each visit gives at most one top-10 list, whichever lenses produce it), or labels that are not visit numbers. Example: a logit-lens readout labelled <var>24</var> and a tuned-lens readout labelled <var>"24b"</var>.</li>
+          <li>Readouts that combine token positions. Examples: scoring each token by its best probability over the last 8 tokens; alternating the top tokens of two positions; subtracting the state at another position.</li>
+          <li>Readouts that combine visits. Examples: one top-10 from a weighted sum of logit lenses at visits 4–47, labelled 47; subtracting visit 12's logits from visit 40's.</li>
+          <li>Reading many more readouts than you submit and keeping the ones that agree. Example: reading 13 visits at every token of the prompt, a few hundred readouts, then submitting six whose top word is the same plus four others, so that this word wins the vote. Or: reading ten visits at two candidate positions and submitting the set whose readouts agree more.</li>
+          <li>Dropping or demoting readout tokens because they appear in the prompt. Example: for “What is 9 − 2?”, removing “9” and “2” from readouts, or ranking them lower.</li>
+        </ul>
+      </dd>
+    </div>
+    <div>
+      <dt>What happens now</dt>
+      <dd>Submissions that do not follow these rules will be removed from the leaderboard, to be fair to everyone, and winning submissions will be audited against them. This applies to individual submissions, not to teams: a team whose submission is removed is still in the competition and can resubmit a lens that follows the rules. Not sure whether your lens qualifies? Ask on <a href="https://discord.com/invite/6uFJmCSwW7">Discord</a>.</dd>
+    </div>
+  </dl>
 </section>
 
 </main>
