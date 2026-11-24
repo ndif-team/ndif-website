@@ -39,23 +39,6 @@ export default function Hero() {
           </a>
         </AnimateOnScroll>
 
-        <AnimateOnScroll variant="fadeIn" duration={0.6}>
-          <div className="flex w-full justify-center gap-3 mb-8">
-            <a href="https://workbench.ndif.us" target="_blank" rel="noopener noreferrer">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100/50 dark:bg-brand-900/30 border border-brand-200 dark:border-brand-500/30 text-brand-700 dark:text-brand-300 text-xs font-semibold uppercase tracking-wide backdrop-blur-sm hover:bg-brand-100 dark:hover:bg-brand-900/50 transition-colors">
-                <span className="w-2 h-2 rounded-full bg-brand-500 dark:bg-brand-400 animate-pulse" />
-                NDIF Workbench
-              </span>
-            </a>
-            <Link href="/status">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-status-success/10 border border-status-success/30 text-emerald-700 dark:text-emerald-300 text-xs font-semibold uppercase tracking-wide backdrop-blur-sm hover:bg-status-success/20 transition-colors">
-                <span className="w-2 h-2 rounded-full bg-status-success animate-pulse" />
-                System Status
-              </span>
-            </Link>
-          </div>
-        </AnimateOnScroll>
-
         <AnimateOnScroll variant="fadeUp" duration={0.7} delay={0.1}>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 leading-[1.05]" style={{ textWrap: 'balance' }}>
             <span className="text-gradient" style={{ letterSpacing: '-0.02em' }}>Cracking open</span>
