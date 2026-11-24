@@ -4,46 +4,14 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
-import { FiSun, FiMoon, FiX } from "react-icons/fi";
+import { FiSun, FiMoon } from "react-icons/fi";
 import ndifLogo from "assets/NSF_NDIF_Lockup.png";
 import Image from "next/image";
 import { mainNav, ctaNav } from "data/navigation";
-import { getAssetPath } from "lib/assetPath";
-
-function AnnouncementBanner({
-  onDismiss,
-}: {
-  onDismiss: () => void;
-}) {
-  return (
-    <div className="relative bg-gradient-brand text-white text-sm text-center py-2 px-4">
-      <div className="max-w-7xl mx-auto flex items-center justify-center gap-2">
-        <span className="font-medium">
-          The <b>Looped Lens Challenge</b> is open for registration: build the lens that best reads Inkling 2 Mini.
-        </span>
-        {/* A plain link: the challenge page is a static file, not an app route. */}
-        <a
-          href={getAssetPath("/looped-lens-challenge/")}
-          className="underline underline-offset-2 font-semibold hover:text-white/90 transition-colors whitespace-nowrap"
-        >
-          Details →
-        </a>
-      </div>
-      <button
-        onClick={onDismiss}
-        className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded hover:bg-white/20 transition-colors"
-        aria-label="Dismiss announcement"
-      >
-        <FiX size={14} />
-      </button>
-    </div>
-  );
-}
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showBanner, setShowBanner] = useState(true);
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -80,10 +48,6 @@ export default function Header() {
 
   return (
     <>
-      {showBanner && (
-        <AnnouncementBanner onDismiss={() => setShowBanner(false)} />
-      )}
-
       <nav
         className={`sticky top-0 w-full z-50 transition-all duration-300 ${
           isScrolled

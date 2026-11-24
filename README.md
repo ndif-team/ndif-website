@@ -34,8 +34,8 @@ picks it up.
 
 `src/public/looped-lens-challenge/` is a standalone static page (plain HTML and
 CSS, no build step), served at `https://ndif.us/looped-lens-challenge/`. It does
-not use the app's layout, header or styles. Edit its files directly; the banner
-in `src/components/Header.tsx` links to it.
+not use the app's layout, header or styles. Edit its files directly; the callout
+at the top of the home page (`src/components/Hero.tsx`) links to it.
 
 ## GitHub Pages preview
 
