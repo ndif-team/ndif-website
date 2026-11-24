@@ -3,18 +3,15 @@
 import Link from "next/link";
 import AnimateOnScroll from "./AnimateOnScroll";
 import { getAssetPath } from "lib/assetPath";
-import { useSettings } from "./SettingsProvider";
 
 export default function Hero() {
-  const { isAnimationEnabled } = useSettings();
   return (
     <section className="relative pt-10 pb-20 lg:pt-12 lg:pb-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* The Looped Lens Challenge: its mark and a way in. It is the first thing
             under the header. A plain link, since that page is a static file and
             not an app route. The mark keeps
-            turning, unless the visitor has paused the site's animation or asks
-            for reduced motion. */}
+            turning, unless the visitor asks for reduced motion. */}
         <AnimateOnScroll variant="fadeIn" duration={0.6}>
           <a
             href={getAssetPath("/looped-lens-challenge/")}
@@ -26,7 +23,7 @@ export default function Hero() {
               alt=""
               width={56}
               height={56}
-              className={`h-14 w-14 shrink-0 ${isAnimationEnabled ? "motion-safe:animate-[spin_6s_linear_infinite]" : ""}`}
+              className="h-14 w-14 shrink-0 motion-safe:animate-[spin_6s_linear_infinite]"
             />
             <span className="text-center sm:text-left">
               <span className="block font-display text-lg font-bold text-slate-900 dark:text-white">

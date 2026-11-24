@@ -3,7 +3,6 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import { SettingsProvider } from "components/SettingsProvider";
 import SpotlightEffect from "components/SpotlightEffect";
-import BackgroundCanvas from "components/BackgroundCanvasLazy";
 import "styles/globals.css";
 import { OG_IMAGE_PATH, SITE_NAME, SITE_TITLE, SITE_DESCRIPTION } from "lib/seo";
 
@@ -57,7 +56,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased selection:bg-brand-600 selection:text-white bg-white dark:bg-surface-950 text-slate-900 dark:text-slate-50 overflow-x-hidden`}>
         <SettingsProvider>
-          <BackgroundCanvas />
           <SpotlightEffect />
           {children}
         </SettingsProvider>

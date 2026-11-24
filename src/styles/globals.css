@@ -151,7 +151,7 @@
 
 /* Glass surface for content cards that manage their own borders/hover.
    Same translucency + blur as card-glass so every card reads identically
-   over the particle canvas in both themes. */
+   in both themes. */
 .surface-glass {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(8px);
@@ -240,14 +240,4 @@ body {
 }
 .dark .snippet-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(100, 116, 139, 0.8);
-}
-
-#canvas-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: -1;
-  opacity: 0.6;
 }

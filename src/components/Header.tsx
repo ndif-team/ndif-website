@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
-import { useSettings } from "./SettingsProvider";
-import { FiSun, FiMoon, FiPlay, FiPause, FiX } from "react-icons/fi";
+import { FiSun, FiMoon, FiX } from "react-icons/fi";
 import ndifLogo from "assets/NSF_NDIF_Lockup.png";
 import Image from "next/image";
 import { mainNav, ctaNav } from "data/navigation";
@@ -47,7 +46,6 @@ export default function Header() {
   const [showBanner, setShowBanner] = useState(true);
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
-  const { isAnimationEnabled, toggleAnimation } = useSettings();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -112,9 +110,9 @@ export default function Header() {
             </Link>
 
             {/* Desktop Menu */}
-            {/* Tighter gaps below lg: six links plus the controls and CTA have to
-                fit beside the logo at 768px. */}
-            <div className="hidden md:flex items-center space-x-3 lg:space-x-6">
+            {/* Tighter gaps below lg: six links plus the theme toggle and CTA
+                have to fit beside the logo at 768px. */}
+            <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
               {mainNav.map((link) =>
                 link.external ? (
                   <a
@@ -140,32 +138,19 @@ export default function Header() {
 
               <div className="flex items-center gap-1 border-l border-slate-200 dark:border-slate-700 pl-4">
                 {mounted && (
-                  <>
-                    <button
-                      onClick={() =>
-                        setTheme(theme === "dark" ? "light" : "dark")
-                      }
-                      className="p-2 rounded-full text-slate-500 hover:text-brand-600 dark:text-slate-400 dark:hover:text-white transition-colors"
-                      aria-label="Toggle Theme"
-                    >
-                      {theme === "dark" ? (
-                        <FiSun size={18} />
-                      ) : (
-                        <FiMoon size={18} />
-                      )}
-                    </button>
-                    <button
-                      onClick={toggleAnimation}
-                      className="p-2 rounded-full text-slate-500 hover:text-brand-600 dark:text-slate-400 dark:hover:text-white transition-colors"
-                      aria-label="Toggle Animation"
-                    >
-                      {isAnimationEnabled ? (
-                        <FiPause size={18} />
-                      ) : (
-                        <FiPlay size={18} />
-                      )}
-                    </button>
-                  </>
+                  <button
+                    onClick={() =>
+                      setTheme(theme === "dark" ? "light" : "dark")
+                    }
+                    className="p-2 rounded-full text-slate-500 hover:text-brand-600 dark:text-slate-400 dark:hover:text-white transition-colors"
+                    aria-label="Toggle Theme"
+                  >
+                    {theme === "dark" ? (
+                      <FiSun size={18} />
+                    ) : (
+                      <FiMoon size={18} />
+                    )}
+                  </button>
                 )}
               </div>
 
@@ -255,16 +240,6 @@ export default function Header() {
                 </Link>
               )
             )}
-
-            <div className="px-3 py-2 flex items-center gap-4">
-              <button
-                onClick={toggleAnimation}
-                className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-white"
-              >
-                {isAnimationEnabled ? <FiPause /> : <FiPlay />}
-                {isAnimationEnabled ? "Pause Animation" : "Play Animation"}
-              </button>
-            </div>
 
             <div className="px-3 pt-2">
               <Link
