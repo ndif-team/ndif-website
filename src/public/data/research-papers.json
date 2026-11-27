@@ -50,6 +50,25 @@
     "image": "/images/ADAG-Automatically-Describing-Attribution-Graphs.png"
   },
   {
+    "title": "Adversarial elicitation suppresses confident misattribution but does not improve introspective accuracy: an activation-injection audit of five open-weight models",
+    "authors": "Alishba Zainab Khan",
+    "venue": "Digital Minds Research Sprint 2026",
+    "year": 2026,
+    "url": "https://pys8vc40ox3z7qxp.public.blob.vercel-storage.com/files/bcac095f40cb7671-b3cf70cb-39f8-47c4-9629-06dddbb9ea4c-adversarial_elicitation_paper.pdf",
+    "description": "I explore how directly inserting a known concept into the internal processing stream of several open-weight language models affects their responses when queried in isolation. By examining whether the models detect or acknowledge this subtle intervention, the study probes the transparency and self-awareness of their internal representations. The findings shed light on how language models encode and potentially reflect upon injected information, offering insights into interpretability and the boundaries of model introspection.",
+    "category": "uses_nnsight"
+  },
+  {
+    "title": "Asymmetries in Spontaneous and Instructed Deception",
+    "authors": "Josiah Luikham",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2609.00180",
+    "description": "This study explores how large language models can deceive users both when explicitly instructed to do so and when deception arises spontaneously. By analyzing the internal representations of deception in Llama-3.1-70B-Instruct, the researchers found that instructed and spontaneous deception share some underlying mechanisms but are not identical — there’s a directional overlap, yet differences in how well signals transfer between the two contexts. Notably, classifiers trained on spontaneous deception detect instructed deception more effectively than the reverse, and steering vectors derived from instructed deception are more effective at influencing spontaneous deception than vice versa. These asymmetries suggest that while the two forms of deception are related, they engage distinct but overlapping cognitive pathways in the model, with implications for detecting and mitigating unintended harmful behaviors. The findings also highlight that the optimal points in the model’s processing for intervention differ depending on whether one is trying to detect or steer deceptive outputs.",
+    "category": "uses_ndif",
+    "image": "/images/Asymmetries-in-Spontaneous-and-Instructed-Deception.png"
+  },
+  {
     "title": "Attention Calibration for Position-Fair Dense Information Retrieval",
     "authors": "Andrianos Michail, Elias Schuhmacher, Juri Opitz, Simon Clematide, Rico Sennrich",
     "venue": "ArXiv 2026",
@@ -110,6 +129,16 @@
     "image": "/images/CircuitKIT-Circuit-Discovery-Evaluation-and-Application-Toolkit-for-Mechanistic-Interpretability.png"
   },
   {
+    "title": "Comparing Linear Probes with Mahalanobis Cosine Similarity",
+    "authors": "Zhuofan Josh Ying, Peter Hase, Nikolaus Kriegeskorte",
+    "venue": "EMNLP 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2606.19603",
+    "description": "This work explains why a refined similarity measure — Mahalanobis cosine similarity — strongly predicts how well a linear probe generalizes to out-of-distribution data. By showing that both the probe’s OOD performance and its similarity to a reference probe depend in the same way on the signal-to-noise ratio in the data, the authors derive a theoretical basis for the observed linear relationship. They further demonstrate when this relationship holds and when it breaks down, validating their theory across diverse models, layers, and concepts. The result positions Mahalanobis cosine similarity as a more principled and effective tool for comparing linear probes in interpretability studies.",
+    "category": "uses_nnsight",
+    "image": "/images/Comparing-Linear-Probes-with-Mahalanobis-Cosine-Similarity.png"
+  },
+  {
     "title": "Counting Hypothesis: Potential Mechanism of In-Context Learning",
     "authors": "Jung H. Lee, Sujith Vijayan",
     "venue": "ArXiv 2026",
@@ -138,6 +167,16 @@
     "description": "Researchers have developed a way to steer language model behavior using only text prompts, eliminating the need for internal access during generation. By optimizing a suffix to mimic hidden-state steering, they demonstrate that complex behaviors—like switching languages or bypassing refusals—can be triggered through carefully crafted input strings. This approach makes steering more portable across different models and prompts, though its effectiveness varies depending on the specific behavior being targeted.",
     "category": "uses_nnsight",
     "image": "/images/Creating-Steering-Vectors-via-Input-Optimisation.png"
+  },
+  {
+    "title": "Cross-layer SAE feature drift for early detection and mitigation of multi-turn jailbreaks",
+    "authors": "Yi-Wen Chu",
+    "venue": "M.S. Thesis, Iowa State University 2026",
+    "year": 2026,
+    "url": "https://doi.org/10.31274/td-20260804-162",
+    "description": "Researchers developed a system that detects when a conversation is gradually shifting toward harmful content before the model actually produces an unsafe response. By tracking changes in internal model features across multiple turns, the tool can identify jailbreak attempts early, though attempts to steer the model back to safety once detected proved ineffective. This highlights a key gap in AI safety: we can spot dangerous escalation, but we still don't know how to stop it at the feature level.",
+    "category": "uses_nnsight",
+    "project_url": "https://github.com/WilliamSnail/SAE-Jailbreak-Research"
   },
   {
     "title": "Cyberlens: taxonomy-mapped sparse autoencoders for cybersecurity interpretability of open-weight language models",
@@ -200,6 +239,16 @@
     "image": "/images/Do-All-LLMs-Know-When-Theyre-Being-Harmful-A-Reproducibility-Study-of-Latent-Space-Safety-Probes-Across-Model-Families.png"
   },
   {
+    "title": "Do Language Models Track Entities Across State Changes?",
+    "authors": "Zilu Tang, Qiao Zhao, Gabriel Franco, Derry Wijaya, Aaron Mueller, Sebastian Schuster, Najoung Kim",
+    "venue": "ICML 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2605.30233",
+    "description": "This work explores how large language models handle the task of tracking entity states through sequences of actions like adding, removing, or moving objects. Rather than updating their internal representation step by step as events unfold, the models appear to gather all relevant information at once only when a question is asked. The study reveals that the mechanism for removing entities relies on a fragile, global suppression signal, which can lead to predictable errors when disrupted. By identifying and neutralizing this signal, the researchers show a way to partially improve the model’s behavior. These findings highlight a mismatch between the sequential nature of reasoning tasks and the models’ parallel, last-minute processing strategy, while demonstrating how combining behavioral tests with deep mechanistic analysis can uncover hidden weaknesses and guide better evaluations.",
+    "category": "uses_ndif",
+    "image": "/images/Do-Language-Models-Track-Entities-Across-State-Changes.png"
+  },
+  {
     "title": "Do Transformers Use their Depth Adaptively? Evidence from a Relational Reasoning Task",
     "authors": "Alicia Curth, Rachel Lawrence, Sushrut Karmalkar, Niranjani Prasad",
     "venue": "ICLR 2026",
@@ -218,6 +267,15 @@
     "description": "This study investigates how two advanced Vision-Language-Action models, π₀.₅ and GR00T N1.7, actually use language instructions when generating actions, testing whether their behavior is truly grounded in linguistic input or merely exploiting visual shortcuts. By systematically altering task descriptions — from rephrasing with synonyms to removing instructions entirely or introducing directional confusion — the researchers found that both models remain largely unaffected by superficial language changes but show strong sensitivity when instructions are missing or spatially misleading. Crucially, the internal mechanisms driving this sensitivity differ: GR00T N1.7 relies heavily on early cross-attention layers to process directional language, while π₀.₅ spreads its reliance across early and later network layers, suggesting distinct strategies for integrating language into action planning. The work highlights that while these models can generalize across tasks, their dependence on language is nuanced, unevenly distributed in the network, and not always reliably interpretable through standard attribution methods",
     "category": "uses_nnsight",
     "image": "/images/Do-Vision-Language-Action-Models-Understand-Instructions-A-Mechanistic-Interpretability-Study-on-Language-Grounding.png"
+  },
+  {
+    "title": "Does the Model Read the Room? Probing and Patching Partner Expertise in Collaborative LLM Dialogue",
+    "authors": "Mika Okamoto, Gabriele Sarti",
+    "venue": "SPAR Spring 2026",
+    "year": 2026,
+    "url": "https://library.sparai.org/attachments/reports/recHjmqnG7X4B29AN/does-the-model-read-the-room-probing-and-patching-partner-expertise-in-collaborative-llm-dialogue-4b29an.pdf",
+    "description": "Researchers explore whether a language model’s internal understanding of a conversation partner’s expertise genuinely shapes its responses in ongoing, collaborative dialogues. By probing how models adjust their tone, depth, and assumptions based on perceived partner knowledge, the study reveals that these internal representations do influence behavior — suggesting models don’t just mimic patterns but actively reason about social context. This insight advances our ability to build AI that communicates more naturally and effectively in real-world teamwork scenarios.",
+    "category": "uses_ndif"
   },
   {
     "title": "Don't Judge an LLM Only by Its Activations: Discovering Suppressed Safety Features via Counterfactual Activation Potential",
@@ -349,14 +407,14 @@
     "image": "/images/FLEET-From-Logits-Entropy-to-Enhanced-Trajectories-in-Text-Generation.png"
   },
   {
-    "title": "Fluid Representations in Reasoning Models",
-    "authors": "Dmitrii Kharlapenko, Alessandro Stolfo, Arthur Conmy, Mrinmaya Sachan, Zhijing Jin",
-    "venue": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+    "title": "Fluid Reasoning Representations",
+    "authors": "Dmitrii Kharlapenko, Terry Jingchen Zhang, Arth Singh, Alessandro Stolfo, Arthur Conmy, Mrinmaya Sachan, Zhijing Jin",
+    "venue": "Findings of EMNLP 2026",
     "year": 2026,
     "url": "https://arxiv.org/abs/2602.04843",
     "description": "Researchers have made strides in understanding how advanced language models process complex information, shedding light on the internal mechanisms that enable them to excel at abstract problem-solving. By analyzing a model trained to produce detailed reasoning traces, they discovered that it develops more effective representations of actions and concepts over time, focusing on underlying structure rather than specific details. This insight has significant implications for improving the performance of language models in complex problem-solving tasks.",
     "category": "referencing",
-    "image": "/images/Fluid-Representations-in-Reasoning-Models.png"
+    "image": "/images/Fluid-Reasoning-Representations.png"
   },
   {
     "title": "Friends and Grandmothers in Silico: Localizing Entity Cells in Language Models",
@@ -487,6 +545,15 @@
     "image": "/images/Language-Switching-Triggers-Take-a-Latent-Detour-Through-Language-Models.png"
   },
   {
+    "title": "Latent, Localized, Retrieved On Demand: Tracing Implicit User Attributes Across Multi-Turn Conversation",
+    "authors": "Valeriya Zelenkova, Gabriele Sarti",
+    "venue": "SPAR Spring 2026",
+    "year": 2026,
+    "url": "https://vzelenkova.com/spar_sp26_final_report.pdf",
+    "description": "Researchers investigate how a chat model retains and uses a user-specific attribute — such as a preference or identity — that is only hinted at once during a conversation, without being explicitly stated again. By analyzing the model’s internal behavior across multiple turns, they uncover how subtle contextual cues are encoded and later leveraged to guide responses, even when the original hint is no longer present. This work sheds light on the mechanisms behind personalized, context-aware AI interactions, revealing how models can maintain implicit user understanding over time.",
+    "category": "uses_ndif"
+  },
+  {
     "title": "Learning a Generative Meta-Model of LLM Activations",
     "authors": "Grace Luo, Jiahai Feng, Trevor Darrell, Alec Radford, Jacob Steinhardt",
     "venue": "ICML 2026",
@@ -527,14 +594,13 @@
     "image": "/images/Lingua-Franca-or-Probing-Artifact-Rethinking-Latent-Language-in-Multilingual-LLMs.png"
   },
   {
-    "title": "Mathematical Modeling of Common-Pool Resources: A Comprehensive Review of Bioeconomics, Strategic Interaction, and Complex Adaptive Systems",
-    "authors": "Zebiao Li, Rui Liu, Chengyi Tu",
-    "venue": "ArXiv 2026",
+    "title": "Meaning on a Video Card: Scalable, Lossless Geometric Primitives",
+    "authors": "John Vaught",
+    "venue": "Preprint 2026",
     "year": 2026,
-    "url": "https://arxiv.org/abs/2602.03129",
-    "description": "Researchers tackle the complex challenge of managing shared resources, where individual actions can significantly impact the overall system, and exclusion of users is difficult. By examining the governance of these common-pool resources, this study sheds light on the intricate relationships between users, resources, and institutions. Its findings offer valuable insights for developing effective management strategies that balance individual needs with the long-term sustainability of these shared resources.",
-    "category": "referencing",
-    "image": "/images/Mathematical-Modeling-of-Common-Pool-Resources-A-Comprehensive-Review-of-Bioeconomics-Strategic-Interaction-and-Complex-Adaptive-Systems.png"
+    "url": "https://synoros.io/papers/meaning-on-a-video-card.pdf",
+    "description": "This work introduces a record-keeping mechanism at the math-primitive level, designed to complement existing neural network inspection tools like TransformerLens and nnsight. By capturing low-level computational steps without altering the model’s behavior, it enables researchers to trace and replay internal operations with precision. The approach supports deeper mechanistic analysis by preserving the integrity of downstream computations for the user to re-execute as needed.",
+    "category": "referencing"
   },
   {
     "title": "Model Medicine: A Clinical Framework for Understanding, Diagnosing, and Treating AI Models",
@@ -613,6 +679,16 @@
     "url": "https://openreview.net/forum?id=SfN6Cjs515",
     "description": "This work critically examines the growing field of interpretability in deep learning, arguing that despite significant research advances, many methods fail to deliver meaningful real-world impact. It highlights a disconnect between theoretical progress and practical utility, calling for a shift toward approaches that genuinely help users understand, trust, and improve AI systems in applied settings. The paper urges the community to prioritize relevance and usability over novelty alone.",
     "category": "referencing"
+  },
+  {
+    "title": "Preference or Position?: Auditing Pairwise Choice Readouts in Gemma-4-31B-it",
+    "authors": "Bo-Shen Chen, Yi-Wen Chu, Barry Yu, Andy Yu",
+    "venue": "Digital Minds Research Sprint 2026",
+    "year": 2026,
+    "url": "https://pys8vc40ox3z7qxp.public.blob.vercel-storage.com/files/d7980f974c5bda66-7795b04ff40d-Digital-Minds-Research-Sprint-submission--Team-Sacabam-Bubble--.pdf",
+    "description": "This study uses the NNsight toolkit to capture detailed internal representations from a language model across all layers of its residual stream, focusing on how different combinations of outcomes, labels, and input order influence the model’s final processing state. By systematically varying these factors and recording hidden states at the prompt’s end, the research aims to uncover how contextual and structural variations shape neural representations during inference. The approach enables a fine-grained analysis of model behavior, offering insights into the mechanisms underlying decision-making and label sensitivity in large language models.",
+    "category": "uses_nnsight",
+    "project_url": "https://github.com/chenshen0103/preference-readout-audit"
   },
   {
     "title": "PyHealth 2.0: A Comprehensive Open-Source Toolkit for Accessible and Reproducible Clinical Deep Learning",
@@ -1061,6 +1137,16 @@
     "description": "Explores how large language models (LLMs) represent and predict human emotions, revealing that larger models develop more complex hierarchical emotion structures and achieve better outcomes in negotiation tasks by accurately modeling counterparts' emotions. Also highlights ethical concerns, showing that LLMs exhibit persona biases, often misclassifying emotions for minority personas, raising important considerations for responsible deployment.",
     "category": "uses_ndif",
     "image": "/images/Emergence-of-Hierarchical-Emotion-Organization-in-Large-Language-Models.png"
+  },
+  {
+    "title": "Epistemic Familiarity is Associated With Belief Stability in Large Language Models",
+    "authors": "Samantha Dies, Courtney Maynard, Germans Savcisens, Tina Eliassi-Rad",
+    "venue": "Findings of EMNLP 2026",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2511.19166",
+    "description": "This research introduces a new way to test how consistently large language models maintain their beliefs when faced with subtle changes in how information is framed. By comparing how models respond to familiar fictional statements versus unfamiliar synthetic ones, the study finds that models are more likely to retract or change their beliefs when confronted with unfamiliar or obscure content — even if the underlying meaning remains similar. The results suggest that a model’s stability depends not just on what it knows, but on how familiar or intuitive the framing of that knowledge feels. This insight highlights that reliability in AI systems isn’t only about getting answers right, but about holding steady under reasonable reinterpretations — a crucial factor for real-world trust and deployment.",
+    "category": "uses_nnsight",
+    "image": "/images/Epistemic-Familiarity-is-Associated-With-Belief-Stability-in-Large-Language-Models.png"
   },
   {
     "title": "Even Heads Fix Odd Errors: Mechanistic Discovery and Surgical Repair in Transformer Attention",
