@@ -100,6 +100,16 @@
     "image": "/images/Can-you-map-it-to-English-The-Role-of-Cross-Lingual-Alignment-in-the-Multilingual-Performance-of-LLMs.png"
   },
   {
+    "title": "CircuitKIT : Circuit Discovery, Evaluation, and Application Toolkit for Mechanistic Interpretability",
+    "authors": "Pratinav Seth, Hem Gosalia, Aditya Kasliwal, Vinay Kumar Sankarapu",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2607.19317",
+    "description": "CircuitKIT unifies the fragmented process of circuit analysis by offering a shared, structured framework for discovering, evaluating, and applying insights from neural network circuits. It streamlines workflows with reusable components for prompt generation, diagnostic tools, and intervention modules, enabling researchers to more easily compare methods and extend analyses beyond standard benchmarks. By making circuit analysis more accessible and interoperable, the library supports deeper model understanding and practical interventions like pruning or steering in real-world applications.",
+    "category": "referencing",
+    "image": "/images/CircuitKIT-Circuit-Discovery-Evaluation-and-Application-Toolkit-for-Mechanistic-Interpretability.png"
+  },
+  {
     "title": "Counting Hypothesis: Potential Mechanism of In-Context Learning",
     "authors": "Jung H. Lee, Sujith Vijayan",
     "venue": "ArXiv 2026",
@@ -120,6 +130,26 @@
     "image": "/images/CRaFT-Circuit-Guided-Refusal-Feature-Selection-via-Cross-Layer-Transcoders.png"
   },
   {
+    "title": "Creating Steering Vectors via Input Optimisation",
+    "authors": "Batuhan Akar",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2611.17481",
+    "description": "Researchers have developed a way to steer language model behavior using only text prompts, eliminating the need for internal access during generation. By optimizing a suffix to mimic hidden-state steering, they demonstrate that complex behaviors—like switching languages or bypassing refusals—can be triggered through carefully crafted input strings. This approach makes steering more portable across different models and prompts, though its effectiveness varies depending on the specific behavior being targeted.",
+    "category": "uses_nnsight",
+    "image": "/images/Creating-Steering-Vectors-via-Input-Optimisation.png"
+  },
+  {
+    "title": "Cyberlens: taxonomy-mapped sparse autoencoders for cybersecurity interpretability of open-weight language models",
+    "authors": "Fahad Hafeez",
+    "venue": "AI and Ethics 2026",
+    "year": 2026,
+    "url": "https://doi.org/10.1007/s43681-026-01480-x",
+    "description": "CyberLens introduces a specialized sparse autoencoder trained on cybersecurity data to make the internal workings of a language model more interpretable for security researchers. By mapping model features to known attack frameworks and vulnerabilities, the tool aims to help developers monitor and understand cyber-relevant behaviors in AI systems. The authors release their weights and an interactive demo to support further research into AI safety and security observability.",
+    "category": "referencing",
+    "image": "/images/Cyberlens-taxonomy-mapped-sparse-autoencoders-for-cybersecurity-interpretability-of-open-weight-language-models.png"
+  },
+  {
     "title": "Decoy Direction Optimization: A Post-Hoc Defense Against LLM Abliteration",
     "authors": "Aashiq Muhamed, Mona T. Diab, Virginia Smith",
     "venue": "ArXiv 2026",
@@ -132,7 +162,7 @@
   {
     "title": "Demystifying Entropy-based Selection for Chain-of-Thought Compression in Large Reasoning Models",
     "authors": "Sara Candussio, Daniel Scalena, Luca Bortolussi, Elisabetta Fersini, Malvina Nissim, Gabriele Sarti",
-    "venue": "ArXiv 2026",
+    "venue": "BlackboxNLP Workshop: Analyzing and Interpreting Neural Networks for NLP 2026",
     "year": 2026,
     "url": "https://arxiv.org/abs/2607.28707",
     "description": "The study investigates whether entropy-based methods can effectively prune reasoning steps in Chain-of-Thought outputs without harming performance. It finds that selecting steps based on entropy — whether low or high — offers no improvement over random selection across different models and tasks. When examining token-level pruning, retaining low-entropy tokens only helps in math problems, likely because numbers naturally have low entropy and carry meaning in those contexts. Crucially, restoring just a few key tokens to their original state brings performance back nearly to full levels, suggesting that reasoning isn’t localized in a few predictable tokens but is instead spread throughout the entire chain. This implies that simple heuristics can’t reliably identify a small, critical subset of reasoning steps for preservation or intervention.",
@@ -180,6 +210,16 @@
     "image": "/images/Do-Transformers-Use-their-Depth-Adaptively-Evidence-from-a-Relational-Reasoning-Task.png"
   },
   {
+    "title": "Do Vision-Language-Action Models Understand Instructions? A Mechanistic Interpretability Study on Language Grounding",
+    "authors": "Theodor Wulff, Angelo Cangelosi",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2610.10178",
+    "description": "This study investigates how two advanced Vision-Language-Action models, π₀.₅ and GR00T N1.7, actually use language instructions when generating actions, testing whether their behavior is truly grounded in linguistic input or merely exploiting visual shortcuts. By systematically altering task descriptions — from rephrasing with synonyms to removing instructions entirely or introducing directional confusion — the researchers found that both models remain largely unaffected by superficial language changes but show strong sensitivity when instructions are missing or spatially misleading. Crucially, the internal mechanisms driving this sensitivity differ: GR00T N1.7 relies heavily on early cross-attention layers to process directional language, while π₀.₅ spreads its reliance across early and later network layers, suggesting distinct strategies for integrating language into action planning. The work highlights that while these models can generalize across tasks, their dependence on language is nuanced, unevenly distributed in the network, and not always reliably interpretable through standard attribution methods",
+    "category": "uses_nnsight",
+    "image": "/images/Do-Vision-Language-Action-Models-Understand-Instructions-A-Mechanistic-Interpretability-Study-on-Language-Grounding.png"
+  },
+  {
     "title": "Don't Judge an LLM Only by Its Activations: Discovering Suppressed Safety Features via Counterfactual Activation Potential",
     "authors": "Swadesh Swain, Sanghamitra Dutta",
     "venue": "ArXiv 2026",
@@ -200,6 +240,26 @@
     "image": "/images/DreamReader-An-Interpretability-Toolkit-for-Text-to-Image-Models.png"
   },
   {
+    "title": "Dynamics of the Transformer Residual Stream: Coupling Spectral Geometry to Network Topology",
+    "authors": "Jesseba Fernando, Grigori Guitchounts",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2605.14258",
+    "description": "Researchers analyzed how information moves through large language models by examining the full mathematical structure of each layer's transformation. They found that during training, the model develops a consistent pattern: early layers process information in complex, rotating ways that amplify certain signals, while later layers become more stable and symmetric, gradually narrowing the flow of information into a small set of key directions. This narrowing, or bottleneck, isn't built into the model's design but emerges through learning, and it depends on specific structural properties of the network. Furthermore, the way groups of interconnected components (like those in language or knowledge graphs) are affected — whether strengthened or weakened — depends on their position in the model's internal structure and the type of computation happening locally, a relationship that only appears after training. Together, these findings reveal a learned geometric organization inside LLMs that governs how signals propagate and get compressed, linking the model's internal dynamics to its functional behavior.",
+    "category": "uses_nnsight",
+    "image": "/images/Dynamics-of-the-Transformer-Residual-Stream-Coupling-Spectral-Geometry-to-Network-Topology.png"
+  },
+  {
+    "title": "Embarrassingly Simple Access Control for Large Language Models",
+    "authors": "Veronica Rammouz, Đorđe Klisura, Ram Krishnan, Anthony Rios",
+    "venue": "International Joint Conference on Natural Language Processing and the 5th Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics 2026",
+    "year": 2026,
+    "url": "https://doi.org/10.18653/2026.aacl-long.110",
+    "description": "Researchers investigate how large language models internally represent role-based access control rules by analyzing their hidden states rather than relying on traditional fine-tuning or prompting. Their findings reveal that while these internal signals can effectively predict permissions and refusals in structured tasks, their reliability varies significantly across different models, domains, and adversarial conditions.",
+    "category": "uses_nnsight",
+    "image": "/images/Embarrassingly-Simple-Access-Control-for-Large-Language-Models.png"
+  },
+  {
     "title": "Enabling Performant and Flexible Model-Internal Observability for LLM Inference",
     "authors": "Nengneng Yu, Sixian Xiong, Yibo Zhao, Wei Wang, Zaoxing Liu",
     "venue": "ArXiv 2026",
@@ -208,6 +268,25 @@
     "description": "Researchers have developed a tool that allows for real-time monitoring of internal states within deep learning models, without disrupting their performance. By decoupling this monitoring capability from the main processing path, the tool enables developers to gain valuable insights into their models' behavior while minimizing latency and memory usage. This innovation has the potential to improve the efficiency and reliability of AI systems in a wide range of applications.",
     "category": "referencing",
     "image": "/images/Enabling-Performant-and-Flexible-Model-Internal-Observability-for-LLM-Inference.png"
+  },
+  {
+    "title": "Encoded Early, Used Late: Where Transformers Begin to Act on an Inferred Partner's Expertise",
+    "authors": "Mika Okamoto, Gabriele Sarti",
+    "venue": "Scientific Understanding of Foundation Models (Sci-FM) Workshop at COLM 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2609.07139",
+    "description": "Researchers investigated how a language model represents and uses information about its conversation partner's expertise during a dialogue. They found that the model encodes this inferred attribute — how expert the partner is — in its early processing layers, long before it actually influences the model's later responses or decisions. Even though the information is present and readable early on, it doesn't start to affect the output until much deeper in the network. This separation between when information becomes available and when it gets used suggests that efforts to interpret or steer the model's behavior based on partner expertise would need to target specific internal stages, and that simply reading internal states early may not reflect what ultimately drives the model's actions. The study highlights a fundamental timing gap in how transformers process socially relevant, inferred attributes over time.",
+    "category": "uses_ndif",
+    "image": "/images/Encoded-Early-Used-Late-Where-Transformers-Begin-to-Act-on-an-Inferred-Partners-Expertise.png"
+  },
+  {
+    "title": "Epistemic State Representations in Large Language Models",
+    "authors": "Jacob L. Steenwyk",
+    "venue": "Preprints.org 2026",
+    "year": 2026,
+    "url": "https://www.preprints.org/manuscript/202608.2226",
+    "description": "Researchers identified internal patterns in language models that reflect how certain or uncertain the model feels about its answers, revealing a consistent structure across different models. By manipulating these internal signals, they were able to reduce instances of confidently incorrect outputs, effectively guiding the model toward more accurate responses. This approach offers a promising way to detect and correct hallucinations by tapping into the model’s own sense of knowing, potentially improving reliability in real-world use.",
+    "category": "uses_nnsight"
   },
   {
     "title": "Explaining the Explainer: Understanding the Inner Workings of Transformer-based Symbolic Regression Models",
@@ -260,9 +339,19 @@
     "image": "/images/Fine-Grained-Analysis-of-Shared-Syntactic-Mechanisms-in-Language-Models.png"
   },
   {
+    "title": "FLEET: From Logits Entropy to Enhanced Trajectories in Text Generation",
+    "authors": "Oleksii Streltsov, Oleksandra Vitko",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2609.27657",
+    "description": "FLEET introduces a memory-aware approach to language model generation that tracks meaningful variations in outputs to avoid redundant samples. By representing each generation as a sparse trajectory through high-entropy states, it estimates per-token usefulness and adjusts model predictions accordingly. This allows FLEET to match the accuracy of repeated sampling while being significantly faster, and to boost performance on challenging coding tasks without increasing computational cost. The method is designed to be practical — deterministic in greedy mode, requiring only one calibration step, and easy to integrate into existing systems.",
+    "category": "uses_nnsight",
+    "image": "/images/FLEET-From-Logits-Entropy-to-Enhanced-Trajectories-in-Text-Generation.png"
+  },
+  {
     "title": "Fluid Representations in Reasoning Models",
     "authors": "Dmitrii Kharlapenko, Alessandro Stolfo, Arthur Conmy, Mrinmaya Sachan, Zhijing Jin",
-    "venue": "ArXiv 2026",
+    "venue": "Findings of the Association for Computational Linguistics: EMNLP 2026",
     "year": 2026,
     "url": "https://arxiv.org/abs/2602.04843",
     "description": "Researchers have made strides in understanding how advanced language models process complex information, shedding light on the internal mechanisms that enable them to excel at abstract problem-solving. By analyzing a model trained to produce detailed reasoning traces, they discovered that it develops more effective representations of actions and concepts over time, focusing on underlying structure rather than specific details. This insight has significant implications for improving the performance of language models in complex problem-solving tasks.",
@@ -299,6 +388,16 @@
     "category": "uses_nnsight"
   },
   {
+    "title": "Goal Encoding in LLMs",
+    "authors": "Arnab Sen Sharma, Eric Todd, Sheridan Feucht, Andy Arditi, Rohit Gandikota, Natalie Shapira, Gabriele Sarti, Constanza Fierro, Lisa Schut, David Bau",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2611.17297",
+    "description": "Researchers explore how large language models internally represent goals that guide their actions across different tasks. By identifying specific neural components that track these goals, they show that models can maintain and transfer their intentions even when switching contexts or languages. The findings suggest a new way of understanding how transformers pursue objectives without traditional memory mechanisms.",
+    "category": "uses_nnsight",
+    "image": "/images/Goal-Encoding-in-LLMs.png"
+  },
+  {
     "title": "Hierarchical Latent Structures in Data Generation Process Unify Mechanistic Phenomena across Scale",
     "authors": "Jonas Rohweder, Subhabrata Dutta, Iryna Gurevych",
     "venue": "ArXiv 2026",
@@ -327,6 +426,15 @@
     "description": "This paper contends that the interpretability of deep neural networks has struggled to deliver real-world impact not because of a lack of methods, but due to insufficient evaluation standards. It proposes that interpretability should be judged by its ability to enable concrete actions—what the authors call \"actionability\"—rather than merely producing explanations. By defining actionability through concreteness and validation, the authors identify key obstacles to practical use and outline a framework that ties interpretability research to tangible outcomes in five high-leverage domains. The goal is to shift the field toward purpose-driven evaluation without dismissing the value of exploratory work.",
     "category": "referencing",
     "image": "/images/Interpretability-Can-Be-Actionable.png"
+  },
+  {
+    "title": "Inverse Scaling in Activation Steering: Architecture and Scale Dependence of Refusal Manipulation",
+    "authors": "Siraj Mohammad, Sohail Mohammad",
+    "venue": "Preprint 2026",
+    "year": 2026,
+    "url": "https://sohailmo.ai/papers/activation-steering-2026.pdf",
+    "description": "The study reveals that two different methods for extracting model behaviors — nnsight and raw hooks — yield divergent results when applied to the same language model, suggesting that the choice of extraction technique significantly influences what is observed. This highlights a critical consideration for researchers interpreting model internals: methodological choices can shape conclusions, and consistency in approach is essential for reliable analysis. The work underscores the need for greater scrutiny of how we probe AI systems, especially as interpretability tools become more widely used.",
+    "category": "uses_nnsight"
   },
   {
     "title": "IRIS: A Visual Cortex-Inspired Framework for Analyzing Orientation Selectivity in Vision Transformers",
@@ -359,9 +467,19 @@
     "image": "/images/LangFIR-Discovering-Sparse-Language-Specific-Features-from-Monolingual-Data-for-Language-Steering.png"
   },
   {
+    "title": "Language Defaults Before Content: A Causal Layer Map of Multilingual Generation",
+    "authors": "Shenbin Qian, Yves Scherrer",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2611.12538",
+    "description": "Researchers use translation as a controlled experiment to separate how LLMs decide what to say from which language to say it in. By patching internal states between successful and failed translations, they reveal a consistent sequence across models: an English default emerges first, content follows, and the target language is resolved last. These findings offer a mechanistic view of how language selection and content generation interact during multilingual text production.",
+    "category": "uses_nnsight",
+    "image": "/images/Language-Defaults-Before-Content-A-Causal-Layer-Map-of-Multilingual-Generation.png"
+  },
+  {
     "title": "Language-Switching Triggers Take a Latent Detour Through Language Models",
     "authors": "Francis Kulumba, Wissam Antoun, Théo Lasnier, Benoît Sagot, Djamé Seddah",
-    "venue": "ArXiv 2026",
+    "venue": "2026 EMNLP",
     "year": 2026,
     "url": "https://arxiv.org/abs/2605.18646",
     "description": "Researchers uncovered how a specific three-word Latin phrase can secretly redirect an AI language model’s output from English to French by tracing the exact path the trigger takes through the model’s internal layers. They found that the trigger is first assembled by early attention mechanisms, then travels through a hidden, language-neutral pathway in the middle layers that avoids detection by typical language-based defenses, and finally gets converted into French responses by the model’s final processing layer. This reveals a stealthy way backdoors can operate — one that evades common security checks looking for suspicious language patterns — and highlights a critical vulnerability where blocking the attack also risks degrading the model’s normal performance.",
@@ -371,7 +489,7 @@
   {
     "title": "Learning a Generative Meta-Model of LLM Activations",
     "authors": "Grace Luo, Jiahai Feng, Trevor Darrell, Alec Radford, Jacob Steinhardt",
-    "venue": "ArXiv 2026",
+    "venue": "ICML 2026",
     "year": 2026,
     "url": "https://arxiv.org/abs/2602.06964",
     "description": "Researchers are developing new methods to analyze neural network activations, moving away from traditional approaches that rely on strong assumptions about the data's structure. By training generative models on large datasets of neural network internal states, they can uncover patterns and relationships without making these assumptions, leading to more accurate and interpretable results. This approach shows promise for improving the understanding and control of complex neural networks.",
@@ -399,6 +517,16 @@
     "image": "/images/Limitations-of-Automated-Simulatability-LLM-Simulators-Can-Bypass-Explanations.png"
   },
   {
+    "title": "Lingua Franca or Probing Artifact? Rethinking Latent Language in Multilingual LLMs",
+    "authors": "Deniz Bayazit, Badr AlKhamissi, Antoine Bosselut",
+    "venue": "Findings of EMNLP 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2609.00155",
+    "description": "Researchers examined how different methods for detecting latent language in multilingual models lead to conflicting conclusions about how these models process multiple languages. They found that probes based on the geometric structure of internal representations suggest earlier blending across languages, while those relying on what can be decoded from the model’s output tend to show stronger, more persistent language-specific patterns — especially favoring English. These discrepancies vary with how multilingual a model is and how far along it is in training, but remain consistent across different types of data. The study concludes that no single probe captures a unified \"internal lingua franca,\" and instead, each method reveals a different facet of how multilingual computation is organized, urging caution in interpreting such probes as direct evidence of language routing.",
+    "category": "uses_nnsight",
+    "image": "/images/Lingua-Franca-or-Probing-Artifact-Rethinking-Latent-Language-in-Multilingual-LLMs.png"
+  },
+  {
     "title": "Mathematical Modeling of Common-Pool Resources: A Comprehensive Review of Bioeconomics, Strategic Interaction, and Complex Adaptive Systems",
     "authors": "Zebiao Li, Rui Liu, Chengyi Tu",
     "venue": "ArXiv 2026",
@@ -421,12 +549,22 @@
   {
     "title": "MURANO: Design, Run, and Reproduce Mechanistic Interpretability Experiments as Composable Pipelines",
     "authors": "Alireza Bayat Makou, Emirhan Böge, Phu Gia Hoang, Federico Tiblias, Jingcheng Niu, Subhabrata Dutta, Richard Eckart de Castilho, Iryna Gurevych",
-    "venue": "EMNLP 2026",
+    "venue": "2026 EMNLP: System Demonstrations",
     "year": 2026,
     "url": "https://arxiv.org/abs/2608.30662",
     "description": "Murano is an open-source framework designed to streamline the process of studying how large language models work internally, making it easier for researchers from any background to design, run, and reproduce mechanistic interpretability experiments. Rather than forcing users to juggle multiple incompatible tools, Murano unifies key steps — like loading models, recording activations, attributing behavior, intervening in computations, and evaluating results — into a single, flexible workflow where each step clearly defines what it needs and what it produces. By standardizing how information flows between steps and building on established libraries, Murano reduces friction in collaborative and reproducible research, demonstrated through real-world reproductions and a new case study involving sparse autoencoders.",
     "category": "uses_nnsight",
     "image": "/images/MURANO-Design-Run-and-Reproduce-Mechanistic-Interpretability-Experiments-as-Composable-Pipelines.png"
+  },
+  {
+    "title": "NCP: Verifier-Guided Optimization of Weight-Space Control Policies",
+    "authors": "Ekrem Aksoy",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2611.13236",
+    "description": "Neural Control Plane introduces a framework that temporarily adjusts language model parameters during inference to improve performance, then reverts those changes once the task is complete. By separating the model's core processing from a management layer that tests and approves these tweaks, the system allows for safer experimentation with model behavior. This approach provides a structured way to study how AI systems can refine their own operational rules without permanently altering their underlying architecture.",
+    "category": "referencing",
+    "image": "/images/NCP-Verifier-Guided-Optimization-of-Weight-Space-Control-Policies.png"
   },
   {
     "title": "One Lens, Many Worlds : A Capability-Typed Interface for World-Model Interpretability",
@@ -449,9 +587,37 @@
     "image": "/images/Patches-of-Nonlinearity-Instruction-Vectors-in-Large-Language-Models.png"
   },
   {
+    "title": "Performance within the foundation paradox: the case for small qualitative evaluations",
+    "authors": "Michael Simeone, Jacki Hyatt, E. Bienenstock, Rahul Babu, Patricia Solis",
+    "venue": "Neural Computing and Applications 2026",
+    "year": 2026,
+    "url": "https://doi.org/10.1007/s00521-026-12328-0",
+    "description": "This paper addresses a growing mismatch between how large language models are evaluated and how they are actually used in real-world settings. As LLMs are increasingly relied upon for nuanced, context-sensitive advice — such as guidance on adapting to extreme heat in vulnerable communities — traditional benchmarks fall short because they either focus on rigid, procedural tasks or highly specialized expert queries, leaving a gap for intermediate, situational uses that lack clear right-or-wrong answers. To bridge this gap, the authors introduce Small Qualitative Evaluations (SQEs), a human-in-the-loop framework inspired by qualitative research methods that emphasizes thoughtful rubric design, analytic simplicity, and structured judgment. They demonstrate SQEs through the Desert Language Model Evaluation Framework (DLEF), applying it to assess how well models like GPT-4o provide practical, place-aware, and clear advice for heat adaptation. The study finds that when human evaluators agree strongly on certain dimensions — such as feasibility or clarity — those same patterns are reflected",
+    "category": "uses_ndif",
+    "image": "/images/Performance-within-the-foundation-paradox-the-case-for-small-qualitative-evaluations.png"
+  },
+  {
+    "title": "Position: If open source is to win, it must go public",
+    "authors": "Joshua Tan, Nicholas De Vincentis, Katherine Elkins, Magnus Sahlgren, Joseph Low, David N. Pham, Sampo Pyysalo, Jenia Jitsev",
+    "venue": "ICML 2026",
+    "year": 2026,
+    "url": "https://openreview.net/forum?id=zN7zY1UVru",
+    "description": "Open source projects have driven remarkable advances in machine learning, making powerful models and systems widely accessible to developers and researchers worldwide. However, relying solely on open source approaches may not be sufficient to address all challenges related to scalability, sustainability, and real-world deployment. The paper argues that complementary strategies — such as institutional support, standardized practices, and cross-organizational collaboration — are needed to ensure these innovations can be reliably maintained, improved, and adopted at scale. This perspective highlights the importance of balancing openness with structured support to unlock the full potential of open source AI.",
+    "category": "referencing"
+  },
+  {
+    "title": "Position: Interpretability Can Be Actionable",
+    "authors": "Hadas Orgad, Fazl Barez, Tal Haklay, Isabelle Lee, Marius Mosbach, Anja Reusch, Naomi Saphra, Byron Wallace, Sarah Wiegreffe, Eric Wong, Ian Tenney, Mor Geva",
+    "venue": "ICML 2026",
+    "year": 2026,
+    "url": "https://openreview.net/forum?id=SfN6Cjs515",
+    "description": "This work critically examines the growing field of interpretability in deep learning, arguing that despite significant research advances, many methods fail to deliver meaningful real-world impact. It highlights a disconnect between theoretical progress and practical utility, calling for a shift toward approaches that genuinely help users understand, trust, and improve AI systems in applied settings. The paper urges the community to prioritize relevance and usability over novelty alone.",
+    "category": "referencing"
+  },
+  {
     "title": "PyHealth 2.0: A Comprehensive Open-Source Toolkit for Accessible and Reproducible Clinical Deep Learning",
     "authors": "John Wu, Yongda Fan, Zhenbang Wu, Paul Landes, Eric Schrock, Sayeed Sajjad Razin, Arjun Chatterjee, Naveen Baskaran, Joshua Steier, Andrea Fitzpatrick, Bilal Arif, Rian Atri, Jathurshan Pradeepkumar, Siddhartha Laghuvarapu, Junyi Gao, Adam R. Cross, Jimeng Sun",
-    "venue": "ArXiv 2026",
+    "venue": "ICML 2026",
     "year": 2026,
     "url": "https://arxiv.org/abs/2601.16414",
     "description": "Researchers have developed PyHealth 2.0, a clinical deep learning toolkit that tackles common barriers to clinical AI research, such as difficulty replicating results and high computational costs. By unifying various datasets, models, and interpretability methods within a single framework, PyHealth 2.0 enables faster and more accessible predictive modeling in healthcare. This open-source toolkit aims to advance reproducible and accessible healthcare AI, making it easier for researchers and clinicians to collaborate and drive innovation.",
@@ -459,9 +625,19 @@
     "image": "/images/PyHealth-20-A-Comprehensive-Open-Source-Toolkit-for-Accessible-and-Reproducible-Clinical-Deep-Learning.png"
   },
   {
+    "title": "Representation as a Bottleneck for Mechanistic Interpretability: The Manifestation Unit Protocol",
+    "authors": "Hussein Chouman, Wataru Sasaki, Tomokazu Matsui, Hirohiko Suwa, Keiichi Yasumoto",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2607.00089",
+    "description": "This work introduces a structured framework called Manifestation Units to organize and make reusable the detailed findings from mechanistic interpretability studies. By defining a standardized typed tuple protocol — including components like entity, selectivity, response, distribution, and gradient, extended for transformers with attention-head primitives — it enables automatic population and natural language querying of per-component analyses across different model types. The approach shows that this structure improves retrieval effectiveness and allows recovered components to meet causal criteria for sufficiency and necessity, while revealing that only two fields are essential for core functionality. Ultimately, it proposes this schema as reusable infrastructure to bridge the gap between fine-grained analysis and practical downstream applications in model auditing and intervention.",
+    "category": "referencing",
+    "image": "/images/Representation-as-a-Bottleneck-for-Mechanistic-Interpretability-The-Manifestation-Unit-Protocol.png"
+  },
+  {
     "title": "Reproducing Transparent and Scrutable Recommendations: Exploring Open-Weight Models via Natural-Language User Profiles",
     "authors": "Noah Mamié, Laurin van den Bergh",
-    "venue": "ArXiv 2026",
+    "venue": "BlackboxNLP Workshop: Analyzing and Interpreting Neural Networks for NLP 2026",
     "year": 2026,
     "url": "https://arxiv.org/abs/2609.19831",
     "description": "This study reproduces and extends research on recommender systems that use natural-language user profiles derived from review text to improve transparency and user control. It confirms that while these profiles allow users to interact with and correct their preference representations, changes to the profiles do not selectively alter recommendations across different genres or topics. Instead, any shifts in predicted ratings are uniform, leaving the final ranking of items unchanged. The analysis reveals that this behavior stems from the underlying rating-prediction objective of the model, not the profile interface itself, suggesting that models optimized for ranking tasks would be needed to achieve truly responsive, preference-driven recommendations. The work highlights a key limitation in current approaches: even when systems appear more interpretable through language-based profiles, their core decision-making may not reflect nuanced user intent.",
@@ -489,8 +665,18 @@
     "image": "/images/reward-lens-A-Mechanistic-Interpretability-Library-for-Reward-Models.png"
   },
   {
+    "title": "Similar, but why? A Toolkit for Explaining Text Similarity",
+    "authors": "Juri Opitz, Andrianos Michail, Lucas Moeller, Sebastian Padó, Simon Clematide",
+    "venue": "EACL 2026",
+    "year": 2026,
+    "url": "https://aclanthology.org/2026.eacl-demo.16/",
+    "description": "",
+    "category": "referencing",
+    "image": "/images/Similar-but-why-A-Toolkit-for-Explaining-Text-Similarity.png"
+  },
+  {
     "title": "Spectra: A Mechanistic Interpretability Library for Vision-Language Models",
-    "authors": "Clement Neo, Yongsen Zheng, Kwok-Yan Lam, Luke Ong",
+    "authors": "Clement Neo, Yongsen Zheng, Kwok-Yan Lam, C.-H. Luke Ong",
     "venue": "ACL 2026",
     "year": 2026,
     "url": "https://doi.org/10.18653/v1/2026.acl-demo.78",
@@ -507,6 +693,16 @@
     "description": "Researchers are exploring a new approach called symbolic distillation, which replaces complex neural networks with simpler, more interpretable mathematical expressions. By doing so, they aim to uncover underlying patterns and relationships in data, making AI systems more transparent and understandable. This method has the potential to reveal new insights and improve the reliability of machine learning models.",
     "category": "referencing",
     "image": "/images/SymTorch-A-Framework-for-Symbolic-Distillation-of-Deep-Neural-Networks.png"
+  },
+  {
+    "title": "TADA! Tuning Audio Diffusion Models through Activation Steering",
+    "authors": "Łukasz Staniszewski, Katarzyna Zaleska, Mateusz Modrzejewski, Kamil Deja",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2602.11910",
+    "description": "Researchers have uncovered that audio diffusion models rely on a small set of specific attention layers to encode key musical features like instruments, vocals, and genre — revealing a kind of internal \"semantic bottleneck.\" By targeting these layers with precise activation adjustments, they show that steering the model’s internal representations yields far more accurate and controllable music generation than modifying prompts, scores, or model weights directly. This approach, validated through a new benchmark and user study, sets a new standard for fine-grained control in AI-generated music.",
+    "category": "uses_nnsight",
+    "image": "/images/TADA-Tuning-Audio-Diffusion-Models-through-Activation-Steering.png"
   },
   {
     "title": "TAGTorch: A PyTorch Library for Geometry, Topology, and Symmetry-Aware Machine Learning",
@@ -531,7 +727,7 @@
   {
     "title": "The Interlingua Hypothesis: LLMs Translate via a Latent Task-agnostic Feature Space",
     "authors": "Jacob Brinton, Jannik Brinkmann, Mark Crovella, Aaron Mueller",
-    "venue": "ArXiv 2026",
+    "venue": "2026 EMNLP",
     "year": 2026,
     "url": "https://arxiv.org/abs/2609.00515",
     "description": "Researchers propose that large language models translate by converting sentences into a shared, language-neutral internal representation—essentially a common mental space—before generating output in the target language. They support this idea with evidence showing that translation performance across language pairs follows predictable patterns based on individual language abilities, that the same model parts are used for both understanding single languages and translating between them, and that improving the model’s general language skills through monolingual training boosts translation almost as much as training on translated text pairs. This suggests LLMs don’t rely on direct word-for-word mapping but instead use a universal internal language to bridge meaning across tongues.",
@@ -579,14 +775,34 @@
     "image": "/images/Unboxing-Diffusion-Models-for-the-Arts-Interactive-Model-Bending-and-Practice-Based-Explainability.png"
   },
   {
+    "title": "VASAE: Naming SAE Dictionary Directions with Vocabulary-Aligned Anchoring",
+    "authors": "Kairui Zhang, Ziwen Yu, Zahraa S. Abdallah, Martha Lewis",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2606.27941",
+    "description": "This paper introduces Vocabulary-Aligned Sparse Autoencoder (VASAE), a method that directly links learned features in Transformer models to specific tokens from the model’s vocabulary by anchoring each feature to the nearest token embedding during training. Unlike standard sparse autoencoders, which require post hoc naming of features, VASAE assigns intrinsic token names to features without sacrificing reconstruction performance. Experiments on GPT-2-small and Llama-3.1-8B show that a large proportion of features in early and middle layers become meaningfully aligned with vocabulary tokens, and even after adjusting for sentence-level context, many of these names remain relevant to nearby input tokens. This approach enhances interpretability by providing a natural, built-in connection between learned representations and the model’s linguistic vocabulary.",
+    "category": "uses_nnsight",
+    "image": "/images/VASAE-Naming-SAE-Dictionary-Directions-with-Vocabulary-Aligned-Anchoring.png"
+  },
+  {
     "title": "Vision-Default, Prior-Override: Causal Mechanisms of Perception-Knowledge Conflict in Vision-Language Models",
     "authors": "Niclas Lietzow, Danielle Bitterman, Carsten Eickhoff, William Rudman, Michal Golovanevsky",
-    "venue": "ArXiv 2026",
+    "venue": "EMNLP 2026",
     "year": 2026,
     "url": "https://arxiv.org/abs/2606.28273",
     "description": "Researchers investigated how vision-language models decide between what they see and what they know from training when the two disagree. By analyzing internal model components at multiple levels, they discovered that relying on prior knowledge — like answering \"red\" for a strawberry even if it looks green — depends on a small, specific group of attention heads located in the later layers of the network. These heads act as a causal switch: disabling them causes the model to default to visual input, while leaving visually grounded responses largely unchanged. The circuit splits into two types of heads — one that routes information and another that directly injects knowledge-based answers — revealing a consistent, sparse mechanism across different model sizes and architectures that governs how VLMs balance perception and memory.",
     "category": "uses_nnsight",
     "image": "/images/Vision-Default-Prior-Override-Causal-Mechanisms-of-Perception-Knowledge-Conflict-in-Vision-Language-Models.png"
+  },
+  {
+    "title": "W-ISA: Transactional Execution of Weight-Space Intervention Programs",
+    "authors": "Ekrem Aksoy",
+    "venue": "ArXiv 2026",
+    "year": 2026,
+    "url": "https://arxiv.org/abs/2611.13232",
+    "description": "W-ISA introduces a specialized instruction set and runtime that allows researchers to apply precise, temporary modifications to language model weights during inference. By separating how interventions are defined from how they are executed, the system ensures that models return to their original state after each request, making complex parameter-level experiments more reproducible and composable.",
+    "category": "referencing",
+    "image": "/images/W-ISA-Transactional-Execution-of-Weight-Space-Intervention-Programs.png"
   },
   {
     "title": "When Meanings Meet: Investigating the Emergence and Quality of Shared Concept Spaces during Multilingual Language Model Training",
@@ -619,6 +835,26 @@
     "image": "/images/Your-Model-Is-Leaking-Covert-Information-Transfer-through-LLM-Residual-Streams.png"
   },
   {
+    "title": "言語モデルの機械論的解釈可能性ツールの調査",
+    "authors": "Ryogo Nakauchi",
+    "venue": "Bulletin of Advanced Institute of Industrial Technology 2026",
+    "year": 2026,
+    "url": "https://aiit.repo.nii.ac.jp/records/2000088",
+    "description": "This paper surveys recent developments in tools designed to help researchers and practitioners understand how transformer language models make decisions by examining their internal activations. It highlights how these tools have evolved to become more accessible, enabling broader use beyond specialists in model interpretability. By making it easier to visualize and manipulate model behavior, the work supports efforts to build more transparent and trustworthy AI systems.",
+    "category": "referencing",
+    "image": "/images/言語モデルの機械論的解釈可能性ツールの調査.png"
+  },
+  {
+    "title": "(How) Do Language Models Track State?",
+    "authors": "Belinda Z. Li, Zifan Carl Guo, Jacob Andreas",
+    "venue": "ICML 2025",
+    "year": 2025,
+    "url": "https://openreview.net/forum?id=8SXosAVIFH",
+    "description": "",
+    "category": "uses_nnsight",
+    "image": "/images/How-Do-Language-Models-Track-State.png"
+  },
+  {
     "title": "A survey on mechanistic interpretability for multi-modal foundation models",
     "authors": "Zihao Lin, Samyadeep Basu, Mohammad Beigi, Varun Manjunatha, Ryan A. Rossi, Zichao Wang, Yufan Zhou, Sriram Balasubramanian, Arman Zarei, Keivan Rezaei, Ying Shen, Barry Menglong Yao, Zhiyang Xu, Qin Liu, Yuxiang Zhang, Yan Sun, Shilong Liu, Li Shen, Hongxuan Li, Soheil Feizi, Lifu Huang",
     "venue": "ArXiv 2025",
@@ -637,6 +873,15 @@
     "description": "Researchers are exploring the concept of representation universality in AI models, where different models and architectures are converging on similar representations across various domains and modalities. This convergence has significant implications for the development of more generalizable and adaptable AI systems. By understanding these universal representations, researchers can unlock new possibilities for AI applications.",
     "category": "referencing",
     "image": "/images/Activation-space-interventions-can-be-transferred-between-large-language-models.png"
+  },
+  {
+    "title": "Adversarial Manipulation of Reasoning Models using Internal Representations",
+    "authors": "Kureha Yamaguchi, Benjamin Etheridge, Andy Arditi",
+    "venue": "ICML 2025 R2-FM Workshop",
+    "year": 2025,
+    "url": "https://openreview.net/forum?id=TYKp5HCb99",
+    "description": "",
+    "category": "uses_nnsight"
   },
   {
     "title": "Annotating the Chain-of-Thought: A Behavior-Labeled Dataset for AI Safety",
@@ -659,6 +904,16 @@
     "image": "/images/Back-Attention-Understanding-and-Enhancing-Multi-Hop-Reasoning-in-Large-Language-Models.png"
   },
   {
+    "title": "Bilinear MLPs enable weight-based mechanistic interpretability",
+    "authors": "Michael T. Pearce, Thomas Dooms, Alice Rigg, Jose M. Oramas, Lee Sharkey",
+    "venue": "ICLR 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2410.08417",
+    "description": "",
+    "category": "uses_nnsight",
+    "image": "/images/Bilinear-MLPs-enable-weight-based-mechanistic-interpretability.png"
+  },
+  {
     "title": "BlueGlass: A Framework for Composite AI Safety",
     "authors": "Harshal Nandigramwar, Syed Qutub, Kay-Ulrich Scholl",
     "venue": "ICML 2025",
@@ -671,7 +926,7 @@
   {
     "title": "Can SAEs reveal and mitigate racial biases of LLMs in healthcare?",
     "authors": "Hiba Ahsan, Byron C. Wallace",
-    "venue": "ICLR 2026",
+    "venue": "ICLR 2025",
     "year": 2025,
     "url": "https://arxiv.org/abs/2511.00177",
     "description": "Researchers are exploring ways to detect and mitigate biases in large language models (LLMs) used in healthcare, particularly those related to patient demographics. By analyzing the inner workings of these models using Sparse Autoencoders, they aim to identify and control associations between patient characteristics, such as race, and stigmatizing concepts. This work highlights the potential of this approach to reveal problematic biases, but also its limitations in effectively mitigating them in real-world clinical tasks.",
@@ -770,7 +1025,7 @@
   {
     "title": "Do Natural Language Descriptions of Model Activations Convey Privileged Information?",
     "authors": "Millicent Li, Alberto Mario Ceballos Arroyo, Giordano Rogers, Naomi Saphra, Byron C. Wallace",
-    "venue": "ArXiv 2025",
+    "venue": "ICML 2025",
     "year": 2025,
     "url": "https://arxiv.org/abs/2509.13316",
     "description": "Critically evaluates activation verbalization methods that translate LLM internal representations into natural language descriptions. Findings show these methods can succeed at benchmarks without accessing target model internals, and verbalizations often reflect the verbalizer LLM's parametric knowledge rather than the target model's. Controlled experiments indicate a need for targeted benchmarks and experimental controls to assess whether verbalization methods provide meaningful insights into LLM operations.",
@@ -1062,6 +1317,16 @@
     "image": "/images/Punctuation-and-Predicates-in-Language-Models.png"
   },
   {
+    "title": "RankAlign: A Ranking View of the Generator-Validator Gap in Large Language Models",
+    "authors": "Juan Diego Rodriguez, Wenxuan Ding, Katrin Erk, Greg Durrett",
+    "venue": "COLM 2025",
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2504.11381",
+    "description": "",
+    "category": "uses_nnsight",
+    "image": "/images/RankAlign-A-Ranking-View-of-the-Generator-Validator-Gap-in-Large-Language-Models.png"
+  },
+  {
     "title": "Representation Shattering in Transformers: A Synthetic Study with Knowledge Editing",
     "authors": "Kento Nishi, Rahul Ramesh, Maya Okawa, Mikail Khona, Hidenori Tanaka, Ekdeep Singh Lubana",
     "venue": "ICML 2025",
@@ -1201,6 +1466,16 @@
     "url": "https://dspace.mit.edu/handle/1721.1/162723",
     "description": "A dissertation advancing AI safety through three main contributions: (1) reverse-engineering addition in LLMs to discover helical number representations and the \"Clock\" algorithm for arithmetic, (2) rigorously evaluating sparse autoencoders under challenging conditions (data scarcity, noise, distribution shift), finding they don't consistently improve probing performance, and (3) introducing a quantitative framework for evaluating scalable oversight, analyzing four oversight games and deriving conditions for optimal Nested Scalable Oversight structures.",
     "category": "uses_nnsight"
+  },
+  {
+    "title": "Trilemma of Truth in Large Language Models",
+    "authors": "Germans Savcisens, Tina Eliassi-Rad",
+    "venue": "NeurIPS 2025 Mech Interp Workshop",
+    "year": 2025,
+    "url": "https://openreview.net/forum?id=z7dLG2ycRf",
+    "description": "",
+    "category": "uses_nnsight",
+    "image": "/images/Trilemma-of-Truth-in-Large-Language-Models.png"
   },
   {
     "title": "Understanding How CodeLLMs (Mis)Predict Types with Activation Steering",
@@ -1391,6 +1666,16 @@
     "project_url": "https://github.com/DanielSc4/Dynamic-Activation-Composition"
   },
   {
+    "title": "Old Moats for New Models: Openness, Control, and Competition in Generative AI",
+    "authors": "Pierre Azoulay, Joshua Krieger, Abhishek Nagaraj",
+    "venue": "ArXiv 2024",
+    "year": 2024,
+    "url": "https://doi.org/10.3386/w32474",
+    "description": "This analysis explores how the economics of innovation can help predict the future structure of the generative AI market. It argues that while rapid progress in foundation models could drive widespread change, the ability of established firms to control essential resources—like computing infrastructure and specialized expertise—may lead to a market dominated by a few powerful players. Such concentration could limit new entrants and slow broader innovation across industries. The paper suggests that policies promoting shared access to these critical assets, or even strategic openness from a major tech company seeking competitive advantage, might help sustain a more dynamic and inclusive AI ecosystem.",
+    "category": "referencing",
+    "image": "/images/Old-Moats-for-New-Models-Openness-Control-and-Competition-in-Generative-AI.png"
+  },
+  {
     "title": "Penzai + Treescope: A Toolkit for Interpreting, Visualizing, and Editing Models As Data",
     "authors": "Daniel D. Johnson",
     "venue": "ICML 2024",
@@ -1454,7 +1739,7 @@
   {
     "title": "What needs to go right for an induction head? A mechanistic study of in-context learning circuits and their formation",
     "authors": "Aaditya K. Singh, Ted Moskovitz, Felix Hill, Stephanie C. Y. Chan, Andrew M. Saxe",
-    "venue": "ArXiv 2024",
+    "venue": "ICML 2024",
     "year": 2024,
     "url": "https://arxiv.org/abs/2404.07129",
     "description": "Researchers have been studying a key component of transformer models called the induction head, which plays a crucial role in enabling these models to learn from context. To better understand how induction heads emerge and interact, scientists developed a new framework for analyzing and manipulating the model's internal workings, revealing the diverse and interconnected nature of these components. By uncovering the underlying mechanisms that drive the formation of induction heads, this research sheds light on the complex processes that enable transformer models to learn and adapt.",
