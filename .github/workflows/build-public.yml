@@ -129,9 +129,20 @@ jobs:
           fi
           age=$(( ( $(date -u +%s) - $(date -u -d "$last" +%s) ) / 86400 ))
           echo "Last successful catalog run: $last ($age days ago)" >> "$GITHUB_STEP_SUMMARY"
-          if [ "$age" -gt 8 ]; then
-            msg="The ndif-citations catalog pipeline last succeeded **$age days ago** ($last). See https://github.com/ndif-team/ndif-citations/actions and the README \"Operations runbook\". Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
-            n=$(gh issue list --label catalog-stale --state open --json number --jq '.[0].number // empty')
+          # ponytail: status=success also counts a dry_run dispatch (the runs API doesn't expose
+          # inputs), so a dry run silences this switch for up to ~9 days and closes an open
+          # catalog-stale issue. Upgrade: give catalog-run.yml a run-name that marks dry runs and
+          # skip those by display_title here (needs per_page > 1).
+          run="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          # On a gh error, stop: an empty $n would fall through to creating a duplicate issue.
+          n=$(gh issue list --label catalog-stale --state open --json number --jq '.[0].number // empty') \
+            || { echo "::warning::Dead-man check could not list catalog-stale issues"; exit 0; }
+          if [ "$age" -le 8 ]; then
+            if [ -n "$n" ]; then
+              gh issue close "$n" --comment "Recovered: the last good catalog run was $last ($age days ago). Run: $run"
+            fi
+          elif [ "$GITHUB_EVENT_NAME" = schedule ]; then   # once a day; push builds would spam the issue
+            msg="The ndif-citations catalog pipeline last succeeded **$age days ago** ($last). See https://github.com/ndif-team/ndif-citations/actions and the README \"Operations runbook\". Run: $run"
             if [ -n "$n" ]; then
               gh issue comment "$n" --body "$msg"
             else
